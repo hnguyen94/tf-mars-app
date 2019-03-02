@@ -16,6 +16,7 @@
 		CD1D5B652229C5D900067636 /* tf_mars_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */; };
 		CD1D5B702229C5D900067636 /* tf_mars_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */; };
 		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
+		CD573A14222B255E00CA943B /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* PropertyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_mars_appUITests.swift; sourceTree = "<group>"; };
 		CD1D5B712229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
+		CD573A13222B255E00CA943B /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,11 @@
 		CD1D5B4B2229C5D800067636 /* tf-mars-app */ = {
 			isa = PBXGroup;
 			children = (
+				CD1D5B4C2229C5D800067636 /* AppDelegate.swift */,
+				CD573A15222B2F9500CA943B /* Controllers */,
+				CD1D5B4E2229C5D800067636 /* ViewController.swift */,
 				CD573A12222B208600CA943B /* Models */,
 				CD573A0F222B0D1E00CA943B /* Views */,
-				CD1D5B4C2229C5D800067636 /* AppDelegate.swift */,
-				CD1D5B4E2229C5D800067636 /* ViewController.swift */,
 				CD1D5B502229C5D800067636 /* Main.storyboard */,
 				CD1D5B562229C5D900067636 /* Assets.xcassets */,
 				CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */,
+				CD573A13222B255E00CA943B /* PropertyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +149,13 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CD573A15222B2F9500CA943B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1D5B4F2229C5D800067636 /* ViewController.swift in Sources */,
+				CD573A14222B255E00CA943B /* PropertyView.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
