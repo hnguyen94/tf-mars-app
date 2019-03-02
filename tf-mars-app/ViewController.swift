@@ -83,12 +83,14 @@ class ViewController: UIViewController {
 
     // MARK: - Functions
     private func fillStackView() {
-        let propertyViews: [PropertyView] = [PropertyView(),
-                                             PropertyView(),
-                                             PropertyView(),
-                                             PropertyView(),
-                                             PropertyView(),
-                                             PropertyView()]
+        let propertyViews: [PropertyView] = [
+            MoneyView(),
+            SteelView(),
+            TitanView(),
+            PlantView(),
+            EnergyView(),
+            HeatView()
+        ]
         
         propertyViews.forEach {
             stackView.addArrangedSubview($0)

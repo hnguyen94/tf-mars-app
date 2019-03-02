@@ -1,6 +1,6 @@
 import UIKit
 
-class PropertyView: UIView,  PropertyProtocol {
+class PropertyView: UIView {
     
     // MARK: - Constants
     
@@ -16,9 +16,7 @@ class PropertyView: UIView,  PropertyProtocol {
     
     // MARK: - Properties
     
-    var productionFactor: Int = 0
-    var quantity: Int = 0
-    
+
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 0, height: Layout.height)
     }

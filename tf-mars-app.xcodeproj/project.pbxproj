@@ -17,6 +17,18 @@
 		CD1D5B702229C5D900067636 /* tf_mars_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */; };
 		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
 		CD573A14222B255E00CA943B /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* PropertyView.swift */; };
+		CD573A17222B475E00CA943B /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A16222B475E00CA943B /* MoneyView.swift */; };
+		CD573A19222B48DB00CA943B /* SteelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A18222B48DB00CA943B /* SteelView.swift */; };
+		CD573A1B222B48F500CA943B /* TitanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A1A222B48F500CA943B /* TitanView.swift */; };
+		CD573A1D222B491700CA943B /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A1C222B491700CA943B /* PlantView.swift */; };
+		CD573A1F222B494600CA943B /* EnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A1E222B494600CA943B /* EnergyView.swift */; };
+		CD573A21222B496C00CA943B /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A20222B496C00CA943B /* HeatView.swift */; };
+		CD573A25222B4D5800CA943B /* MoneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* MoneyModel.swift */; };
+		CD573A27222B4F5A00CA943B /* SteelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A26222B4F5A00CA943B /* SteelModel.swift */; };
+		CD573A29222B4F5F00CA943B /* TitanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A28222B4F5F00CA943B /* TitanModel.swift */; };
+		CD573A2B222B4F6400CA943B /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2A222B4F6400CA943B /* PlantModel.swift */; };
+		CD573A2D222B4F6F00CA943B /* EnergyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2C222B4F6F00CA943B /* EnergyModel.swift */; };
+		CD573A2F222B4F7600CA943B /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2E222B4F7600CA943B /* HeatModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +65,18 @@
 		CD1D5B712229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
 		CD573A13222B255E00CA943B /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
+		CD573A16222B475E00CA943B /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
+		CD573A18222B48DB00CA943B /* SteelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteelView.swift; sourceTree = "<group>"; };
+		CD573A1A222B48F500CA943B /* TitanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanView.swift; sourceTree = "<group>"; };
+		CD573A1C222B491700CA943B /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
+		CD573A1E222B494600CA943B /* EnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyView.swift; sourceTree = "<group>"; };
+		CD573A20222B496C00CA943B /* HeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatView.swift; sourceTree = "<group>"; };
+		CD573A24222B4D5800CA943B /* MoneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModel.swift; sourceTree = "<group>"; };
+		CD573A26222B4F5A00CA943B /* SteelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteelModel.swift; sourceTree = "<group>"; };
+		CD573A28222B4F5F00CA943B /* TitanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanModel.swift; sourceTree = "<group>"; };
+		CD573A2A222B4F6400CA943B /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
+		CD573A2C222B4F6F00CA943B /* EnergyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyModel.swift; sourceTree = "<group>"; };
+		CD573A2E222B4F7600CA943B /* HeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				CD1D5B4C2229C5D800067636 /* AppDelegate.swift */,
+				CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */,
 				CD573A15222B2F9500CA943B /* Controllers */,
 				CD1D5B4E2229C5D800067636 /* ViewController.swift */,
 				CD573A12222B208600CA943B /* Models */,
@@ -138,8 +163,13 @@
 		CD573A0F222B0D1E00CA943B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */,
 				CD573A13222B255E00CA943B /* PropertyView.swift */,
+				CD573A16222B475E00CA943B /* MoneyView.swift */,
+				CD573A18222B48DB00CA943B /* SteelView.swift */,
+				CD573A1A222B48F500CA943B /* TitanView.swift */,
+				CD573A1C222B491700CA943B /* PlantView.swift */,
+				CD573A1E222B494600CA943B /* EnergyView.swift */,
+				CD573A20222B496C00CA943B /* HeatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +177,12 @@
 		CD573A12222B208600CA943B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CD573A24222B4D5800CA943B /* MoneyModel.swift */,
+				CD573A26222B4F5A00CA943B /* SteelModel.swift */,
+				CD573A28222B4F5F00CA943B /* TitanModel.swift */,
+				CD573A2A222B4F6400CA943B /* PlantModel.swift */,
+				CD573A2C222B4F6F00CA943B /* EnergyModel.swift */,
+				CD573A2E222B4F7600CA943B /* HeatModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,11 +325,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD573A29222B4F5F00CA943B /* TitanModel.swift in Sources */,
+				CD573A2F222B4F7600CA943B /* HeatModel.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* ViewController.swift in Sources */,
+				CD573A1D222B491700CA943B /* PlantView.swift in Sources */,
 				CD573A14222B255E00CA943B /* PropertyView.swift in Sources */,
+				CD573A27222B4F5A00CA943B /* SteelModel.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
+				CD573A1F222B494600CA943B /* EnergyView.swift in Sources */,
+				CD573A2D222B4F6F00CA943B /* EnergyModel.swift in Sources */,
+				CD573A17222B475E00CA943B /* MoneyView.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
+				CD573A25222B4D5800CA943B /* MoneyModel.swift in Sources */,
+				CD573A1B222B48F500CA943B /* TitanView.swift in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
+				CD573A21222B496C00CA943B /* HeatView.swift in Sources */,
+				CD573A2B222B4F6400CA943B /* PlantModel.swift in Sources */,
+				CD573A19222B48DB00CA943B /* SteelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
