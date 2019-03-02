@@ -19,6 +19,13 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
 
     lazy var nextGenButton: UIButton = {
         let button = UIButton()
@@ -39,8 +46,9 @@ class ViewController: UIViewController {
     
     private func setupViews() {
         view.addSubview(titleLabel)
+        view.addSubview(<#T##view: UIView##UIView#>)
         view.addSubview(nextGenButton)
-        
+
         layoutNextGenButton()
         layoutTitleLabel()
     }

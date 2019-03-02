@@ -15,6 +15,7 @@
 		CD1D5B5A2229C5D900067636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */; };
 		CD1D5B652229C5D900067636 /* tf_mars_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */; };
 		CD1D5B702229C5D900067636 /* tf_mars_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */; };
+		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CD1D5B6B2229C5D900067636 /* tf-mars-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tf-mars-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_mars_appUITests.swift; sourceTree = "<group>"; };
 		CD1D5B712229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,8 @@
 		CD1D5B4B2229C5D800067636 /* tf-mars-app */ = {
 			isa = PBXGroup;
 			children = (
+				CD573A12222B208600CA943B /* Models */,
+				CD573A0F222B0D1E00CA943B /* Views */,
 				CD1D5B4C2229C5D800067636 /* AppDelegate.swift */,
 				CD1D5B4E2229C5D800067636 /* ViewController.swift */,
 				CD1D5B502229C5D800067636 /* Main.storyboard */,
@@ -126,6 +130,21 @@
 				CD1D5B712229C5D900067636 /* Info.plist */,
 			);
 			path = "tf-mars-appUITests";
+			sourceTree = "<group>";
+		};
+		CD573A0F222B0D1E00CA943B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD573A12222B208600CA943B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1D5B4F2229C5D800067636 /* ViewController.swift in Sources */,
+				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
 			);
