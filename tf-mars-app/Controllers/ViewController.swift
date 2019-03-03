@@ -6,10 +6,14 @@ class ViewController: UIViewController {
     
     struct Layout {
         struct Padding {
-            static let nextGenButtonBottom: CGFloat = 64
             static let standard: CGFloat = 8
-            static let margin: CGFloat = Layout.Padding.standard * 2 // 16
-            static let titleLabelSpace: CGFloat = Layout.Padding.standard * 3 // 24
+            static let standard16: CGFloat = Layout.Padding.standard * 2
+            static let standard24: CGFloat = Layout.Padding.standard * 3
+            static let standard32: CGFloat = Layout.Padding.standard * 4
+            static let standard40: CGFloat = Layout.Padding.standard * 5
+            static let standard48: CGFloat = Layout.Padding.standard * 6
+            static let standard56: CGFloat = Layout.Padding.standard * 7
+            static let standard64: CGFloat = Layout.Padding.standard * 8
         }
     }
     
@@ -55,30 +59,42 @@ class ViewController: UIViewController {
     
     // MARK: - Constraints
     
-    /// Setup all views with its constraints
-    private func setupViews() {
+    /// A function for adding subviews.
+    fileprivate func addSubViews() {
         view.addSubview(titleLabel)
         view.addSubview(stackView)
         view.addSubview(nextGenButton)
-
+    }
+    
+    /// A function for setting the constraints.
+    fileprivate func setupConstraints() {
+        // Variables
+        let stackLeadingTrailingMargin = Layout.Padding.standard24
+        
         NSLayoutConstraint.activate([
-            // Title Label
+            // TitleLabel
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                            constant: Layout.Padding.titleLabelSpace),
+                                            constant: Layout.Padding.standard24),
             
             // StackView
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                                               constant: Layout.Padding.margin),
+                                               constant: stackLeadingTrailingMargin),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                                                constant: -Layout.Padding.margin),
-            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: CGFloat(24)),
+                                                constant: -stackLeadingTrailingMargin),
+            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
             
             // NextGenButton
             nextGenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextGenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: -Layout.Padding.nextGenButtonBottom)
-        ])
+                                                  constant: -Layout.Padding.standard64)
+            ])
+    }
+    
+    /// Setup all views with its constraints
+    private func setupViews() {
+        addSubViews()
+        setupConstraints()
     }
 
     // MARK: - Functions
