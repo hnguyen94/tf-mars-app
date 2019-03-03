@@ -1,10 +1,14 @@
 import UIKit
 
 class MoneyView: PropertyView {
+    let model = MoneyModel()
+    
     override init() {
         super.init()
         
-        self.titleLabel.text = "Mega Credits"
+        titleLabel.text = "Mega Credits"
+        productionFactorLabel.text = "Production: \(model.productionFactor)"
+        quantityLabel.text = "Quantity: \(model.quantity)"
     }
     
     required init?(coder aDecoder: NSCoder) {

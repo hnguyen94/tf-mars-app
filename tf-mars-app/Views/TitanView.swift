@@ -1,10 +1,15 @@
 import UIKit
 
 class TitanView: PropertyView {
+    
+    let model = TitanModel()
+    
     override init() {
         super.init()
         
-        self.titleLabel.text = "Titan"
+        titleLabel.text = "Titan"
+        productionFactorLabel.text = "Production: \(model.productionFactor)"
+        quantityLabel.text = "Quantity: \(model.quantity)"
     }
     
     required init?(coder aDecoder: NSCoder) {

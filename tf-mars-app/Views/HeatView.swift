@@ -4,7 +4,10 @@ class HeatView: PropertyView {
     override init() {
         super.init()
         
-        self.titleLabel.text = "Heat"
+        titleLabel.text = "Heat"
+        productionFactorLabel.text = "Production: \(model.productionFactor)"
+        quantityLabel.text = "Quantity: \(model.quantity)"
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

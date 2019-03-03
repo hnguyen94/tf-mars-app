@@ -29,6 +29,7 @@
 		CD573A2B222B4F6400CA943B /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2A222B4F6400CA943B /* PlantModel.swift */; };
 		CD573A2D222B4F6F00CA943B /* EnergyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2C222B4F6F00CA943B /* EnergyModel.swift */; };
 		CD573A2F222B4F7600CA943B /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2E222B4F7600CA943B /* HeatModel.swift */; };
+		CD573A32222B551B00CA943B /* PropertyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* PropertyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		CD573A2A222B4F6400CA943B /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		CD573A2C222B4F6F00CA943B /* EnergyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyModel.swift; sourceTree = "<group>"; };
 		CD573A2E222B4F7600CA943B /* HeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatModel.swift; sourceTree = "<group>"; };
+		CD573A31222B551B00CA943B /* PropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +129,11 @@
 		CD1D5B4B2229C5D800067636 /* tf-mars-app */ = {
 			isa = PBXGroup;
 			children = (
+				CD573A12222B208600CA943B /* Models */,
+				CD573A30222B54E100CA943B /* ViewModels */,
 				CD1D5B4C2229C5D800067636 /* AppDelegate.swift */,
 				CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */,
 				CD573A15222B2F9500CA943B /* Controllers */,
-				CD1D5B4E2229C5D800067636 /* ViewController.swift */,
-				CD573A12222B208600CA943B /* Models */,
 				CD573A0F222B0D1E00CA943B /* Views */,
 				CD1D5B502229C5D800067636 /* Main.storyboard */,
 				CD1D5B562229C5D900067636 /* Assets.xcassets */,
@@ -190,8 +192,17 @@
 		CD573A15222B2F9500CA943B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD1D5B4E2229C5D800067636 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CD573A30222B54E100CA943B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CD573A31222B551B00CA943B /* PropertyViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD573A29222B4F5F00CA943B /* TitanModel.swift in Sources */,
+				CD573A32222B551B00CA943B /* PropertyViewModel.swift in Sources */,
 				CD573A2F222B4F7600CA943B /* HeatModel.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* ViewController.swift in Sources */,
 				CD573A1D222B491700CA943B /* PlantView.swift in Sources */,

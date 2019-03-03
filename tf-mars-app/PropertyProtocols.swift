@@ -5,9 +5,8 @@ protocol PropertyProtocol {
     var quantity: Int { get set }
 }
 
-extension PropertyProtocol {
-    var productionFactor: Int { return 0 }
-    var quantity: Int { return 0 }
+protocol ProductFactorRangeProtocol {
+    var range: [Int] { get set }
 }
 
 protocol TerraFormable {
