@@ -1,6 +1,6 @@
 import UIKit
 
-class PropertyView: UIView {
+class PropertyCellView: UIView {
     
     // MARK: - Constants
     

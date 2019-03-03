@@ -83,13 +83,13 @@ class ViewController: UIViewController {
 
     // MARK: - Functions
     private func fillStackView() {
-        let propertyViews: [PropertyView] = [
-            MoneyView(),
-            SteelView(),
-            TitanView(),
-            PlantView(),
-            EnergyView(),
-            HeatView()
+        let propertyViews: [PropertyCellView] = [
+            MoneyCellView(),
+            SteelCellView(),
+            TitanCellView(),
+            PlantCellView(),
+            EnergyCellView(),
+            HeatCellView()
         ]
         
         propertyViews.forEach {

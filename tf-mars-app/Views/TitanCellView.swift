@@ -1,13 +1,13 @@
 import UIKit
 
-class SteelView: PropertyView {
+class TitanCellView: PropertyCellView {
     
-    let model = SteelModel()
+    let model = TitanModel()
     
     override init() {
         super.init()
         
-        self.titleLabel.text = "Steel"
+        titleLabel.text = "Titan"
         productionFactorLabel.text = "Production: \(model.productionFactor)"
         quantityLabel.text = "Quantity: \(model.quantity)"
     }

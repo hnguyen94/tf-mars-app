@@ -1,15 +1,16 @@
 import UIKit
 
-class PlantView: PropertyView {
+class HeatCellView: PropertyCellView {
     
-    let model = PlantModel()
+    let model = HeatModel()
     
     override init() {
         super.init()
         
-        titleLabel.text = "Plant"
+        titleLabel.text = "Heat"
         productionFactorLabel.text = "Production: \(model.productionFactor)"
         quantityLabel.text = "Quantity: \(model.quantity)"
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
