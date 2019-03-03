@@ -16,6 +16,12 @@ class PropertyCell: UIView {
     
     // MARK: - Properties
     
+    /// Value will be displayed in productionFactor row.
+    var productionFactorValue = 0
+    
+    /// Value will be displayed in quantity row.
+    var quantityValue = 0
+    
 
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 0, height: Layout.height)
@@ -35,7 +41,7 @@ class PropertyCell: UIView {
     
     lazy var productionFactorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Production: 10"
+        label.text = "Production: \(productionFactorValue)"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
         
@@ -45,7 +51,7 @@ class PropertyCell: UIView {
     
     lazy var quantityLabel: UILabel = {
         let label = UILabel()
-        label.text = "Quantity: 10"
+        label.text = "Quantity: \(quantityValue)"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
         
@@ -76,12 +82,16 @@ class PropertyCell: UIView {
         layer.cornerRadius = Layout.cornerRadius
         layer.masksToBounds = true
     }
+    
+    // MARK: - Constraints
    
-    private func setupViews() {
+    fileprivate func addSubViews() {
         addSubview(titleLabel)
         addSubview(quantityLabel)
         addSubview(productionFactorLabel)
-        
+    }
+    
+    fileprivate func setupConstraints() {
         NSLayoutConstraint.activate([
             // TitleLabel
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -97,6 +107,13 @@ class PropertyCell: UIView {
         ])
     }
     
+    private func setupViews() {
+        addSubViews()
+        setupConstraints()
+    }
+    
+    /// The default implementation does nothing.
+    /// Will be called in the initializer.
     func setupActions() {}
     
 }

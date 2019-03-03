@@ -8,8 +8,8 @@ class EnergyCell: PropertyCell {
         super.init()
         
         titleLabel.text = model.title
-        productionFactorLabel.text = "Production: \(model.productionFactor)"
-        quantityLabel.text = "Quantity: \(model.quantity)"
+        productionFactorValue = model.productionFactor
+        quantityValue = model.quantity
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -3,13 +3,13 @@ import UIKit
 class MoneyCell: PropertyCell {
     
     let model = Money()
-    
+
     override init() {
         super.init()
         
-        titleLabel.text = "Mega Credits"
-        productionFactorLabel.text = "Production: \(model.productionFactor)"
-        quantityLabel.text = "Quantity: \(model.quantity)"
+        titleLabel.text = model.title
+        productionFactorValue = model.productionFactor
+        quantityValue = model.quantity
     }
     
     required init?(coder aDecoder: NSCoder) {
