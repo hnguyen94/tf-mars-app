@@ -1,6 +1,6 @@
 import UIKit
 
-class PropertyCellView: UIView {
+class PropertyCell: UIView {
     
     // MARK: - Constants
     
@@ -60,6 +60,7 @@ class PropertyCellView: UIView {
 
         configureView()
         setupViews()
+        setupActions()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -94,6 +95,12 @@ class PropertyCellView: UIView {
             quantityLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             quantityLabel.topAnchor.constraint(equalTo: productionFactorLabel.bottomAnchor, constant: 8)
         ])
+    }
+    
+    private func setupActions() {
+        addTapGestureRecognizer {
+            print("Tapped!  ")
+        }
     }
     
 }

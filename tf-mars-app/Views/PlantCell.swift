@@ -1,6 +1,6 @@
 import UIKit
 
-class PlantCellView: PropertyCellView {
+class PlantCell: PropertyCell {
     
     let model = PlantModel()
     

@@ -1,6 +1,6 @@
 import UIKit
 
-class HeatCellView: PropertyCellView {
+class HeatCell: PropertyCell {
     
     let model = HeatModel()
     
