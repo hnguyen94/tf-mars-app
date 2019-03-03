@@ -100,12 +100,12 @@ class ViewController: UIViewController {
     // MARK: - Functions
     private func fillStackView() {
         let propertyViews: [PropertyCell] = [
-            MoneyCell(),
-            SteelCell(),
-            TitanCell(),
-            PlantCell(),
-            EnergyCell(),
-            HeatCell()
+            PropertyCell(model: Money()),
+            PropertyCell(model: Steel()),
+            PropertyCell(model: Titan()),
+            PropertyCell(model: Plant()),
+            PropertyCell(model: Energy()),
+            PropertyCell(model: Heat()),
         ]
         
         propertyViews.forEach {

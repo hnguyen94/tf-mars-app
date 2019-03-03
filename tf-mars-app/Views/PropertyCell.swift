@@ -22,6 +22,9 @@ class PropertyCell: UIView {
     }
     
     // MARK: - Properties
+    let model: PropertyProtocol
+
+    // MARK: - Overriden Properties
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 0, height: Layout.Cell.height)
@@ -31,7 +34,7 @@ class PropertyCell: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Placeholder Title"
+        label.text = model.title
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.big, weight: .bold)
 
@@ -81,9 +84,11 @@ class PropertyCell: UIView {
 
     // MARK: - Init
     
-    init() {
+    init(model: PropertyProtocol) {
+        self.model = model
+        
         super.init(frame: .zero)
-
+        
         configureView()
         setupViews()
         setupActions()
@@ -145,6 +150,32 @@ class PropertyCell: UIView {
     
     /// The default implementation does nothing.
     /// Will be called in the initializer.
-    func setupActions() {}
+    func setupActions() {
+        productionStepper.value = Double(model.productionFactor)
+        productionStepper.addTarget(self, action: #selector(productionStepperValueChanged), for: .valueChanged)
+        
+        quantityStepper.value = Double(model.quantity)
+        quantityStepper.addTarget(self, action: #selector(quantityStepperValueChanged), for: .valueChanged)
+        
+        addTapGestureRecognizer {
+            print("Tapped \(self.model.title)")
+        }
+    }
+    
+    @objc func productionStepperValueChanged(_ sender: UIStepper!) {
+        let stepperValue = Int(sender.value)
+        
+        DispatchQueue.main.async {
+            self.productionFactorLabel.text = "Production: \(stepperValue)"
+        }
+    }
+    
+    @objc func quantityStepperValueChanged(_ sender: UIStepper!) {
+        let stepperValue = Int(sender.value)
+        
+        DispatchQueue.main.async {
+            self.quantityLabel.text = "Quantity: \(stepperValue)"
+        }
+    }
     
 }
