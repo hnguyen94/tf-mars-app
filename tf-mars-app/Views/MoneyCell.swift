@@ -2,7 +2,7 @@ import UIKit
 
 class MoneyCell: PropertyCell {
     
-    let model = MoneyModel()
+    let model = Money()
     
     override init() {
         super.init()
@@ -14,6 +14,12 @@ class MoneyCell: PropertyCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setupActions() {
+        addTapGestureRecognizer {
+            print("Tapped \(self.model.title)")
+        }
     }
     
 }

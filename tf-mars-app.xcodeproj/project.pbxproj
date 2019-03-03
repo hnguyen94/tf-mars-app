@@ -23,12 +23,12 @@
 		CD573A1D222B491700CA943B /* PlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A1C222B491700CA943B /* PlantCell.swift */; };
 		CD573A1F222B494600CA943B /* EnergyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A1E222B494600CA943B /* EnergyCell.swift */; };
 		CD573A21222B496C00CA943B /* HeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A20222B496C00CA943B /* HeatCell.swift */; };
-		CD573A25222B4D5800CA943B /* MoneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* MoneyModel.swift */; };
-		CD573A27222B4F5A00CA943B /* SteelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A26222B4F5A00CA943B /* SteelModel.swift */; };
-		CD573A29222B4F5F00CA943B /* TitanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A28222B4F5F00CA943B /* TitanModel.swift */; };
-		CD573A2B222B4F6400CA943B /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2A222B4F6400CA943B /* PlantModel.swift */; };
-		CD573A2D222B4F6F00CA943B /* EnergyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2C222B4F6F00CA943B /* EnergyModel.swift */; };
-		CD573A2F222B4F7600CA943B /* HeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2E222B4F7600CA943B /* HeatModel.swift */; };
+		CD573A25222B4D5800CA943B /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* Money.swift */; };
+		CD573A27222B4F5A00CA943B /* Steel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A26222B4F5A00CA943B /* Steel.swift */; };
+		CD573A29222B4F5F00CA943B /* Titan.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A28222B4F5F00CA943B /* Titan.swift */; };
+		CD573A2B222B4F6400CA943B /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2A222B4F6400CA943B /* Plant.swift */; };
+		CD573A2D222B4F6F00CA943B /* Energy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2C222B4F6F00CA943B /* Energy.swift */; };
+		CD573A2F222B4F7600CA943B /* Heat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A2E222B4F7600CA943B /* Heat.swift */; };
 		CD573A32222B551B00CA943B /* PropertyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* PropertyViewModel.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 /* End PBXBuildFile section */
@@ -73,12 +73,12 @@
 		CD573A1C222B491700CA943B /* PlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCell.swift; sourceTree = "<group>"; };
 		CD573A1E222B494600CA943B /* EnergyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyCell.swift; sourceTree = "<group>"; };
 		CD573A20222B496C00CA943B /* HeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatCell.swift; sourceTree = "<group>"; };
-		CD573A24222B4D5800CA943B /* MoneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyModel.swift; sourceTree = "<group>"; };
-		CD573A26222B4F5A00CA943B /* SteelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteelModel.swift; sourceTree = "<group>"; };
-		CD573A28222B4F5F00CA943B /* TitanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanModel.swift; sourceTree = "<group>"; };
-		CD573A2A222B4F6400CA943B /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
-		CD573A2C222B4F6F00CA943B /* EnergyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyModel.swift; sourceTree = "<group>"; };
-		CD573A2E222B4F7600CA943B /* HeatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatModel.swift; sourceTree = "<group>"; };
+		CD573A24222B4D5800CA943B /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		CD573A26222B4F5A00CA943B /* Steel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steel.swift; sourceTree = "<group>"; };
+		CD573A28222B4F5F00CA943B /* Titan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titan.swift; sourceTree = "<group>"; };
+		CD573A2A222B4F6400CA943B /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		CD573A2C222B4F6F00CA943B /* Energy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Energy.swift; sourceTree = "<group>"; };
+		CD573A2E222B4F7600CA943B /* Heat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heat.swift; sourceTree = "<group>"; };
 		CD573A31222B551B00CA943B /* PropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewModel.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,12 +182,12 @@
 		CD573A12222B208600CA943B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CD573A24222B4D5800CA943B /* MoneyModel.swift */,
-				CD573A26222B4F5A00CA943B /* SteelModel.swift */,
-				CD573A28222B4F5F00CA943B /* TitanModel.swift */,
-				CD573A2A222B4F6400CA943B /* PlantModel.swift */,
-				CD573A2C222B4F6F00CA943B /* EnergyModel.swift */,
-				CD573A2E222B4F7600CA943B /* HeatModel.swift */,
+				CD573A24222B4D5800CA943B /* Money.swift */,
+				CD573A26222B4F5A00CA943B /* Steel.swift */,
+				CD573A28222B4F5F00CA943B /* Titan.swift */,
+				CD573A2A222B4F6400CA943B /* Plant.swift */,
+				CD573A2C222B4F6F00CA943B /* Energy.swift */,
+				CD573A2E222B4F7600CA943B /* Heat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,24 +355,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD573A29222B4F5F00CA943B /* TitanModel.swift in Sources */,
+				CD573A29222B4F5F00CA943B /* Titan.swift in Sources */,
 				CD573A32222B551B00CA943B /* PropertyViewModel.swift in Sources */,
-				CD573A2F222B4F7600CA943B /* HeatModel.swift in Sources */,
+				CD573A2F222B4F7600CA943B /* Heat.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* ViewController.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
 				CD573A1D222B491700CA943B /* PlantCell.swift in Sources */,
 				CD573A14222B255E00CA943B /* PropertyCell.swift in Sources */,
-				CD573A27222B4F5A00CA943B /* SteelModel.swift in Sources */,
+				CD573A27222B4F5A00CA943B /* Steel.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
 				CD573A1F222B494600CA943B /* EnergyCell.swift in Sources */,
-				CD573A2D222B4F6F00CA943B /* EnergyModel.swift in Sources */,
+				CD573A2D222B4F6F00CA943B /* Energy.swift in Sources */,
 				CD573A17222B475E00CA943B /* MoneyCell.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
-				CD573A25222B4D5800CA943B /* MoneyModel.swift in Sources */,
+				CD573A25222B4D5800CA943B /* Money.swift in Sources */,
 				CD573A1B222B48F500CA943B /* TitanCell.swift in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
 				CD573A21222B496C00CA943B /* HeatCell.swift in Sources */,
-				CD573A2B222B4F6400CA943B /* PlantModel.swift in Sources */,
+				CD573A2B222B4F6400CA943B /* Plant.swift in Sources */,
 				CD573A19222B48DB00CA943B /* SteelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

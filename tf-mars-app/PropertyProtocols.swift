@@ -1,6 +1,7 @@
 import UIKit
 
 protocol PropertyProtocol {
+    var title: String { get set }
     var productionFactor: Int { get set }
     var quantity: Int { get set }
 }

@@ -2,18 +2,24 @@ import UIKit
 
 class SteelCell: PropertyCell {
     
-    let model = SteelModel()
+    let model = Steel()
     
     override init() {
         super.init()
         
-        self.titleLabel.text = "Steel"
+        titleLabel.text = model.title
         productionFactorLabel.text = "Production: \(model.productionFactor)"
         quantityLabel.text = "Quantity: \(model.quantity)"
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setupActions() {
+        addTapGestureRecognizer {
+            print("Tapped \(self.model.title)")
+        }
     }
     
 }

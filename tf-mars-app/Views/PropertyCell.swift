@@ -97,10 +97,6 @@ class PropertyCell: UIView {
         ])
     }
     
-    private func setupActions() {
-        addTapGestureRecognizer {
-            print("Tapped!  ")
-        }
-    }
+    func setupActions() {}
     
 }

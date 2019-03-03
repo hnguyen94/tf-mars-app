@@ -2,12 +2,12 @@ import UIKit
 
 class HeatCell: PropertyCell {
     
-    let model = HeatModel()
+    let model = Heat()
     
     override init() {
         super.init()
         
-        titleLabel.text = "Heat"
+        titleLabel.text = model.title
         productionFactorLabel.text = "Production: \(model.productionFactor)"
         quantityLabel.text = "Quantity: \(model.quantity)"
         
@@ -15,6 +15,12 @@ class HeatCell: PropertyCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setupActions() {
+        addTapGestureRecognizer {
+            print("Tapped \(self.model.title)")
+        }
     }
     
 }
