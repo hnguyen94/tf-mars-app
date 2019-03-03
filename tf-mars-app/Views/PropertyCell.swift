@@ -76,7 +76,7 @@ class PropertyCell: UIView {
         let stepper = UIStepper()
         stepper.wraps = true
         stepper.autorepeat = true
-        stepper.maximumValue = 30
+        stepper.maximumValue = 100
         
         stepper.translatesAutoresizingMaskIntoConstraints = false
         return stepper

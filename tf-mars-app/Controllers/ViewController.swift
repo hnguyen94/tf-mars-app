@@ -36,6 +36,16 @@ class ViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+//        // zoom
+//        scrollView.minimumZoomScale = 0.1
+//        scrollView.maximumZoomScale = 3
+
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
 
     lazy var nextGenButton: UIButton = {
         let button = UIButton()
@@ -51,7 +61,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
+        view.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
         
         setupViews()
         fillStackView()
@@ -62,7 +72,8 @@ class ViewController: UIViewController {
     /// A function for adding subviews.
     fileprivate func addSubViews() {
         view.addSubview(titleLabel)
-        view.addSubview(stackView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
         view.addSubview(nextGenButton)
     }
     
@@ -77,13 +88,23 @@ class ViewController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
                                             constant: Layout.Padding.standard24),
             
-            // StackView
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
                                                constant: stackLeadingTrailingMargin),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                                                constant: -stackLeadingTrailingMargin),
-            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
             
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                                                constant: -stackLeadingTrailingMargin),
+            scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+            // StackView
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            
+
             // NextGenButton
             nextGenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextGenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
@@ -106,6 +127,7 @@ class ViewController: UIViewController {
             PropertyCell(model: Plant()),
             PropertyCell(model: Energy()),
             PropertyCell(model: Heat()),
+            PropertyCell(model: Heat())
         ]
         
         propertyViews.forEach {
