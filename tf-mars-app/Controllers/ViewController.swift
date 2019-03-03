@@ -111,8 +111,7 @@ class ViewController: UIViewController {
         propertyViews.forEach {
             stackView.addArrangedSubview($0)
         }
-       
-        
     }
+    
 }
 

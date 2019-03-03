@@ -5,8 +5,15 @@ class PropertyCell: UIView {
     // MARK: - Constants
     
     struct Layout {
-        static let height: CGFloat = 100
-        static let cornerRadius: CGFloat = 10
+        struct Cell {
+            static let height: CGFloat = 110
+            static let cornerRadius: CGFloat = 10
+        }
+        
+        struct Padding {
+            static let standard: CGFloat = 8
+            static let standard16: CGFloat = Layout.Padding.standard * 2
+        }
     }
     
     struct FontSize {
@@ -16,15 +23,8 @@ class PropertyCell: UIView {
     
     // MARK: - Properties
     
-    /// Value will be displayed in productionFactor row.
-    var productionFactorValue = 0
-    
-    /// Value will be displayed in quantity row.
-    var quantityValue = 0
-    
-
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0, height: Layout.height)
+        return CGSize(width: 0, height: Layout.Cell.height)
     }
     
     // MARK: - View Properties
@@ -41,7 +41,7 @@ class PropertyCell: UIView {
     
     lazy var productionFactorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Production: \(productionFactorValue)"
+        label.text = "Production: 0"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
         
@@ -51,12 +51,32 @@ class PropertyCell: UIView {
     
     lazy var quantityLabel: UILabel = {
         let label = UILabel()
-        label.text = "Quantity: \(quantityValue)"
+        label.text = "Quantity: 0"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var productionStepper: UIStepper = {
+        let stepper = UIStepper()
+        stepper.wraps = true
+        stepper.autorepeat = true
+        stepper.maximumValue = 30
+
+       stepper.translatesAutoresizingMaskIntoConstraints = false
+       return stepper
+    }()
+    
+    lazy var quantityStepper: UIStepper = {
+        let stepper = UIStepper()
+        stepper.wraps = true
+        stepper.autorepeat = true
+        stepper.maximumValue = 30
+        
+        stepper.translatesAutoresizingMaskIntoConstraints = false
+        return stepper
     }()
 
     // MARK: - Init
@@ -79,7 +99,7 @@ class PropertyCell: UIView {
     private func configureView() {
         backgroundColor = .white
         
-        layer.cornerRadius = Layout.cornerRadius
+        layer.cornerRadius = Layout.Cell.cornerRadius
         layer.masksToBounds = true
     }
     
@@ -89,21 +109,32 @@ class PropertyCell: UIView {
         addSubview(titleLabel)
         addSubview(quantityLabel)
         addSubview(productionFactorLabel)
+        addSubview(productionStepper)
+        addSubview(quantityStepper)
     }
     
     fileprivate func setupConstraints() {
         NSLayoutConstraint.activate([
             // TitleLabel
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Layout.Padding.standard16),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: Layout.Padding.standard),
             
             // ProductonFactorLabel
             productionFactorLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            productionFactorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            productionFactorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard),
             
             // QuantityLabel
             quantityLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            quantityLabel.topAnchor.constraint(equalTo: productionFactorLabel.bottomAnchor, constant: 8)
+            quantityLabel.topAnchor.constraint(equalTo: productionFactorLabel.bottomAnchor, constant: Layout.Padding.standard16),
+            
+            // ProductionStepper
+            productionStepper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.Padding.standard16),
+            productionStepper.centerYAnchor.constraint(equalTo: productionFactorLabel.centerYAnchor),
+            
+            // Quantity Stepper
+            quantityStepper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.Padding.standard16),
+            quantityStepper.centerYAnchor.constraint(equalTo: quantityLabel.centerYAnchor)
+            
         ])
     }
     
