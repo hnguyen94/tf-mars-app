@@ -1,6 +1,7 @@
 import UIKit
 
 class MoneyView: PropertyView {
+    
     let model = MoneyModel()
     
     override init() {
@@ -14,4 +15,5 @@ class MoneyView: PropertyView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
