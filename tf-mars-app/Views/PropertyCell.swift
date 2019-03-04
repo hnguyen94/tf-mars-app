@@ -22,7 +22,16 @@ class PropertyCell: UIView {
     }
     
     // MARK: - Properties
+    
     let model: PropertyProtocol
+
+    var minimumProductionValue: Double {
+        if model.type == .megaCredit {
+            return Double(-10)
+        }
+        
+        return Double(0)
+    }
 
     // MARK: - Overriden Properties
     
@@ -34,7 +43,7 @@ class PropertyCell: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = model.title
+        label.text = model.type.rawValue
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.big, weight: .bold)
 
@@ -66,11 +75,12 @@ class PropertyCell: UIView {
         let stepper = UIStepper()
         stepper.wraps = true
         stepper.autorepeat = true
+        stepper.minimumValue = $0
         stepper.maximumValue = 30
 
        stepper.translatesAutoresizingMaskIntoConstraints = false
        return stepper
-    }()
+    }(minimumProductionValue)
     
     lazy var quantityStepper: UIStepper = {
         let stepper = UIStepper()
@@ -158,7 +168,7 @@ class PropertyCell: UIView {
         quantityStepper.addTarget(self, action: #selector(quantityStepperValueChanged), for: .valueChanged)
         
         addTapGestureRecognizer {
-            print("Tapped \(self.model.title)")
+            print("Tapped \(self.model.type)")
         }
     }
     

@@ -69,6 +69,12 @@ class ViewController: UIViewController {
     
     // MARK: - Constraints
     
+    /// Setup all views with its constraints
+    private func setupViews() {
+        addSubViews()
+        setupConstraints()
+    }
+    
     /// A function for adding subviews.
     fileprivate func addSubViews() {
         view.addSubview(titleLabel)
@@ -112,13 +118,9 @@ class ViewController: UIViewController {
             ])
     }
     
-    /// Setup all views with its constraints
-    private func setupViews() {
-        addSubViews()
-        setupConstraints()
-    }
 
     // MARK: - Functions
+    
     private func fillStackView() {
         let propertyViews: [PropertyCell] = [
             PropertyCell(model: Money()),
