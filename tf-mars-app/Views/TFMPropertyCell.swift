@@ -1,6 +1,6 @@
 import UIKit
 
-class PropertyCell: UIView {
+class TFMPropertyCell: UIView {
     
     // MARK: - Constants
     
@@ -23,7 +23,7 @@ class PropertyCell: UIView {
     
     // MARK: - Properties
     
-    let model: PropertyProtocol
+    let model: TFMPropertyProtocol
 
     var minimumProductionValue: Double {
         if model.type == .megaCredit {
@@ -94,7 +94,7 @@ class PropertyCell: UIView {
 
     // MARK: - Init
     
-    init(model: PropertyProtocol) {
+    init(model: TFMPropertyProtocol) {
         self.model = model
         
         super.init(frame: .zero)

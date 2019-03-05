@@ -1,6 +1,6 @@
 import Foundation
 
-struct Titan: PropertyProtocol {
+struct Titan: TFMPropertyProtocol {
     var type: TFMProperty = .titan
     var range: [Int] = Array(0...30)
     var quantity: Int = 0

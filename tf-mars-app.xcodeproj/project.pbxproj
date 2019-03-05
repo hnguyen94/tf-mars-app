@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4C2229C5D800067636 /* AppDelegate.swift */; };
-		CD1D5B4F2229C5D800067636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4E2229C5D800067636 /* ViewController.swift */; };
+		CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4E2229C5D800067636 /* MainViewController.swift */; };
 		CD1D5B522229C5D800067636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B502229C5D800067636 /* Main.storyboard */; };
 		CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B532229C5D800067636 /* tf_mars_app.xcdatamodeld */; };
 		CD1D5B572229C5D900067636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B562229C5D900067636 /* Assets.xcassets */; };
@@ -16,7 +16,7 @@
 		CD1D5B652229C5D900067636 /* tf_mars_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */; };
 		CD1D5B702229C5D900067636 /* tf_mars_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */; };
 		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
-		CD573A14222B255E00CA943B /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* PropertyCell.swift */; };
+		CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* TFMPropertyCell.swift */; };
 		CD573A25222B4D5800CA943B /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* Money.swift */; };
 		CD573A27222B4F5A00CA943B /* Steel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A26222B4F5A00CA943B /* Steel.swift */; };
 		CD573A29222B4F5F00CA943B /* Titan.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A28222B4F5F00CA943B /* Titan.swift */; };
@@ -47,7 +47,7 @@
 /* Begin PBXFileReference section */
 		CD1D5B492229C5D800067636 /* tf-mars-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tf-mars-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1D5B4C2229C5D800067636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD1D5B4E2229C5D800067636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD1D5B4E2229C5D800067636 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CD1D5B512229C5D800067636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD1D5B542229C5D800067636 /* tf_mars_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tf_mars_app.xcdatamodel; sourceTree = "<group>"; };
 		CD1D5B562229C5D900067636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_mars_appUITests.swift; sourceTree = "<group>"; };
 		CD1D5B712229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
-		CD573A13222B255E00CA943B /* PropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
+		CD573A13222B255E00CA943B /* TFMPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCell.swift; sourceTree = "<group>"; };
 		CD573A24222B4D5800CA943B /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		CD573A26222B4F5A00CA943B /* Steel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steel.swift; sourceTree = "<group>"; };
 		CD573A28222B4F5F00CA943B /* Titan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titan.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		CD573A0F222B0D1E00CA943B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD573A13222B255E00CA943B /* PropertyCell.swift */,
+				CD573A13222B255E00CA943B /* TFMPropertyCell.swift */,
 				CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -177,7 +177,7 @@
 		CD573A15222B2F9500CA943B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD1D5B4E2229C5D800067636 /* ViewController.swift */,
+				CD1D5B4E2229C5D800067636 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,9 +340,9 @@
 				CD573A29222B4F5F00CA943B /* Titan.swift in Sources */,
 				CD573A32222B551B00CA943B /* PropertyViewModel.swift in Sources */,
 				CD573A2F222B4F7600CA943B /* Heat.swift in Sources */,
-				CD1D5B4F2229C5D800067636 /* ViewController.swift in Sources */,
+				CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
-				CD573A14222B255E00CA943B /* PropertyCell.swift in Sources */,
+				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
 				CD573A27222B4F5A00CA943B /* Steel.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
 				CD573A2D222B4F6F00CA943B /* Energy.swift in Sources */,

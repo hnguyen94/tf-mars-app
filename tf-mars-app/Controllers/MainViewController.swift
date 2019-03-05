@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     // MARK: - Constants
     
@@ -39,9 +39,6 @@ class ViewController: UIViewController {
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-//        // zoom
-//        scrollView.minimumZoomScale = 0.1
-//        scrollView.maximumZoomScale = 3
 
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
@@ -115,21 +112,21 @@ class ViewController: UIViewController {
             nextGenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextGenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
                                                   constant: -Layout.Padding.standard64)
-            ])
+        ])
     }
     
 
     // MARK: - Functions
     
     private func fillStackView() {
-        let propertyViews: [PropertyCell] = [
-            PropertyCell(model: Money()),
-            PropertyCell(model: Steel()),
-            PropertyCell(model: Titan()),
-            PropertyCell(model: Plant()),
-            PropertyCell(model: Energy()),
-            PropertyCell(model: Heat()),
-            PropertyCell(model: Heat())
+        let propertyViews: [TFMPropertyCell] = [
+            TFMPropertyCell(model: Money()),
+            TFMPropertyCell(model: Steel()),
+            TFMPropertyCell(model: Titan()),
+            TFMPropertyCell(model: Plant()),
+            TFMPropertyCell(model: Energy()),
+            TFMPropertyCell(model: Heat()),
+            TFMPropertyCell(model: Heat())
         ]
         
         propertyViews.forEach {

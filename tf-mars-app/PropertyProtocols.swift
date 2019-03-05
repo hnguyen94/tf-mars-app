@@ -10,7 +10,7 @@ enum TFMProperty: String {
     case heat = "Heat"
 }
 
-protocol PropertyProtocol {
+protocol TFMPropertyProtocol {
     var type: TFMProperty { get set }
     var productionFactor: Int { get set }
     var quantity: Int { get set }
