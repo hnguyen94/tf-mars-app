@@ -23,7 +23,7 @@ class TFMPropertyCell: UIView {
     
     // MARK: - Properties
     
-    let model: TFMPropertyProtocol
+    var model: TFMPropertyProtocol
 
     var minimumProductionValue: Double {
         if model.type == .megaCredit {
@@ -53,23 +53,23 @@ class TFMPropertyCell: UIView {
     
     lazy var productionFactorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Production: 0"
+        label.text = "Production: \($0)"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
+    }(model.productionFactor)
     
     lazy var quantityLabel: UILabel = {
         let label = UILabel()
-        label.text = "Quantity: 0"
+        label.text = "Quantity: \($0)"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
+    }(model.quantity)
     
     lazy var productionStepper: UIStepper = {
         let stepper = UIStepper()
@@ -169,22 +169,23 @@ class TFMPropertyCell: UIView {
         
         addTapGestureRecognizer {
             print("Tapped \(self.model.type)")
+            self.backgroundColor = .red
         }
     }
     
     @objc func productionStepperValueChanged(_ sender: UIStepper!) {
-        let stepperValue = Int(sender.value)
-        
+        model.productionFactor = Int(sender.value)
+
         DispatchQueue.main.async {
-            self.productionFactorLabel.text = "Production: \(stepperValue)"
+            self.productionFactorLabel.text = "Production: \(self.model.productionFactor)"
         }
     }
     
     @objc func quantityStepperValueChanged(_ sender: UIStepper!) {
-        let stepperValue = Int(sender.value)
+        model.productionFactor = Int(sender.value)
         
         DispatchQueue.main.async {
-            self.quantityLabel.text = "Quantity: \(stepperValue)"
+            self.quantityLabel.text = "Quantity: \(self.model.productionFactor)"
         }
     }
     

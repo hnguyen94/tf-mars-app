@@ -17,6 +17,16 @@ class MainViewController: UIViewController {
         }
     }
     
+    // MARK: - Properties
+    
+    /// An Array of TFMProperties which conforms to the TFMPropertyProtocol.
+    var tfmProperties: [TFMPropertyProtocol] = [] {
+        didSet {
+            let tfmPropertyCells = makeTFMPropertyCells(tfmProperties)
+            fillStackView(with: tfmPropertyCells)
+        }
+    }
+
     // MARK: - View Properties
     
     lazy var titleLabel: UILabel = {
@@ -43,6 +53,14 @@ class MainViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
+    
+    lazy var nextGenBackgroundView: UIView = {
+        let aView = UIView()
+        aView.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
+        
+        aView.translatesAutoresizingMaskIntoConstraints = false
+        return aView
+    }()
 
     lazy var nextGenButton: UIButton = {
         let button = UIButton()
@@ -53,6 +71,8 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    // MARK: INIT
+
     // MARK: - Overriden functions
     
     override func viewDidLoad() {
@@ -60,8 +80,22 @@ class MainViewController: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
         
+        startGame()
         setupViews()
-        fillStackView()
+    }
+    
+    // MARK: - Functions
+    private func startGame() {
+       let model = TFMPropertyViewModel(tfmProperties: [
+            TFMPropertyModel(type: .megaCredit),
+            TFMPropertyModel(type: .steel),
+            TFMPropertyModel(type: .titan),
+            TFMPropertyModel(type: .plant),
+            TFMPropertyModel(type: .energy),
+            TFMPropertyModel(type: .heat)
+        ])
+        
+        tfmProperties = model.tfmProperties
     }
     
     // MARK: - Constraints
@@ -77,6 +111,7 @@ class MainViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
+//        view.addSubview(nextGenBackgroundView)
         view.addSubview(nextGenButton)
     }
     
@@ -111,25 +146,26 @@ class MainViewController: UIViewController {
             // NextGenButton
             nextGenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextGenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: -Layout.Padding.standard64)
+                                                  constant: -Layout.Padding.standard16)
+            
+            // Next Gen Backgroundview
+//            nextGenBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            nextGenBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            nextGenBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//            nextGenBackgroundView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
 
     // MARK: - Functions
     
-    private func fillStackView() {
-        let propertyViews: [TFMPropertyCell] = [
-            TFMPropertyCell(model: Money()),
-            TFMPropertyCell(model: Steel()),
-            TFMPropertyCell(model: Titan()),
-            TFMPropertyCell(model: Plant()),
-            TFMPropertyCell(model: Energy()),
-            TFMPropertyCell(model: Heat()),
-            TFMPropertyCell(model: Heat())
-        ]
-        
-        propertyViews.forEach {
+    private func makeTFMPropertyCells(_ tfmProperties: [TFMPropertyProtocol]) -> [TFMPropertyCell] {
+        let tfmCells = tfmProperties.map { return TFMPropertyCell(model: $0) }
+        return tfmCells
+    }
+    
+    private func fillStackView(with tfmCells: [TFMPropertyCell]) {
+        tfmCells.forEach {
             stackView.addArrangedSubview($0)
         }
     }
