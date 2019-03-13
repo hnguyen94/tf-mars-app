@@ -86,16 +86,8 @@ class MainViewController: UIViewController {
     
     // MARK: - Functions
     private func startGame() {
-       let model = TFMPropertyViewModel(tfmProperties: [
-            TFMPropertyModel(type: .megaCredit),
-            TFMPropertyModel(type: .steel),
-            TFMPropertyModel(type: .titan),
-            TFMPropertyModel(type: .plant),
-            TFMPropertyModel(type: .energy),
-            TFMPropertyModel(type: .heat)
-        ])
-        
-        tfmProperties = model.tfmProperties
+        let viewModel = TFMPropertyViewModel()
+        tfmProperties = viewModel.tfmProperties
     }
     
     // MARK: - Constraints
@@ -146,7 +138,7 @@ class MainViewController: UIViewController {
             // NextGenButton
             nextGenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextGenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: -Layout.Padding.standard16)
+                                                  constant: -Layout.Padding.standard)
             
             // Next Gen Backgroundview
 //            nextGenBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

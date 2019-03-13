@@ -25,13 +25,14 @@ class TFMPropertyCell: UIView {
     
     var model: TFMPropertyProtocol
 
-    var minimumProductionValue: Double {
-        if model.type == .megaCredit {
-            return Double(-10)
-        }
-        
-        return Double(0)
+    private var minimumProductionValue: Double {
+        return Double(model.minimumProductionNumber)
     }
+    
+    private var maximumProductionValue: Double {
+        return Double(model.maximumProductionNumber)
+    }
+    
 
     // MARK: - Overriden Properties
     
@@ -76,11 +77,11 @@ class TFMPropertyCell: UIView {
         stepper.wraps = true
         stepper.autorepeat = true
         stepper.minimumValue = $0
-        stepper.maximumValue = 30
+        stepper.maximumValue = $1
 
        stepper.translatesAutoresizingMaskIntoConstraints = false
        return stepper
-    }(minimumProductionValue)
+    }(minimumProductionValue, maximumProductionValue)
     
     lazy var quantityStepper: UIStepper = {
         let stepper = UIStepper()

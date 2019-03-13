@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0D2ECD22385B1300A9D5F9 /* textViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */; };
 		CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4C2229C5D800067636 /* AppDelegate.swift */; };
 		CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4E2229C5D800067636 /* MainViewController.swift */; };
 		CD1D5B522229C5D800067636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B502229C5D800067636 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewModel.swift; sourceTree = "<group>"; };
 		CD1D5B492229C5D800067636 /* tf-mars-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tf-mars-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1D5B4C2229C5D800067636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1D5B4E2229C5D800067636 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CD573A31222B551B00CA943B /* TFMPropertyViewModel.swift */,
+				CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD573A32222B551B00CA943B /* TFMPropertyViewModel.swift in Sources */,
+				CD0D2ECD22385B1300A9D5F9 /* textViewModel.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
 				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
