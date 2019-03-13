@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     
+    let viewModel = TFMPropertyViewModel()
     /// An Array of TFMProperties which conforms to the TFMPropertyProtocol.
     var tfmProperties: [TFMPropertyProtocol] = [] {
         didSet {
@@ -66,6 +67,7 @@ class MainViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Next Generation", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(nextGeneration), for: .touchUpInside)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -85,8 +87,8 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
     private func startGame() {
-        let viewModel = TFMPropertyViewModel()
         tfmProperties = viewModel.tfmProperties
     }
     
@@ -160,6 +162,11 @@ class MainViewController: UIViewController {
         tfmCells.forEach {
             stackView.addArrangedSubview($0)
         }
+    }
+    
+    @objc private func nextGeneration() {
+//        viewModel.st
+        
     }
     
 }

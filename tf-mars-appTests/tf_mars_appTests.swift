@@ -105,9 +105,86 @@ class tf_mars_appTests: XCTestCase {
     
     // MARK: - Minimum quantity
     
-    func testMinimumQuantityValue
+    // MARK: - Next Generation Button
+
+    func testNextGenMegaCredits() {
+        // WHEN
+        var viewModel = TFMPropertyViewModel()
+        viewModel.megaCredit.quantity = 10
+        viewModel.megaCredit.productionFactor = 10
+        viewModel.recalculateMegaCredits()
+        let result = viewModel.megaCredit.quantity
+        let expectedNumber = 20
+        
+        // THEN
+        XCTAssertEqual(result, expectedNumber)
+    }
     
+    func testNextGenSteel() {
+        // WHEN
+        var viewModel = TFMPropertyViewModel()
+        viewModel.steel.quantity = 10
+        viewModel.steel.productionFactor = 10
+        viewModel.recalculateSteel()
+        let result = viewModel.steel.quantity
+        let expectedNumber = 20
+        
+        // THEN
+        XCTAssertEqual(result, expectedNumber)
+    }
     
+    func testNextGenTitan() {
+        // WHEN
+        var viewModel = TFMPropertyViewModel()
+        viewModel.titan.quantity = 10
+        viewModel.titan.productionFactor = 10
+        viewModel.recalculateTitan()
+        let result = viewModel.titan.quantity
+        let expectedNumber = 20
+        
+        // THEN
+        XCTAssertEqual(result, expectedNumber)
+    }
+    
+    func testNextGenPlant() {
+        // WHEN
+        var viewModel = TFMPropertyViewModel()
+        viewModel.plant.quantity = 10
+        viewModel.plant.productionFactor = 10
+        viewModel.recalculatePlant()
+        let result = viewModel.plant.quantity
+        let expectedNumber = 20
+        
+        // THEN
+        XCTAssertEqual(result, expectedNumber)
+    }
+    
+    func testNextGenEnergy() {
+        // WHEN
+        var viewModel = TFMPropertyViewModel()
+        viewModel.energy.quantity = 10
+        viewModel.energy.productionFactor = 20
+        viewModel.recalculateEnergy()
+        let result = viewModel.energy.quantity
+        let expectedNumber = 20
+        
+        // THEN
+        XCTAssertEqual(result, expectedNumber)
+    }
+    
+    func testNextGenHeat() {
+        // WHEN
+        var viewModel = TFMPropertyViewModel()
+        viewModel.energy.quantity = 10
+        viewModel.heat.quantity = 10
+        viewModel.heat.productionFactor = 10
+        viewModel.recalculateHeat(from: viewModel.energy)
+        let result = viewModel.heat.quantity
+        let expectedNumber = 30
+        
+        // THEN
+        XCTAssertEqual(result, expectedNumber)
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
