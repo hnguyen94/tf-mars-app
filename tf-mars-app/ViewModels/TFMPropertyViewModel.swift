@@ -1,6 +1,6 @@
 import Foundation
 
-struct TFMPropertyViewModel {
+class TFMPropertyViewModel {
     
     // MARK: - Properties
     var megaCredit = TFMPropertyModel(type: .megaCredit)
@@ -27,85 +27,50 @@ struct TFMPropertyViewModel {
     
     // MARK: - Functions
 
-    /// Will mutate megaCredit property with a recalculated MegaCredit model.
-    ///
-    /// `newQuantity` = CurrentProductionFactor + CurrentQuantity
-    mutating func recalculateMegaCredits() {
-       let newQuantity = megaCredit.productionFactor + megaCredit.quantity
-        megaCredit = TFMPropertyModel(type: .megaCredit,
-                                      quantity: newQuantity,
-                                      productionFactor: megaCredit.productionFactor)
-    }
-    
-    /// Will mutate megaCredit property with a recalculated Steel model.
-    ///
-    /// `newQuantity` = CurrentProductionFactor + CurrentQuantity
-    mutating func recalculateSteel() {
-       let newQuantity = steel.productionFactor + steel.quantity
-        steel = TFMPropertyModel(type: .steel,
-                                 quantity: newQuantity,
-                                 productionFactor: steel.productionFactor)
-        
-    }
-    
-    /// Will mutate megaCredit property with a recalculated Titan model.
-    ///
-    /// `newQuantity` = CurrentProductionFactor + CurrentQuantity
-    mutating func recalculateTitan() {
-        let newQuantity = titan.productionFactor + titan.quantity
-        titan = TFMPropertyModel(type: .titan,
-                                 quantity: newQuantity,
-                                 productionFactor: titan.productionFactor)
-        
-    }
-    
-    /// Will mutate megaCredit property with a recalculated Plant model.
-    ///
-    /// `newQuantity` = CurrentProductionFactor + CurrentQuantity
-    mutating func recalculatePlant() {
-        let newQuantity = plant.productionFactor + plant.quantity
-        plant = TFMPropertyModel(type: .plant,
-                                 quantity: newQuantity,
-                                 productionFactor: plant.productionFactor)
-        
-    }
 
     /// Will mutate megaCredit property with a recalculated Energy model.
     ///
     /// `newQuantity` = CurrentProductionFactor
     /// The current `quantity` will be converted to heat.
-    mutating func recalculateEnergy() {
-        let newQuantity = energy.productionFactor
-        energy = TFMPropertyModel(type: .energy,
-                                 quantity: newQuantity,
-                                 productionFactor: energy.productionFactor)
-        
-    }
-    
-    /// Will mutate megaCredit property with a recalculated Energy model.
-    ///
-    /// `newQuantity` = CurrentProductionFactor + CurrentQuantity + EnergyQuantity
-    /// This method should be called before `recalculateEnergy` to get the current energy.
-    mutating func recalculateHeat(from energy: TFMPropertyModel) {
-        guard energy.type == .energy else {
-            assertionFailure("Wront type! Type must be energy.")
-            return
+//    mutating func recalculateEnergy() {
+//        let newQuantity = energy.productionFactor
+//        energy = TFMPropertyModel(type: .energy,
+//                                 quantity: newQuantity,
+//                                 productionFactor: energy.productionFactor)
+//
+//    }
+//
+//    /// Will mutate megaCredit property with a recalculated Energy model.
+//    ///
+//    /// `newQuantity` = CurrentProductionFactor + CurrentQuantity + EnergyQuantity
+//    /// This method should be called before `recalculateEnergy` to get the current energy.
+//    mutating func recalculateHeat(from energy: TFMPropertyModel) {
+//        guard energy.type == .energy else {
+//            assertionFailure("Wront type! Type must be energy.")
+//            return
+//        }
+//
+//        let newQuantity = heat.productionFactor + heat.quantity + energy.quantity
+//        heat = TFMPropertyModel(type: .heat,
+//                                  quantity: newQuantity,
+//                                  productionFactor: energy.productionFactor)
+//
+//    }
+
+    func recalculateQuantity(_ oldProperties: [TFMPropertyModel]) {
+        let nextGenProperties = oldProperties.map { currentProperty -> TFMPropertyModel in
+            let newQuantity = currentProperty.quantity + currentProperty.productionFactor
+
+            return TFMPropertyModel(type: currentProperty.type,
+                                    quantity: newQuantity,
+                                    productionFactor: currentProperty.productionFactor)
         }
-        
-        let newQuantity = heat.productionFactor + heat.quantity + energy.quantity
-        heat = TFMPropertyModel(type: .heat,
-                                  quantity: newQuantity,
-                                  productionFactor: energy.productionFactor)
-        
+
+        tfmProperties = nextGenProperties
     }
     
-     mutating func nextGeneration() {
-        recalculateMegaCredits()
-        recalculateSteel()
-        recalculateTitan()
-        recalculatePlant()
-        recalculateHeat(from: energy)
-        recalculateEnergy()
+     func nextGeneration() {
+        recalculateQuantity(tfmProperties)
     }
     
 }

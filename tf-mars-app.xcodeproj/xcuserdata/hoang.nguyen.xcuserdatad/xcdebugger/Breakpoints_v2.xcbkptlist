@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tf-mars-app/ViewModels/TFMPropertyViewModel.swift"
+            timestampString = "574334465.129132"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "nextGeneration()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tf-mars-app/ViewModels/TFMPropertyViewModel.swift"
+            timestampString = "574334465.129815"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "recalculateQuantity(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tf_mars_app.TFMPropertyViewModel.recalculateQuantity(Swift.Array&lt;tf_mars_app.TFMPropertyModel&gt;) -&gt; ()"
+                  moduleName = "tf-mars-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoang.nguyen/Projects/private/tf-mars-app/tf-mars-app/ViewModels/TFMPropertyViewModel.swift"
+                  timestampString = "574334465.255852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (tf_mars_app.TFMPropertyModel) -&gt; tf_mars_app.TFMPropertyModel in tf_mars_app.TFMPropertyViewModel.recalculateQuantity(Swift.Array&lt;tf_mars_app.TFMPropertyModel&gt;) -&gt; ()"
+                  moduleName = "tf-mars-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoang.nguyen/Projects/private/tf-mars-app/tf-mars-app/ViewModels/TFMPropertyViewModel.swift"
+                  timestampString = "574334465.259341"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
