@@ -36,7 +36,7 @@ class tf_mars_appTests: XCTestCase {
     
     func testMinimumProductionNumberMegaCredit() {
         // WHEN
-        let result = tfmPropertyModels.megaCredit.minimumProductionNumber
+        let result = TFMPropertyModel(type: .megaCredit).minimumProductionNumber
         let expectedNumber = -10
         
         // THEN
@@ -45,7 +45,7 @@ class tf_mars_appTests: XCTestCase {
 
     func testMinimumProductionNumberSteel() {
         // WHEN
-        let result = tfmPropertyModels.steel.minimumProductionNumber
+        let result = TFMPropertyModel(type: .steel).minimumProductionNumber
         let expectedNumber = 0
         
         // THEN
@@ -54,7 +54,7 @@ class tf_mars_appTests: XCTestCase {
     
     func testMinimumProductionNumberTitan() {
         // WHEN
-        let result = tfmPropertyModels.titan.minimumProductionNumber
+        let result = TFMPropertyModel(type: .titan).minimumProductionNumber
         let expectedNumber = 0
         
         // THEN
@@ -63,7 +63,7 @@ class tf_mars_appTests: XCTestCase {
     
     func testMinimumProductionNumberPlant() {
         // WHEN
-        let result = tfmPropertyModels.plant.minimumProductionNumber
+        let result = TFMPropertyModel(type: .plant).minimumProductionNumber
         let expectedNumber = 0
         
         // THEN
@@ -72,7 +72,7 @@ class tf_mars_appTests: XCTestCase {
     
     func testMinimumProductionNumberEnergy() {
         // WHEN
-        let result = tfmPropertyModels.energy.minimumProductionNumber
+        let result = TFMPropertyModel(type: .energy).minimumProductionNumber
         let expectedNumber = 0
         
         // THEN
@@ -81,7 +81,7 @@ class tf_mars_appTests: XCTestCase {
     
     func testMinimumProductionNumberHeat() {
         // WHEN
-        let result = tfmPropertyModels.heat.minimumProductionNumber
+        let result = TFMPropertyModel(type: .heat).minimumProductionNumber
         let expectedNumber = 0
         
         // THEN
@@ -133,6 +133,41 @@ class tf_mars_appTests: XCTestCase {
             XCTAssertEqual(result, expectedResult)
         }
 
+    }
+
+    func testNextGenEnergy() {
+        // WHEN
+        let viewModel = TFMPropertyViewModel()
+        let expectedResult = 20
+
+        // Energy is on index 4
+        viewModel.tfmProperties[4].quantity = 10
+        viewModel.tfmProperties[4].productionFactor = 20
+
+        let nextGenProperties = viewModel.recalculateQuantity(viewModel.tfmProperties)
+
+        let result = nextGenProperties[4].quantity
+
+        // THEN
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    func testNextGenHeat() {
+        // WHEN
+        let viewModel = TFMPropertyViewModel()
+        let expectedResult = 30
+
+        // Heat is on index 5
+        viewModel.tfmProperties[4].quantity = 10
+        viewModel.tfmProperties[5].quantity = 10
+        viewModel.tfmProperties[5].productionFactor = 10
+
+        let nextGenProperties = viewModel.recalculateQuantity(viewModel.tfmProperties)
+
+        let result = nextGenProperties[5].quantity
+
+        // THEN
+        XCTAssertEqual(result, expectedResult)
     }
 
     func testPerformanceExample() {
