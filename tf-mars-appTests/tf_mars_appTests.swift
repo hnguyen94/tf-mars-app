@@ -122,9 +122,9 @@ class tf_mars_appTests: XCTestCase {
             viewModel.tfmProperties[index].productionFactor = 10
         }
 
-        viewModel.nextGeneration()
+        let nextGenProperties = viewModel.recalculateQuantity(viewModel.tfmProperties)
 
-        viewModel.tfmProperties.forEach { property in
+        nextGenProperties.forEach { property in
             if isEnergyOrHeat(property) {
                 return
             }
