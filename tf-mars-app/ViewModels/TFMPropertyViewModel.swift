@@ -33,28 +33,20 @@ class TFMPropertyViewModel {
         let nextGenProperties = oldProperties.map { currentProperty -> TFMPropertyModel in
             if isEnergy(currentProperty) {
                 energyQuantity = currentProperty.quantity
-                let newQuantity = currentProperty.productionFactor
 
-                return TFMPropertyModel(type: currentProperty.type,
-                                 quantity: newQuantity,
-                                 productionFactor: currentProperty.productionFactor)
+                let newProperty = makeNewEnergyProperty(of: currentProperty)
+                return newProperty
             }
 
             if isHeat(currentProperty) {
-                let newQuantity = currentProperty.productionFactor + currentProperty.quantity + energyQuantity
-
-                return TFMPropertyModel(type: currentProperty.type,
-                                        quantity: newQuantity,
-                                        productionFactor: currentProperty.productionFactor)
+                let newProperty = makeNewHeatProperty(of: energyQuantity, and: currentProperty)
+                return newProperty
             }
 
             // Default behaviour
 
-            let newQuantity = currentProperty.quantity + currentProperty.productionFactor
-
-            return TFMPropertyModel(type: currentProperty.type,
-                                    quantity: newQuantity,
-                                    productionFactor: currentProperty.productionFactor)
+            let newProperty = makeNewProperty(of: currentProperty)
+            return newProperty
         }
 
         return nextGenProperties
@@ -63,6 +55,32 @@ class TFMPropertyViewModel {
      func nextGeneration() {
         tfmProperties = recalculateQuantity(tfmProperties)
     }
+
+    private func makeNewProperty(of currentProperty: TFMPropertyModel) -> TFMPropertyModel {
+        let newQuantity = currentProperty.quantity + currentProperty.productionFactor
+
+        return TFMPropertyModel(type: currentProperty.type,
+                                quantity: newQuantity,
+                                productionFactor: currentProperty.productionFactor)
+    }
+
+    private func makeNewEnergyProperty(of currentEnergyProperty: TFMPropertyModel) -> TFMPropertyModel {
+        let newQuantity = currentEnergyProperty.productionFactor
+
+        return TFMPropertyModel(type: currentEnergyProperty.type,
+                                quantity: newQuantity,
+                                productionFactor: currentEnergyProperty.productionFactor)
+    }
+
+    private func makeNewHeatProperty(of energyQuantity: Int, and property: TFMPropertyModel) -> TFMPropertyModel {
+        let newQuantity = energyQuantity + property.quantity + property.productionFactor
+
+        return TFMPropertyModel(type: property.type,
+                                quantity: newQuantity,
+                                productionFactor: property.productionFactor)
+    }
+
+
 
     private func isEnergy(_ property: TFMPropertyModel) -> Bool {
         return property.type == .energy
