@@ -40,7 +40,7 @@ class tf_mars_appTests: XCTestCase {
         let expectedNumber = -10
         
         // THEN
-        XCTAssertEqual(result, expectedNumber)
+        XCTAssertEqual(result, Double(expectedNumber))
     }
 
     func testMinimumProductionNumberSteel() {
@@ -49,7 +49,7 @@ class tf_mars_appTests: XCTestCase {
         let expectedNumber = 0
         
         // THEN
-        XCTAssertEqual(result, expectedNumber)
+        XCTAssertEqual(result, Double(expectedNumber))
     }
     
     func testMinimumProductionNumberTitan() {
@@ -58,7 +58,7 @@ class tf_mars_appTests: XCTestCase {
         let expectedNumber = 0
         
         // THEN
-        XCTAssertEqual(result, expectedNumber)
+        XCTAssertEqual(result, Double(expectedNumber))
     }
     
     func testMinimumProductionNumberPlant() {
@@ -67,7 +67,7 @@ class tf_mars_appTests: XCTestCase {
         let expectedNumber = 0
         
         // THEN
-        XCTAssertEqual(result, expectedNumber)
+        XCTAssertEqual(result, Double(expectedNumber))
     }
     
     func testMinimumProductionNumberEnergy() {
@@ -76,7 +76,7 @@ class tf_mars_appTests: XCTestCase {
         let expectedNumber = 0
         
         // THEN
-        XCTAssertEqual(result, expectedNumber)
+        XCTAssertEqual(result, Double(expectedNumber))
     }
     
     func testMinimumProductionNumberHeat() {
@@ -85,7 +85,7 @@ class tf_mars_appTests: XCTestCase {
         let expectedNumber = 0
         
         // THEN
-        XCTAssertEqual(result, expectedNumber)
+        XCTAssertEqual(result, Double(expectedNumber))
     }
     
     // MARK: - Maximum production
@@ -99,7 +99,7 @@ class tf_mars_appTests: XCTestCase {
             let expectedNumber = 30
 
             // THEN
-            XCTAssertEqual(result, expectedNumber)
+            XCTAssertEqual(result, Double(expectedNumber))
         }
     }
     
