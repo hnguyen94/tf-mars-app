@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: UIViewController {
+class MainCollectionViewController: UIViewController {
     
     // MARK: - Constants
     
@@ -18,15 +18,12 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Properties
-    
+
+    private let customCellIdentifier = "customCellIdentifier"
+    weak var collectionView: UICollectionView!
+
     let viewModel = TFMPropertyViewModel()
     /// An Array of TFMProperties which conforms to the TFMPropertyProtocol.
-    var tfmProperties: [TFMPropertyProtocol] = [] {
-        didSet {
-            let tfmPropertyCells = makeTFMPropertyCells(tfmProperties)
-            fillStackView(with: tfmPropertyCells)
-        }
-    }
 
     // MARK: - View Properties
     
@@ -47,7 +44,7 @@ class MainViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
+
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
 
@@ -73,25 +70,30 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    // MARK: INIT
-
     // MARK: - Overriden functions
+
+    override func loadView() {
+        super.loadView()
+
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+
+        self.collectionView = collectionView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
-        
-        startGame()
+
+        setupCollectionView()
         setupViews()
     }
-    
-    // MARK: - Functions
-    
-    private func startGame() {
-        tfmProperties = viewModel.tfmProperties
-    }
-    
+
+    // MARK: - Methods
+
     // MARK: - Constraints
     
     /// Setup all views with its constraints
@@ -103,9 +105,6 @@ class MainViewController: UIViewController {
     /// A function for adding subviews.
     fileprivate func addSubViews() {
         view.addSubview(titleLabel)
-        view.addSubview(scrollView)
-        scrollView.addSubview(stackView)
-//        view.addSubview(nextGenBackgroundView)
         view.addSubview(nextGenButton)
     }
     
@@ -120,22 +119,13 @@ class MainViewController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
                                             constant: Layout.Padding.standard24),
             
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
                                                constant: stackLeadingTrailingMargin),
             
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
                                                 constant: -stackLeadingTrailingMargin),
-            scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-
-            // StackView
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            
-            
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             // NextGenButton
             nextGenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -149,21 +139,19 @@ class MainViewController: UIViewController {
 //            nextGenBackgroundView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
-    
+
 
     // MARK: - Functions
-    
-    private func makeTFMPropertyCells(_ tfmProperties: [TFMPropertyProtocol]) -> [TFMPropertyCell] {
-        let tfmCells = tfmProperties.map { return TFMPropertyCell(model: $0) }
-        return tfmCells
+
+    private func setupCollectionView() {
+        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(TFMPropertyCell.self, forCellWithReuseIdentifier: customCellIdentifier)
+
     }
-    
-    private func fillStackView(with tfmCells: [TFMPropertyCell]) {
-        tfmCells.forEach {
-            stackView.addArrangedSubview($0)
-        }
-    }
-    
+
     @objc private func nextGeneration() {
 //        viewModel.st
         
@@ -171,3 +159,30 @@ class MainViewController: UIViewController {
     
 }
 
+//  MARK: - Collection View Settings
+
+
+/// Datasource
+extension MainCollectionViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let totalCells = viewModel.tfmProperties.count
+        return totalCells
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath) as! TFMPropertyCell
+        cell.model = viewModel.tfmProperties[indexPath.item]
+
+        return cell
+    }
+}
+
+/// Delegate Flow Layout
+extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = CGSize(width: collectionView.frame.width, height: 110)
+        return size
+    }
+}

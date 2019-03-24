@@ -6,7 +6,7 @@ struct TFMPropertyModel: TFMPropertyProtocol {
     var productionFactor: Int
     
     /// Minimum production number that will be shown in cell.
-    var minimumProductionNumber: Int {
+    var minimumProductionNumber: Double {
         if type == .megaCredit {
             return -10
         }
@@ -15,7 +15,7 @@ struct TFMPropertyModel: TFMPropertyProtocol {
     }
     
     /// Maximum production number that will be shown in cell.
-    var maximumProductionNumber: Int {
+    var maximumProductionNumber: Double {
         return 30
     }
     

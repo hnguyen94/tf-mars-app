@@ -80,8 +80,6 @@ class TFMPropertyViewModel {
                                 productionFactor: property.productionFactor)
     }
 
-
-
     private func isEnergy(_ property: TFMPropertyModel) -> Bool {
         return property.type == .energy
     }
