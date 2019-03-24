@@ -21,6 +21,7 @@
 		CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */; };
 		CD573A32222B551B00CA943B /* TFMPropertyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* TFMPropertyViewModel.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
+		EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModel.swift; sourceTree = "<group>"; };
 		CD573A31222B551B00CA943B /* TFMPropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyViewModel.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
+		EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfmPropertyDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				CD573A12222B208600CA943B /* Models */,
 				CD573A30222B54E100CA943B /* ViewModels */,
 				CD573A15222B2F9500CA943B /* Controllers */,
+				EC5D6FB222481FBC0094CA10 /* Datasources */,
 				CD573A0F222B0D1E00CA943B /* Views */,
 				CDBC6C15222BF12B0012AA99 /* Helpers */,
 				CDBC6C14222BE6530012AA99 /* Prototypes */,
@@ -192,6 +195,14 @@
 				CDBC6C16222BF1400012AA99 /* CellTouchable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EC5D6FB222481FBC0094CA10 /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */,
+			);
+			path = Datasources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				CD573A32222B551B00CA943B /* TFMPropertyViewModel.swift in Sources */,
 				CD0D2ECD22385B1300A9D5F9 /* textViewModel.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainCollectionViewController.swift in Sources */,
+				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
 				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,

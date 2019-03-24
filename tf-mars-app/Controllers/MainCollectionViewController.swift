@@ -1,5 +1,7 @@
 import UIKit
 
+let customCellIdentifier = "tfmCellId"
+
 class MainCollectionViewController: UIViewController {
     
     // MARK: - Constants
@@ -19,11 +21,9 @@ class MainCollectionViewController: UIViewController {
     
     // MARK: - Properties
 
-    private let customCellIdentifier = "customCellIdentifier"
     weak var collectionView: UICollectionView!
-
-    let viewModel = TFMPropertyViewModel()
-    /// An Array of TFMProperties which conforms to the TFMPropertyProtocol.
+    private let viewModel = TFMPropertyViewModel()
+    let tfmDatasource = TfmPropertyDataSource()
 
     // MARK: - View Properties
     
@@ -92,8 +92,6 @@ class MainCollectionViewController: UIViewController {
         setupViews()
     }
 
-    // MARK: - Methods
-
     // MARK: - Constraints
     
     /// Setup all views with its constraints
@@ -141,41 +139,28 @@ class MainCollectionViewController: UIViewController {
     }
 
 
-    // MARK: - Functions
+    // MARK: - Methods
 
     private func setupCollectionView() {
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
-        collectionView.dataSource = self
+        collectionView.dataSource = tfmDatasource
+        tfmDatasource.tfmProperties = viewModel.tfmProperties
         collectionView.register(TFMPropertyCell.self, forCellWithReuseIdentifier: customCellIdentifier)
-
     }
 
     @objc private func nextGeneration() {
-//        viewModel.st
-        
+        viewModel.nextGeneration()
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
     }
     
 }
 
 //  MARK: - Collection View Settings
 
-
-/// Datasource
-extension MainCollectionViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let totalCells = viewModel.tfmProperties.count
-        return totalCells
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath) as! TFMPropertyCell
-        cell.model = viewModel.tfmProperties[indexPath.item]
-
-        return cell
-    }
-}
 
 /// Delegate Flow Layout
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
