@@ -28,7 +28,6 @@ class TFMPropertyViewModel {
     // MARK: - Functions
 
     func recalculateQuantity(_ oldProperties: [TFMPropertyModel]) -> [TFMPropertyModel] {
-
         var energyQuantity = 0
         let nextGenProperties = oldProperties.map { currentProperty -> TFMPropertyModel in
             if isEnergy(currentProperty) {

@@ -6,7 +6,6 @@ class TFMPropertyCell: UICollectionViewCell {
     
     struct Layout {
         struct Cell {
-            static let height: CGFloat = 110
             static let cornerRadius: CGFloat = 10
         }
         
@@ -30,12 +29,6 @@ class TFMPropertyCell: UICollectionViewCell {
         }
     }
 
-    // MARK: - Overriden Properties
-    
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0, height: Layout.Cell.height)
-    }
-    
     // MARK: - View Properties
     
     lazy var titleLabel: UILabel = {
@@ -96,9 +89,6 @@ class TFMPropertyCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Functions
-    
-
     // MARK: - Constraints
    
     fileprivate func addSubViews() {
