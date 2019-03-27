@@ -1,6 +1,6 @@
 import Foundation
 
-struct TFMPropertyModel: TFMPropertyProtocol {
+class TFMPropertyModel: TFMPropertyProtocol {
     var type: TFMProperty
     var quantity: Int
     var productionFactor: Int

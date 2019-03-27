@@ -3,12 +3,12 @@ import Foundation
 class TFMPropertyViewModel {
     
     // MARK: - Properties
-    private var megaCredit = TFMPropertyModel(type: .megaCredit)
-    private var steel = TFMPropertyModel(type: .steel)
-    private var titan = TFMPropertyModel(type: .titan)
-    private var plant = TFMPropertyModel(type: .plant)
-    private var energy = TFMPropertyModel(type: .energy)
-    private var heat = TFMPropertyModel(type: .heat)
+    private let megaCredit = TFMPropertyModel(type: .megaCredit)
+    private let steel = TFMPropertyModel(type: .steel)
+    private let titan = TFMPropertyModel(type: .titan)
+    private let plant = TFMPropertyModel(type: .plant)
+    private let energy = TFMPropertyModel(type: .energy)
+    private let heat = TFMPropertyModel(type: .heat)
 
     var tfmProperties: [TFMPropertyModel]
     

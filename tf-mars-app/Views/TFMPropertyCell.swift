@@ -127,19 +127,19 @@ class TFMPropertyCell: UICollectionViewCell {
     // MARK: - Methods
 
     /// Styling for the view itself
-    fileprivate func configureView() {
+    private func configureView() {
         backgroundColor = .white
 
         layer.cornerRadius = Layout.Cell.cornerRadius
         layer.masksToBounds = true
     }
     
-    fileprivate func setupViews() {
+    private func setupViews() {
         addSubViews()
         setupConstraints()
     }
 
-    fileprivate func setContent() {
+    private func setContent() {
         titleLabel.text = model?.type.rawValue
         productionFactorLabel.text = "Production: \(model?.productionFactor ?? 0)"
         quantityLabel.text = "Quantity: \(model?.quantity ?? 0)"
@@ -149,35 +149,16 @@ class TFMPropertyCell: UICollectionViewCell {
     
     /// The default implementation does nothing.
     /// Will be called in the initializer.
-    fileprivate func setupActions() {
+    private func setupActions() {
         guard let model = model else { return }
+
         productionStepper.value = Double(model.productionFactor)
-        productionStepper.addTarget(self, action: #selector(productionStepperValueChanged), for: .valueChanged)
-        
         quantityStepper.value = Double(model.quantity)
-        quantityStepper.addTarget(self, action: #selector(quantityStepperValueChanged), for: .valueChanged)
-        
+
         addTapGestureRecognizer {
             guard let model = self.model else { return }
             print("Tapped \(model.type)")
             self.backgroundColor = .red
         }
     }
-    
-    @objc func productionStepperValueChanged(_ sender: UIStepper!) {
-        model?.productionFactor = Int(sender.value)
-
-        DispatchQueue.main.async {
-            self.productionFactorLabel.text = "Production: \(self.model?.productionFactor ?? 0)"
-        }
-    }
-    
-    @objc func quantityStepperValueChanged(_ sender: UIStepper!) {
-        model?.quantity = Int(sender.value)
-        
-        DispatchQueue.main.async {
-            self.quantityLabel.text = "Quantity: \(self.model?.quantity ?? 0)"
-        }
-    }
-    
 }

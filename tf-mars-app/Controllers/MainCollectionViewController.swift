@@ -23,7 +23,7 @@ class MainCollectionViewController: UIViewController {
 
     weak var collectionView: UICollectionView!
     private let viewModel = TFMPropertyViewModel()
-    let tfmDatasource = TfmPropertyDataSource()
+    let tfmDatasource: TfmPropertyDataSource
 
     // MARK: - View Properties
     
@@ -69,7 +69,20 @@ class MainCollectionViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
+    // MARK: - Init
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.tfmDatasource = TfmPropertyDataSource()
+
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+        tfmDatasource.collectionViewController = self
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Overriden functions
 
     override func loadView() {
@@ -171,3 +184,52 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
         return size
     }
 }
+
+// Action
+extension MainCollectionViewController: UICollectionViewDelegate {
+    enum Unit {
+        case productionFactor
+        case quantity
+    }
+
+    @objc func productionStepperValueChanged(_ sender: UIStepper) {
+        changeValue(for: .productionFactor, sender: sender)
+    }
+
+    @objc func quantityStepperValueChanged(_ sender: UIStepper!) {
+        changeValue(for: .quantity, sender: sender)
+    }
+
+    private func changeValue(for unit: Unit, sender: UIStepper) {
+        let i = sender.tag
+        let indexPath = IndexPath(item: i, section: 0)
+        var item = tfmDatasource.tfmProperties[indexPath.item]
+
+        if unit == .productionFactor {
+            item.productionFactor = Int(sender.value)
+        }
+
+        if unit == .quantity {
+            item.quantity = Int(sender.value)
+        }
+
+
+        UIView.performWithoutAnimation {
+            collectionView.reloadItems(at: [indexPath])
+        }
+    }
+
+}
+
+
+//extension MainCollectionViewController: UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//       var item = tfmDatasource.tfmProperties[indexPath.item]
+//
+//        item.quantity += 1
+//
+//        UIView.performWithoutAnimation {
+//            collectionView.reloadItems(at: [indexPath])
+//        }
+//    }
+//}
