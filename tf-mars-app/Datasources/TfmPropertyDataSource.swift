@@ -3,7 +3,7 @@ import UIKit
 class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
 
     var collectionViewController: MainCollectionViewController? = nil
-    var tfmProperties = [TFMPropertyProtocol]()
+    var tfmProperties = [TFMPropertyModel]()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let totalCells = tfmProperties.count

@@ -22,7 +22,7 @@ class TFMPropertyCell: UICollectionViewCell {
     
     // MARK: - Properties
 
-    var model: TFMPropertyProtocol? {
+    var model: TFMPropertyModel? {
         didSet {
             setContent()
             setupActions()
@@ -158,7 +158,6 @@ class TFMPropertyCell: UICollectionViewCell {
         addTapGestureRecognizer {
             guard let model = self.model else { return }
             print("Tapped \(model.type)")
-            self.backgroundColor = .red
         }
     }
 }
