@@ -61,7 +61,7 @@ class TFMPropertyCell: UICollectionViewCell {
     lazy var productionStepper: UIStepper = {
         let stepper = UIStepper()
         stepper.wraps = true
-        stepper.autorepeat = true
+//        stepper.autorepeat = true
 
        stepper.translatesAutoresizingMaskIntoConstraints = false
        return stepper
@@ -70,8 +70,8 @@ class TFMPropertyCell: UICollectionViewCell {
     lazy var quantityStepper: UIStepper = {
         let stepper = UIStepper()
         stepper.wraps = true
-        stepper.autorepeat = true
-        stepper.maximumValue = 100
+//        stepper.autorepeat = true
+        stepper.maximumValue = 1000
         
         stepper.translatesAutoresizingMaskIntoConstraints = false
         return stepper

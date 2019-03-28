@@ -11,7 +11,7 @@ import XCTest
 
 class tf_mars_appTests: XCTestCase {
     
-    let tfmPropertyModels = TFMPropertyViewModel()
+    let tfmPropertyModels = TFMPropertyContainer()
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -110,19 +110,19 @@ class tf_mars_appTests: XCTestCase {
 
     func testNextGenProperties() {
         // WHEN
-        let viewModel = TFMPropertyViewModel()
+        let container = TFMPropertyContainer()
         let expectedResult = 20
 
-        for (index, element) in viewModel.tfmProperties.enumerated() {
+        for (index, element) in container.tfmProperties.enumerated() {
             if isEnergyOrHeat(element) {
                 continue
             }
 
-            viewModel.tfmProperties[index].quantity = 10
-            viewModel.tfmProperties[index].productionFactor = 10
+            container.tfmProperties[index].quantity = 10
+            container.tfmProperties[index].productionFactor = 10
         }
 
-        let nextGenProperties = viewModel.recalculateQuantity(viewModel.tfmProperties)
+        let nextGenProperties = container.recalculateQuantity(container.tfmProperties)
 
         nextGenProperties.forEach { property in
             if isEnergyOrHeat(property) {
@@ -137,14 +137,14 @@ class tf_mars_appTests: XCTestCase {
 
     func testNextGenEnergy() {
         // WHEN
-        let viewModel = TFMPropertyViewModel()
+        let container = TFMPropertyContainer()
         let expectedResult = 20
 
         // Energy is on index 4
-        viewModel.tfmProperties[4].quantity = 10
-        viewModel.tfmProperties[4].productionFactor = 20
+        container.tfmProperties[4].quantity = 10
+        container.tfmProperties[4].productionFactor = 20
 
-        let nextGenProperties = viewModel.recalculateQuantity(viewModel.tfmProperties)
+        let nextGenProperties = container.recalculateQuantity(container.tfmProperties)
 
         let result = nextGenProperties[4].quantity
 
@@ -154,15 +154,15 @@ class tf_mars_appTests: XCTestCase {
 
     func testNextGenHeat() {
         // WHEN
-        let viewModel = TFMPropertyViewModel()
+        let container = TFMPropertyContainer()
         let expectedResult = 30
 
         // Heat is on index 5
-        viewModel.tfmProperties[4].quantity = 10
-        viewModel.tfmProperties[5].quantity = 10
-        viewModel.tfmProperties[5].productionFactor = 10
+        container.tfmProperties[4].quantity = 10
+        container.tfmProperties[5].quantity = 10
+        container.tfmProperties[5].productionFactor = 10
 
-        let nextGenProperties = viewModel.recalculateQuantity(viewModel.tfmProperties)
+        let nextGenProperties = container.recalculateQuantity(container.tfmProperties)
 
         let result = nextGenProperties[5].quantity
 

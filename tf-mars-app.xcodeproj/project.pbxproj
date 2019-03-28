@@ -19,7 +19,7 @@
 		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
 		CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* TFMPropertyCell.swift */; };
 		CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */; };
-		CD573A32222B551B00CA943B /* TFMPropertyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* TFMPropertyViewModel.swift */; };
+		CD573A32222B551B00CA943B /* TFMPropertyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* TFMPropertyContainer.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 		EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -60,7 +60,7 @@
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
 		CD573A13222B255E00CA943B /* TFMPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCell.swift; sourceTree = "<group>"; };
 		CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModel.swift; sourceTree = "<group>"; };
-		CD573A31222B551B00CA943B /* TFMPropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyViewModel.swift; sourceTree = "<group>"; };
+		CD573A31222B551B00CA943B /* TFMPropertyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyContainer.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 		EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfmPropertyDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,7 +175,7 @@
 		CD573A30222B54E100CA943B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CD573A31222B551B00CA943B /* TFMPropertyViewModel.swift */,
+				CD573A31222B551B00CA943B /* TFMPropertyContainer.swift */,
 				CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */,
 			);
 			path = ViewModels;
@@ -336,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD573A32222B551B00CA943B /* TFMPropertyViewModel.swift in Sources */,
+				CD573A32222B551B00CA943B /* TFMPropertyContainer.swift in Sources */,
 				CD0D2ECD22385B1300A9D5F9 /* textViewModel.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainCollectionViewController.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,

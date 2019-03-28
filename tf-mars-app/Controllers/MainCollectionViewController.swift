@@ -22,7 +22,7 @@ class MainCollectionViewController: UIViewController {
     // MARK: - Properties
 
     weak var collectionView: UICollectionView!
-    private let viewModel = TFMPropertyViewModel()
+    private let viewModel = TFMPropertyContainer()
     let tfmDatasource: TfmPropertyDataSource
 
     // MARK: - View Properties
@@ -31,6 +31,7 @@ class MainCollectionViewController: UIViewController {
         let label = UILabel()
         label.text = "Terra Forming Board"
         label.font = UIFont.systemFont(ofSize: 24)
+        label.textColor = .white
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -162,7 +163,7 @@ class MainCollectionViewController: UIViewController {
         tfmDatasource.tfmProperties = viewModel.tfmProperties
         collectionView.register(TFMPropertyCell.self, forCellWithReuseIdentifier: customCellIdentifier)
     }
-    
+
 }
 
 //  MARK: - Collection View Settings
@@ -178,7 +179,7 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// Action
+/// Action
 extension MainCollectionViewController {
     enum Unit {
         case productionFactor
@@ -205,7 +206,6 @@ extension MainCollectionViewController {
         if unit == .quantity {
             item.quantity = Int(sender.value)
         }
-
 
         UIView.performWithoutAnimation {
             collectionView.reloadItems(at: [indexPath])
