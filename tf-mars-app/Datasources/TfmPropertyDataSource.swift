@@ -14,7 +14,7 @@ class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath) as! TFMPropertyCell
         cell.model = tfmProperties[indexPath.item]
 
-        // stepper
+        // Stepper
         cell.productionStepper.addTarget(collectionViewController,
                                          action: #selector(collectionViewController?.productionStepperValueChanged),
                                          for: .valueChanged)
@@ -22,6 +22,7 @@ class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
                                          action: #selector(collectionViewController?.quantityStepperValueChanged),
                                          for: .valueChanged)
 
+        // Tag
         cell.productionStepper.tag = indexPath.item
         cell.quantityStepper.tag = indexPath.item
 

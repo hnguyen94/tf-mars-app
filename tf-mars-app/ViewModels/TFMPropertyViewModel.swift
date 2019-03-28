@@ -50,10 +50,6 @@ class TFMPropertyViewModel {
 
         return nextGenProperties
     }
-    
-     func nextGeneration() {
-        tfmProperties = recalculateQuantity(tfmProperties)
-    }
 
     private func makeNewProperty(of currentProperty: TFMPropertyModel) -> TFMPropertyModel {
         let newQuantity = currentProperty.quantity + currentProperty.productionFactor

@@ -162,13 +162,6 @@ class MainCollectionViewController: UIViewController {
         tfmDatasource.tfmProperties = viewModel.tfmProperties
         collectionView.register(TFMPropertyCell.self, forCellWithReuseIdentifier: customCellIdentifier)
     }
-
-    @objc private func nextGeneration() {
-        viewModel.nextGeneration()
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
-        }
-    }
     
 }
 
@@ -186,7 +179,7 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // Action
-extension MainCollectionViewController: UICollectionViewDelegate {
+extension MainCollectionViewController {
     enum Unit {
         case productionFactor
         case quantity
@@ -201,9 +194,9 @@ extension MainCollectionViewController: UICollectionViewDelegate {
     }
 
     private func changeValue(for unit: Unit, sender: UIStepper) {
-        let i = sender.tag
-        let indexPath = IndexPath(item: i, section: 0)
-        var item = tfmDatasource.tfmProperties[indexPath.item]
+        let index = sender.tag
+        let indexPath = IndexPath(item: index, section: 0)
+        let item = tfmDatasource.tfmProperties[indexPath.item]
 
         if unit == .productionFactor {
             item.productionFactor = Int(sender.value)
@@ -219,17 +212,12 @@ extension MainCollectionViewController: UICollectionViewDelegate {
         }
     }
 
+    @objc private func nextGeneration() {
+        let nextGenerationProperties = viewModel.recalculateQuantity(tfmDatasource.tfmProperties)
+        tfmDatasource.tfmProperties = nextGenerationProperties
+
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
 }
-
-
-//extension MainCollectionViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//       var item = tfmDatasource.tfmProperties[indexPath.item]
-//
-//        item.quantity += 1
-//
-//        UIView.performWithoutAnimation {
-//            collectionView.reloadItems(at: [indexPath])
-//        }
-//    }
-//}
