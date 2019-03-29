@@ -85,5 +85,4 @@ extension TFMPropertyModel {
     var isHeat: Bool {
         return type == .heat
     }
-    
 }
