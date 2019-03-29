@@ -30,14 +30,14 @@ class TFMPropertyContainer {
     func recalculateQuantity(_ oldProperties: [TFMPropertyModel]) -> [TFMPropertyModel] {
         var energyQuantity = 0
         let nextGenProperties = oldProperties.map { currentProperty -> TFMPropertyModel in
-            if isEnergy(currentProperty) {
+            if currentProperty.isEnergy {
                 energyQuantity = currentProperty.quantity
 
                 let newProperty = makeNewEnergyProperty(of: currentProperty)
                 return newProperty
             }
 
-            if isHeat(currentProperty) {
+            if currentProperty.isHeat {
                 let newProperty = makeNewHeatProperty(of: energyQuantity, and: currentProperty)
                 return newProperty
             }
@@ -75,12 +75,15 @@ class TFMPropertyContainer {
                                 productionFactor: property.productionFactor)
     }
 
-    private func isEnergy(_ property: TFMPropertyModel) -> Bool {
-        return property.type == .energy
+}
+
+extension TFMPropertyModel {
+    var isEnergy: Bool {
+        return type == .energy
     }
 
-    private func isHeat(_ property: TFMPropertyModel) -> Bool {
-        return property.type == .heat
+    var isHeat: Bool {
+        return type == .heat
     }
     
 }
