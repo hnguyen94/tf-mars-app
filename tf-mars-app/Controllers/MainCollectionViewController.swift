@@ -101,19 +101,13 @@ extension MainCollectionViewController {
         let nextGenerationProperties = viewModel.recalculateQuantity(tfmDatasource.tfmProperties)
         tfmDatasource.tfmProperties = nextGenerationProperties
 
-        counter = increment(counter, by: 1)
+        counter += 1
 
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.mainView.generationCounterLabel.text = "Lv: \(self.counter)"
             self.mainView.collectionView.reloadData()
         }
-    }
-
-    private func increment(_ counter: Int, by number: Int) -> Int {
-        let newCounter = counter + number
-
-        return newCounter
     }
 
 }
