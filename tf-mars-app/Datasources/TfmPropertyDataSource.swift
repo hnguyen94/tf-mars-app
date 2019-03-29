@@ -2,6 +2,8 @@ import UIKit
 
 class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
 
+    // MARK: - Properties
+
     var collectionViewController: MainCollectionViewController? = nil
     var tfmProperties = [TFMPropertyModel]()
 
@@ -9,6 +11,8 @@ class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
         let totalCells = tfmProperties.count
         return totalCells
     }
+
+    // MARK: - Methods
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath) as! TFMPropertyCell

@@ -9,6 +9,7 @@ class MainCollectionViewController: UIViewController {
     private let viewModel = TFMPropertyContainer()
     private let tfmDatasource: TfmPropertyDataSource
     private let mainView = MainView()
+    private var counter: Int = 0
 
 
     // MARK: - Init
@@ -100,9 +101,19 @@ extension MainCollectionViewController {
         let nextGenerationProperties = viewModel.recalculateQuantity(tfmDatasource.tfmProperties)
         tfmDatasource.tfmProperties = nextGenerationProperties
 
+        counter = increment(counter, by: 1)
+
         DispatchQueue.main.async { [weak self] in
-            self?.mainView.collectionView.reloadData()
+            guard let self = self else { return }
+            self.mainView.generationCounterLabel.text = "Lv: \(self.counter)"
+            self.mainView.collectionView.reloadData()
         }
+    }
+
+    private func increment(_ counter: Int, by number: Int) -> Int {
+        let newCounter = counter + number
+
+        return newCounter
     }
 
 }

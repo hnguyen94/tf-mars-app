@@ -22,6 +22,17 @@ class MainView: UIView {
         return label
     }()
 
+    lazy var generationCounterLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Lv: 0"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .white
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
@@ -64,6 +75,7 @@ class MainView: UIView {
 
     private func addSubviews() {
         addSubview(titleLabel)
+        addSubview(generationCounterLabel)
         addSubview(collectionView)
         addSubview(nextGenButton)
     }
@@ -77,6 +89,10 @@ class MainView: UIView {
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
                                             constant: Layout.Padding.standard24),
+
+            // Generation counter label
+            generationCounterLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            generationCounterLabel.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor),
 
             // Collection View
             collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,
