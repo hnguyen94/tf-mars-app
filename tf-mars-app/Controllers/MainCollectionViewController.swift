@@ -21,45 +21,12 @@ class MainCollectionViewController: UIViewController {
     
     // MARK: - Properties
 
-    weak var collectionView: UICollectionView!
     private let viewModel = TFMPropertyContainer()
     let tfmDatasource: TfmPropertyDataSource
 
     // MARK: - View Properties
-    
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Terra Forming Board"
-        label.font = UIFont.systemFont(ofSize: 24)
-        label.textColor = .white
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = Layout.Padding.standard
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
 
-    lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
-    
-    lazy var nextGenBackgroundView: UIView = {
-        let aView = UIView()
-        aView.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
-        
-        aView.translatesAutoresizingMaskIntoConstraints = false
-        return aView
-    }()
+//    var mainView = TestView()
 
     lazy var nextGenButton: UIButton = {
         let button = UIButton()
@@ -87,22 +54,15 @@ class MainCollectionViewController: UIViewController {
     // MARK: - Overriden functions
 
     override func loadView() {
-        super.loadView()
 
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collectionView)
-
-        self.collectionView = collectionView
+//        view = mainView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
 
-        setupCollectionView()
+//        setupCollectionView()
         setupViews()
     }
 
@@ -116,34 +76,22 @@ class MainCollectionViewController: UIViewController {
     
     /// A function for adding subviews.
     fileprivate func addSubViews() {
-        view.addSubview(titleLabel)
-        view.addSubview(nextGenButton)
+//        view.addSubview(nextGenButton)
     }
     
     /// A function for setting the constraints.
     fileprivate func setupConstraints() {
         // Variables
-        let stackLeadingTrailingMargin = Layout.Padding.standard24
-        
+
         NSLayoutConstraint.activate([
             // TitleLabel
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                            constant: Layout.Padding.standard24),
-            
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                                               constant: stackLeadingTrailingMargin),
-            
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                                                constant: -stackLeadingTrailingMargin),
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
 
             // NextGenButton
-            nextGenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextGenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: -Layout.Padding.standard)
-            
+//            nextGenButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
+//            nextGenButton.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor,
+//                                                  constant: -Layout.Padding.standard)
+
             // Next Gen Backgroundview
 //            nextGenBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 //            nextGenBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -156,18 +104,14 @@ class MainCollectionViewController: UIViewController {
     // MARK: - Methods
 
     private func setupCollectionView() {
-        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
-        collectionView.alwaysBounceVertical = true
-        collectionView.delegate = self
-        collectionView.dataSource = tfmDatasource
+//        mainView.collectionView.delegate = self
+//        mainView.collectionView.dataSource = tfmDatasource
         tfmDatasource.tfmProperties = viewModel.tfmProperties
-        collectionView.register(TFMPropertyCell.self, forCellWithReuseIdentifier: customCellIdentifier)
     }
 
 }
 
 //  MARK: - Collection View Settings
-
 
 /// Delegate Flow Layout
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -187,14 +131,14 @@ extension MainCollectionViewController {
     }
 
     @objc func productionStepperValueChanged(_ sender: UIStepper) {
-        changeValue(for: .productionFactor, sender: sender)
+        changeValue(for: .productionFactor, sender)
     }
 
     @objc func quantityStepperValueChanged(_ sender: UIStepper!) {
-        changeValue(for: .quantity, sender: sender)
+        changeValue(for: .quantity, sender)
     }
 
-    private func changeValue(for unit: Unit, sender: UIStepper) {
+    private func changeValue(for unit: Unit, _ sender: UIStepper) {
         let index = sender.tag
         let indexPath = IndexPath(item: index, section: 0)
         let item = tfmDatasource.tfmProperties[indexPath.item]
@@ -208,7 +152,7 @@ extension MainCollectionViewController {
         }
 
         UIView.performWithoutAnimation {
-            collectionView.reloadItems(at: [indexPath])
+//            mainView.collectionView.reloadItems(at: [indexPath])
         }
     }
 
@@ -217,7 +161,7 @@ extension MainCollectionViewController {
         tfmDatasource.tfmProperties = nextGenerationProperties
 
         DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
+//            self?.mainView.collectionView.reloadData()
         }
     }
 }
