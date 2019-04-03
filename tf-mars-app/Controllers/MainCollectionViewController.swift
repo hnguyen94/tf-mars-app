@@ -9,7 +9,15 @@ class MainCollectionViewController: UIViewController {
     private let viewModel = TFMPropertyContainer()
     private let tfmDatasource: TfmPropertyDataSource
     private let mainView = MainView()
-    private var counter: Int = 0
+
+    private var counter: Int = 0 {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.mainView.generationCounterLabel.text = "Lv: \(self.counter)"
+            }
+        }
+    }
 
 
     // MARK: - Init
@@ -82,11 +90,7 @@ extension MainCollectionViewController {
         let resettedProperties = viewModel.resetProperties(tfmDatasource.tfmProperties)
         tfmDatasource.tfmProperties = resettedProperties
 
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.counter = 0
-            self.mainView.generationCounterLabel.text = "Lv: \(self.counter)"
-        }
+        counter = 0
 
         UIView.performWithoutAnimation {
             mainView.collectionView.reloadData()
@@ -127,7 +131,6 @@ extension MainCollectionViewController {
 
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.mainView.generationCounterLabel.text = "Lv: \(self.counter)"
             self.mainView.collectionView.reloadData()
         }
     }
