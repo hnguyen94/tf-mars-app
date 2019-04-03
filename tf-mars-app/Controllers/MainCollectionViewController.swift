@@ -37,8 +37,7 @@ class MainCollectionViewController: UIViewController {
         super.viewDidLoad()
 
         setupCollectionView()
-
-        mainView.nextGenButton.addTarget(self, action: #selector(nextGeneration), for: .touchUpInside)
+        loadActions()
     }
 
     // MARK: - Methods
@@ -48,6 +47,7 @@ class MainCollectionViewController: UIViewController {
         mainView.collectionView.dataSource = tfmDatasource
         tfmDatasource.tfmProperties = viewModel.tfmProperties
     }
+
 
 }
 
@@ -69,6 +69,28 @@ extension MainCollectionViewController {
     enum Unit {
         case productionFactor
         case quantity
+    }
+
+    private func loadActions() {
+        mainView.nextGenButton.addTarget(self, action: #selector(nextGeneration), for: .touchUpInside)
+        mainView.resetButton.addTarget(self, action: #selector(resetValues), for: .touchUpInside)
+    }
+
+
+    /// Reset all values (Generation counter, quantity, property).
+    @objc func resetValues() {
+        let resettedProperties = viewModel.resetProperties(tfmDatasource.tfmProperties)
+        tfmDatasource.tfmProperties = resettedProperties
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.counter = 0
+            self.mainView.generationCounterLabel.text = "Lv: \(self.counter)"
+        }
+
+        UIView.performWithoutAnimation {
+            mainView.collectionView.reloadData()
+        }
     }
 
     @objc func productionStepperValueChanged(_ sender: UIStepper) {

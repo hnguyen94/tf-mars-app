@@ -16,9 +16,7 @@ class MainView: UIView {
         label.text = "Terra Forming Board"
         label.font = UIFont.systemFont(ofSize: 24)
         label.textColor = .white
-
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
 
@@ -27,21 +25,24 @@ class MainView: UIView {
         label.text = "Lv: 0"
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .white
-
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
+    }()
+
+    lazy var resetButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Reset", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
 
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         collectionView.alwaysBounceVertical = true
-
-
         collectionView.register(TFMPropertyCell.self, forCellWithReuseIdentifier: customCellIdentifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-
         return collectionView
     }()
 
@@ -49,7 +50,6 @@ class MainView: UIView {
         let button = UIButton()
         button.setTitle("Next Generation", for: .normal)
         button.setTitleColor(.black, for: .normal)
-
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -76,6 +76,7 @@ class MainView: UIView {
     private func addSubviews() {
         addSubview(titleLabel)
         addSubview(generationCounterLabel)
+        addSubview(resetButton)
         addSubview(collectionView)
         addSubview(nextGenButton)
     }
@@ -92,7 +93,11 @@ class MainView: UIView {
 
             // Generation counter label
             generationCounterLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            generationCounterLabel.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            generationCounterLabel.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor),
+
+            // Reset Button
+            resetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            resetButton.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor),
 
             // Collection View
             collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,

@@ -44,14 +44,22 @@ class TFMPropertyContainer {
 
             // Default behaviour
 
-            let newProperty = makeNewProperty(of: currentProperty)
+            let newProperty = makeNextGenProperty(of: currentProperty)
             return newProperty
         }
 
         return nextGenProperties
     }
 
-    private func makeNewProperty(of currentProperty: TFMPropertyModel) -> TFMPropertyModel {
+    func resetProperties(_ oldProperties: [TFMPropertyModel]) -> [TFMPropertyModel] {
+        let resettedProperties = oldProperties.map { currentProperty -> TFMPropertyModel in
+            return TFMPropertyModel(type: currentProperty.type, quantity: 0, productionFactor: 0)
+        }
+
+        return resettedProperties
+    }
+
+    private func makeNextGenProperty(of currentProperty: TFMPropertyModel) -> TFMPropertyModel {
         let newQuantity = currentProperty.quantity + currentProperty.productionFactor
 
         return TFMPropertyModel(type: currentProperty.type,
