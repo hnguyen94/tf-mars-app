@@ -56,7 +56,6 @@ class MainCollectionViewController: UIViewController {
         tfmDatasource.tfmProperties = viewModel.tfmProperties
     }
 
-
 }
 
 //  MARK: - Collection View Settings
@@ -70,6 +69,14 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
         let size = CGSize(width: collectionView.frame.width, height: 110)
         return size
     }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        let size = CGSize(width: collectionView.frame.width, height: 110)
+        return size
+    }
+
 }
 
 /// Actions

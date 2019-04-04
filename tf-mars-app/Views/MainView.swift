@@ -1,11 +1,14 @@
 import UIKit
 
+let footerID = "footerID"
+
 class MainView: UIView {
 
     struct Layout {
         struct Padding {
             static let standard: CGFloat = 8
             static let standard24: CGFloat = Layout.Padding.standard * 3
+            static let standard64: CGFloat = Layout.Padding.standard * 8
         }
     }
 
@@ -50,9 +53,22 @@ class MainView: UIView {
         let button = UIButton()
         button.setTitle("Next Generation", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .red
+        button.layer.cornerRadius = 8
+        button.clipsToBounds = true
+        button.contentEdgeInsets  = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
+    lazy var gradientBackgroundView: UIView = {
+        let aView = UIView()
+        aView.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 0.601975132)
+        aView.translatesAutoresizingMaskIntoConstraints = false
+        return aView
+    }()
+
+    // MARK: - Init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,6 +94,7 @@ class MainView: UIView {
         addSubview(generationCounterLabel)
         addSubview(resetButton)
         addSubview(collectionView)
+        addSubview(gradientBackgroundView)
         addSubview(nextGenButton)
     }
 
@@ -99,6 +116,12 @@ class MainView: UIView {
             resetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             resetButton.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor),
 
+            // Gradient Background
+//            gradientBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            gradientBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            gradientBackgroundView.heightAnchor.constraint(equalToConstant: 100),
+//            gradientBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
             // Collection View
             collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,
                                                     constant: stackLeadingTrailingMargin),
@@ -109,8 +132,7 @@ class MainView: UIView {
 
             // Next Gen Button
             nextGenButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nextGenButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: -Layout.Padding.standard)
+            nextGenButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Layout.Padding.standard)
         ])
     }
 }
