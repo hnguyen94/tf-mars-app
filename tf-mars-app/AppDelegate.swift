@@ -17,11 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        let flowLayout = UICollectionViewFlowLayout()
-        let customCollectionViewController = MainCollectionViewController()
 
-        window?.rootViewController = customCollectionViewController
+        let navigationController = UINavigationController(rootViewController: MainTabBarController())
+        navigationController.navigationBar.isHidden = true
+
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 

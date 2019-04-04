@@ -32,6 +32,15 @@ class MainView: UIView {
         return label
     }()
 
+    lazy var terraFormValueLabel: UILabel = {
+        let label = UILabel()
+        label.text = "TF: 0"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     lazy var resetButton: UIButton = {
         let button = UIButton()
         button.setTitle("Reset", for: .normal)
@@ -59,7 +68,7 @@ class MainView: UIView {
     lazy var nextGenButton: UIButton = {
         let button = UIButton()
         button.setTitle("Next Generation", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .red
         button.layer.cornerRadius = 8
         button.clipsToBounds = true
@@ -99,6 +108,7 @@ class MainView: UIView {
     private func addSubviews() {
         addSubview(titleLabel)
         addSubview(generationCounterLabel)
+        addSubview(terraFormValueLabel)
         addSubview(resetButton)
         addSubview(collectionView)
         addSubview(gradientBackgroundView)
@@ -112,12 +122,15 @@ class MainView: UIView {
         NSLayoutConstraint.activate([
             // Title Label
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                            constant: Layout.Padding.standard24),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
 
             // Generation counter label
             generationCounterLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            generationCounterLabel.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor),
+            generationCounterLabel.bottomAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+
+            // Terra Form Value Label
+            terraFormValueLabel.topAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            terraFormValueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
 
             // Reset Button
             resetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),

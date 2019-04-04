@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD0D2ECD22385B1300A9D5F9 /* textViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */; };
 		CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4C2229C5D800067636 /* AppDelegate.swift */; };
 		CD1D5B4F2229C5D800067636 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4E2229C5D800067636 /* MainCollectionViewController.swift */; };
-		CD1D5B522229C5D800067636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B502229C5D800067636 /* Main.storyboard */; };
+		CD1D5B522229C5D800067636 /* Prototype.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B502229C5D800067636 /* Prototype.storyboard */; };
 		CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B532229C5D800067636 /* tf_mars_app.xcdatamodeld */; };
 		CD1D5B572229C5D900067636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B562229C5D900067636 /* Assets.xcassets */; };
 		CD1D5B5A2229C5D900067636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */; };
@@ -24,6 +23,8 @@
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
 		EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */; };
 		EC6D278B22561196003A471B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC6D278D22561196003A471B /* Localizable.strings */; };
+		EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D279122563C31003A471B /* MainTabBarController.swift */; };
+		EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D2795225642E4003A471B /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewModel.swift; sourceTree = "<group>"; };
 		CD1D5B492229C5D800067636 /* tf-mars-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tf-mars-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1D5B4C2229C5D800067636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1D5B4E2229C5D800067636 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
-		CD1D5B512229C5D800067636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD1D5B512229C5D800067636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Prototype.storyboard; sourceTree = "<group>"; };
 		CD1D5B542229C5D800067636 /* tf_mars_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tf_mars_app.xcdatamodel; sourceTree = "<group>"; };
 		CD1D5B562229C5D900067636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD1D5B592229C5D900067636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,8 +68,10 @@
 		EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfmPropertyDataSource.swift; sourceTree = "<group>"; };
 		EC6D278C22561196003A471B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EC6D278E22561202003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		EC6D278F22561203003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		EC6D278F22561203003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Prototype.strings; sourceTree = "<group>"; };
 		EC6D279022561203003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EC6D279122563C31003A471B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		EC6D2795225642E4003A471B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				CD1D5B4E2229C5D800067636 /* MainCollectionViewController.swift */,
+				EC6D279122563C31003A471B /* MainTabBarController.swift */,
+				EC6D2795225642E4003A471B /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				CD573A31222B551B00CA943B /* TFMBoard.swift */,
-				CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 		CDBC6C14222BE6530012AA99 /* Prototypes */ = {
 			isa = PBXGroup;
 			children = (
-				CD1D5B502229C5D800067636 /* Main.storyboard */,
+				CD1D5B502229C5D800067636 /* Prototype.storyboard */,
 			);
 			path = Prototypes;
 			sourceTree = "<group>";
@@ -322,7 +325,7 @@
 				CD1D5B5A2229C5D900067636 /* LaunchScreen.storyboard in Resources */,
 				EC6D278B22561196003A471B /* Localizable.strings in Resources */,
 				CD1D5B572229C5D900067636 /* Assets.xcassets in Resources */,
-				CD1D5B522229C5D800067636 /* Main.storyboard in Resources */,
+				CD1D5B522229C5D800067636 /* Prototype.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,13 +351,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */,
-				CD0D2ECD22385B1300A9D5F9 /* textViewModel.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainCollectionViewController.swift in Sources */,
+				EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
 				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
 				EC23C237224E452F008E4785 /* MainView.swift in Sources */,
+				EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
 				CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
@@ -393,13 +397,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CD1D5B502229C5D800067636 /* Main.storyboard */ = {
+		CD1D5B502229C5D800067636 /* Prototype.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CD1D5B512229C5D800067636 /* Base */,
 				EC6D278F22561203003A471B /* de */,
 			);
-			name = Main.storyboard;
+			name = Prototype.storyboard;
 			sourceTree = "<group>";
 		};
 		CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */ = {
