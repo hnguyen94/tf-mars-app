@@ -40,6 +40,13 @@ class MainView: UIView {
         return button
     }()
 
+    lazy var resetAlert: UIAlertController = {
+        let alert = UIAlertController(title: "Reset",
+                                      message: "All data in properties will be resetted.",
+                                      preferredStyle: .alert)
+        return alert
+    }()
+
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)

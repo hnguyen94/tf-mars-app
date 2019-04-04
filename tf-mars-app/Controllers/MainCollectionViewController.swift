@@ -89,19 +89,27 @@ extension MainCollectionViewController {
     private func loadActions() {
         mainView.nextGenButton.addTarget(self, action: #selector(nextGeneration), for: .touchUpInside)
         mainView.resetButton.addTarget(self, action: #selector(resetValues), for: .touchUpInside)
-    }
 
+        // Reset Alert ViewController
+        mainView.resetAlert.addAction(.init(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            let resettedProperties = self.viewModel.resetProperties(self.tfmDatasource.tfmProperties)
+            self.tfmDatasource.tfmProperties = resettedProperties
+
+            self.counter = 0
+
+            UIView.performWithoutAnimation {
+                self.mainView.collectionView.reloadData()
+            }
+        }))
+
+        mainView.resetAlert.addAction(.init(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            self.mainView.resetAlert .dismiss(animated: true, completion: nil)
+        }))
+    }
 
     /// Reset all values (Generation counter, quantity, property).
     @objc func resetValues() {
-        let resettedProperties = viewModel.resetProperties(tfmDatasource.tfmProperties)
-        tfmDatasource.tfmProperties = resettedProperties
-
-        counter = 0
-
-        UIView.performWithoutAnimation {
-            mainView.collectionView.reloadData()
-        }
+            present(mainView.resetAlert, animated: true, completion: nil)
     }
 
     @objc func productionStepperValueChanged(_ sender: UIStepper) {

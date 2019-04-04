@@ -35,7 +35,6 @@ class TFMPropertyCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.big, weight: .bold)
-
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -44,7 +43,6 @@ class TFMPropertyCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,7 +51,6 @@ class TFMPropertyCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: FontSize.normal)
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -61,8 +58,7 @@ class TFMPropertyCell: UICollectionViewCell {
     lazy var productionStepper: UIStepper = {
         let stepper = UIStepper()
         stepper.wraps = true
-//        stepper.autorepeat = true
-
+        stepper.autorepeat = true
        stepper.translatesAutoresizingMaskIntoConstraints = false
        return stepper
     }()
@@ -72,7 +68,6 @@ class TFMPropertyCell: UICollectionViewCell {
         stepper.wraps = true
 //        stepper.autorepeat = true
         stepper.maximumValue = 1000
-        
         stepper.translatesAutoresizingMaskIntoConstraints = false
         return stepper
     }()
@@ -147,8 +142,6 @@ class TFMPropertyCell: UICollectionViewCell {
         productionStepper.maximumValue = model?.maximumProductionNumber ?? 0
     }
     
-    /// The default implementation does nothing.
-    /// Will be called in the initializer.
     private func setupActions() {
         guard let model = model else { return }
 

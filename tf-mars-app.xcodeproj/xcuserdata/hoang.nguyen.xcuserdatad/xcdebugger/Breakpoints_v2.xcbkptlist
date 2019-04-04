@@ -22,11 +22,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tf-mars-app/Views/MainView.swift"
-            timestampString = "576059463.172604"
+            timestampString = "576064639.1086529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "init(frame:)"
             landmarkType = "7">
          </BreakpointContent>
