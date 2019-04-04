@@ -19,10 +19,11 @@
 		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
 		CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* TFMPropertyCell.swift */; };
 		CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */; };
-		CD573A32222B551B00CA943B /* TFMPropertyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* TFMPropertyContainer.swift */; };
+		CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* TFMBoard.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
 		EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */; };
+		EC6D278B22561196003A471B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC6D278D22561196003A471B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +62,14 @@
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
 		CD573A13222B255E00CA943B /* TFMPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCell.swift; sourceTree = "<group>"; };
 		CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModel.swift; sourceTree = "<group>"; };
-		CD573A31222B551B00CA943B /* TFMPropertyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyContainer.swift; sourceTree = "<group>"; };
+		CD573A31222B551B00CA943B /* TFMBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMBoard.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 		EC23C236224E452F008E4785 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfmPropertyDataSource.swift; sourceTree = "<group>"; };
+		EC6D278C22561196003A471B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EC6D278E22561202003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EC6D278F22561203003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		EC6D279022561203003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,7 @@
 		CD1D5B402229C5D800067636 = {
 			isa = PBXGroup;
 			children = (
+				EC6D278D22561196003A471B /* Localizable.strings */,
 				CD1D5B4B2229C5D800067636 /* tf-mars-app */,
 				CD1D5B632229C5D900067636 /* tf-mars-appTests */,
 				CD1D5B6E2229C5D900067636 /* tf-mars-appUITests */,
@@ -178,7 +184,7 @@
 		CD573A30222B54E100CA943B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CD573A31222B551B00CA943B /* TFMPropertyContainer.swift */,
+				CD573A31222B551B00CA943B /* TFMBoard.swift */,
 				CD0D2ECC22385B1300A9D5F9 /* textViewModel.swift */,
 			);
 			path = ViewModels;
@@ -294,6 +300,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = CD1D5B402229C5D800067636;
 			productRefGroup = CD1D5B4A2229C5D800067636 /* Products */;
@@ -313,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1D5B5A2229C5D900067636 /* LaunchScreen.storyboard in Resources */,
+				EC6D278B22561196003A471B /* Localizable.strings in Resources */,
 				CD1D5B572229C5D900067636 /* Assets.xcassets in Resources */,
 				CD1D5B522229C5D800067636 /* Main.storyboard in Resources */,
 			);
@@ -339,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD573A32222B551B00CA943B /* TFMPropertyContainer.swift in Sources */,
+				CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */,
 				CD0D2ECD22385B1300A9D5F9 /* textViewModel.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainCollectionViewController.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
@@ -389,6 +397,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CD1D5B512229C5D800067636 /* Base */,
+				EC6D278F22561203003A471B /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -397,8 +406,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				CD1D5B592229C5D900067636 /* Base */,
+				EC6D278E22561202003A471B /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EC6D278D22561196003A471B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC6D278C22561196003A471B /* en */,
+				EC6D279022561203003A471B /* de */,
+			);
+			name = Localizable.strings;
+			path = "tf-mars-app";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -408,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -469,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

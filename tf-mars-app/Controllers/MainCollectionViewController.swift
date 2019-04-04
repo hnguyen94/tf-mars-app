@@ -6,7 +6,7 @@ class MainCollectionViewController: UIViewController {
     
     // MARK: - Properties
 
-    private let viewModel = TFMPropertyContainer()
+    private let viewModel = TFMBoard()
     private let tfmDatasource: TfmPropertyDataSource
     private let mainView = MainView()
 

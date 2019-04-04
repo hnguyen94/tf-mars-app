@@ -11,7 +11,7 @@ import XCTest
 
 class tf_mars_appTests: XCTestCase {
     
-    let tfmPropertyModels = TFMPropertyContainer()
+    let tfmPropertyModels = TFMBoard()
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -110,7 +110,7 @@ class tf_mars_appTests: XCTestCase {
 
     func testNextGenProperties() {
         // WHEN
-        let container = TFMPropertyContainer()
+        let container = TFMBoard()
         let expectedResult = 20
 
         for (index, element) in container.tfmProperties.enumerated() {
@@ -137,7 +137,7 @@ class tf_mars_appTests: XCTestCase {
 
     func testNextGenEnergy() {
         // WHEN
-        let container = TFMPropertyContainer()
+        let container = TFMBoard()
         let expectedResult = 20
 
         // Energy is on index 4
@@ -154,7 +154,7 @@ class tf_mars_appTests: XCTestCase {
 
     func testNextGenHeat() {
         // WHEN
-        let container = TFMPropertyContainer()
+        let container = TFMBoard()
         let expectedResult = 30
 
         // Heat is on index 5

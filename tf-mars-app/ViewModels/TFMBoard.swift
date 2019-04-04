@@ -1,6 +1,6 @@
 import Foundation
 
-class TFMPropertyContainer {
+class TFMBoard {
     
     // MARK: - Properties
     private let megaCredit = TFMPropertyModel(type: .megaCredit)

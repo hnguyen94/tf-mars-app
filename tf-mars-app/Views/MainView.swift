@@ -42,7 +42,7 @@ class MainView: UIView {
 
     lazy var resetAlert: UIAlertController = {
         let alert = UIAlertController(title: "Reset",
-                                      message: "All data in properties will be resetted.",
+                                      message: NSLocalizedString("All data in units will be resetted.", comment: "Alert"),
                                       preferredStyle: .alert)
         return alert
     }()
