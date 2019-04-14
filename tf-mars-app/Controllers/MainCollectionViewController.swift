@@ -7,8 +7,8 @@ class MainCollectionViewController: UIViewController {
     // MARK: - Properties
 
     private let viewModel = TFMBoard()
-    private let tfmDatasource: TfmPropertyDataSource
-    private let mainView = MainView()
+    private var tfmDatasource: TfmPropertyDataSource
+    private var mainView: MainView!
 
     private var counter: Int = 0 {
         didSet {
@@ -23,9 +23,7 @@ class MainCollectionViewController: UIViewController {
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.tfmDatasource = TfmPropertyDataSource()
-
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-
         tfmDatasource.collectionViewController = self
     }
 
@@ -37,7 +35,7 @@ class MainCollectionViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-
+        mainView = MainView(nextGenAction: nextGenerationAction)
         view = mainView
     }
     
@@ -87,7 +85,6 @@ extension MainCollectionViewController {
     }
 
     private func loadActions() {
-        mainView.nextGenButton.addTarget(self, action: #selector(nextGeneration), for: .touchUpInside)
         mainView.resetButton.addTarget(self, action: #selector(resetValues), for: .touchUpInside)
 
         // Reset Alert ViewController
@@ -138,16 +135,11 @@ extension MainCollectionViewController {
         }
     }
 
-    @objc private func nextGeneration() {
+    private func nextGenerationAction() {
         let nextGenerationProperties = viewModel.recalculateQuantity(tfmDatasource.tfmProperties)
         tfmDatasource.tfmProperties = nextGenerationProperties
-
         counter += 1
-
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.mainView.collectionView.reloadData()
-        }
+        mainView.collectionView.reloadData()
     }
 
 }

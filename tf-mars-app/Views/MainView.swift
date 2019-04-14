@@ -11,8 +11,12 @@ class MainView: UIView {
             static let standard64: CGFloat = Layout.Padding.standard * 8
         }
     }
-
+    
     // MARK: - Properties
+    
+    var nextGenAction: (() -> Void)?
+
+    // MARK: - View objects
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -73,6 +77,7 @@ class MainView: UIView {
         button.layer.cornerRadius = 8
         button.clipsToBounds = true
         button.contentEdgeInsets  = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        button.addTarget(self, action: #selector(nextGeneration), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -84,11 +89,12 @@ class MainView: UIView {
         return aView
     }()
 
-    // MARK: - Init
+    // MARK: - Initializer
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
+    init(nextGenAction: @escaping () -> Void) {
+        self.nextGenAction = nextGenAction
+        super.init(frame: .zero)
+        
         backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
         setupViews()
     }
@@ -155,4 +161,9 @@ class MainView: UIView {
             nextGenButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Layout.Padding.standard)
         ])
     }
+    
+    @objc func nextGeneration() {
+        nextGenAction?()
+    }
+    
 }

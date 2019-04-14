@@ -14,7 +14,6 @@
 		CD1D5B572229C5D900067636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B562229C5D900067636 /* Assets.xcassets */; };
 		CD1D5B5A2229C5D900067636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */; };
 		CD1D5B652229C5D900067636 /* tf_mars_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */; };
-		CD1D5B702229C5D900067636 /* tf_mars_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */; };
 		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
 		CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* TFMPropertyCell.swift */; };
 		CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */; };
@@ -57,8 +56,6 @@
 		CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_mars_appTests.swift; sourceTree = "<group>"; };
 		CD1D5B662229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1D5B6B2229C5D900067636 /* tf-mars-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tf-mars-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_mars_appUITests.swift; sourceTree = "<group>"; };
-		CD1D5B712229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
 		CD573A13222B255E00CA943B /* TFMPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCell.swift; sourceTree = "<group>"; };
 		CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModel.swift; sourceTree = "<group>"; };
@@ -105,7 +102,6 @@
 				EC6D278D22561196003A471B /* Localizable.strings */,
 				CD1D5B4B2229C5D800067636 /* tf-mars-app */,
 				CD1D5B632229C5D900067636 /* tf-mars-appTests */,
-				CD1D5B6E2229C5D900067636 /* tf-mars-appUITests */,
 				CD1D5B4A2229C5D800067636 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,7 +122,7 @@
 				CD1D5B4C2229C5D800067636 /* AppDelegate.swift */,
 				CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */,
 				CD573A12222B208600CA943B /* Models */,
-				CD573A30222B54E100CA943B /* ViewModels */,
+				CD573A30222B54E100CA943B /* BusinessLogic */,
 				CD573A15222B2F9500CA943B /* Controllers */,
 				EC5D6FB222481FBC0094CA10 /* Datasources */,
 				CD573A0F222B0D1E00CA943B /* Views */,
@@ -146,15 +142,6 @@
 				CD1D5B662229C5D900067636 /* Info.plist */,
 			);
 			path = "tf-mars-appTests";
-			sourceTree = "<group>";
-		};
-		CD1D5B6E2229C5D900067636 /* tf-mars-appUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CD1D5B6F2229C5D900067636 /* tf_mars_appUITests.swift */,
-				CD1D5B712229C5D900067636 /* Info.plist */,
-			);
-			path = "tf-mars-appUITests";
 			sourceTree = "<group>";
 		};
 		CD573A0F222B0D1E00CA943B /* Views */ = {
@@ -185,12 +172,12 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CD573A30222B54E100CA943B /* ViewModels */ = {
+		CD573A30222B54E100CA943B /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
 				CD573A31222B551B00CA943B /* TFMBoard.swift */,
 			);
-			path = ViewModels;
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		CDBC6C14222BE6530012AA99 /* Prototypes */ = {
@@ -377,7 +364,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD1D5B702229C5D900067636 /* tf_mars_appUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -114,7 +114,7 @@ class tf_mars_appTests: XCTestCase {
         let expectedResult = 20
 
         for (index, element) in container.tfmProperties.enumerated() {
-            if isEnergyOrHeat(element) {
+            if element.isHeat || element.isEnergy {
                 continue
             }
 
@@ -175,10 +175,6 @@ class tf_mars_appTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
-    }
-
-    private func isEnergyOrHeat(_ property: TFMPropertyModel) -> Bool {
-        return property.type == .energy || property.type == .heat
     }
 
 }
