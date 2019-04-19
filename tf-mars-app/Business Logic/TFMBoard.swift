@@ -3,6 +3,9 @@ import Foundation
 class TFMBoard {
     
     // MARK: - Properties
+    
+    // MARK: Private
+    
     private let megaCredit = TFMPropertyModel(type: .megaCredit)
     private let steel = TFMPropertyModel(type: .steel)
     private let titan = TFMPropertyModel(type: .titan)
@@ -10,7 +13,17 @@ class TFMBoard {
     private let energy = TFMPropertyModel(type: .energy)
     private let heat = TFMPropertyModel(type: .heat)
 
+    // MARK: Public
+    
+    var generation: Int = 0 {
+        didSet {
+            didChangeGeneration?()
+        }
+    }
+    
     var tfmProperties: [TFMPropertyModel]
+    
+    var didChangeGeneration: (() -> Void)?
     
     // MARK: - Init
     

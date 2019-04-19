@@ -2,23 +2,13 @@ import UIKit
 
 let customCellIdentifier = "tfmCellId"
 
-class MainCollectionViewController: UIViewController {
+class MainViewController: UIViewController {
     
     // MARK: - Properties
 
-    private let viewModel = TFMBoard()
+    private let tfmBoard = TFMBoard()
     private var tfmDatasource: TfmPropertyDataSource
     private var mainView: MainView!
-
-    private var counter: Int = 0 {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.mainView.generationCounterLabel.text = "Lv: \(self.counter)"
-            }
-        }
-    }
-
 
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -35,7 +25,10 @@ class MainCollectionViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        mainView = MainView(nextGenAction: nextGenerationAction)
+        mainView = MainView(with: tfmBoard,
+                            nextGenAction: nextGenerationAction,
+                            resetValuesAction: resetValuesAction)
+
         view = mainView
     }
     
@@ -51,7 +44,7 @@ class MainCollectionViewController: UIViewController {
     private func setupCollectionView() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = tfmDatasource
-        tfmDatasource.tfmProperties = viewModel.tfmProperties
+        tfmDatasource.tfmProperties = tfmBoard.tfmProperties
     }
 
 }
@@ -60,7 +53,7 @@ class MainCollectionViewController: UIViewController {
 
 
 /// Delegate Flow Layout
-extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -78,35 +71,42 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 /// Actions
-extension MainCollectionViewController {
+extension MainViewController {
     enum Unit {
         case productionFactor
         case quantity
     }
+    
+    private func makeGenLvlAlert() {
 
-    private func loadActions() {
-        mainView.resetButton.addTarget(self, action: #selector(resetValues), for: .touchUpInside)
+    }
 
+    private func makeResetAlert() {
         // Reset Alert ViewController
         mainView.resetAlert.addAction(.init(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-            let resettedProperties = self.viewModel.resetProperties(self.tfmDatasource.tfmProperties)
+            let resettedProperties = self.tfmBoard.resetProperties(self.tfmDatasource.tfmProperties)
             self.tfmDatasource.tfmProperties = resettedProperties
-
-            self.counter = 0
-
+            
+            self.tfmBoard.generation = 0
+            
             UIView.performWithoutAnimation {
                 self.mainView.collectionView.reloadData()
             }
         }))
-
+        
         mainView.resetAlert.addAction(.init(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
             self.mainView.resetAlert .dismiss(animated: true, completion: nil)
         }))
     }
-
+    
+    private func loadActions() {
+        makeGenLvlAlert()
+        makeResetAlert()
+    }
+    
     /// Reset all values (Generation counter, quantity, property).
-    @objc func resetValues() {
-            present(mainView.resetAlert, animated: true, completion: nil)
+    func resetValuesAction() {
+        present(mainView.resetAlert, animated: true, completion: nil)
     }
 
     @objc func productionStepperValueChanged(_ sender: UIStepper) {
@@ -136,9 +136,9 @@ extension MainCollectionViewController {
     }
 
     private func nextGenerationAction() {
-        let nextGenerationProperties = viewModel.recalculateQuantity(tfmDatasource.tfmProperties)
+        let nextGenerationProperties = tfmBoard.recalculateQuantity(tfmDatasource.tfmProperties)
         tfmDatasource.tfmProperties = nextGenerationProperties
-        counter += 1
+        tfmBoard.generation += 1
         mainView.collectionView.reloadData()
     }
 

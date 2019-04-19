@@ -3,6 +3,8 @@ import UIKit
 let footerID = "footerID"
 
 class MainView: UIView {
+    
+    // MARK: - Constants
 
     struct Layout {
         struct Padding {
@@ -14,7 +16,9 @@ class MainView: UIView {
     
     // MARK: - Properties
     
+    let tfmBoard: TFMBoard
     var nextGenAction: (() -> Void)?
+    var resetValuesAction: (() -> Void)?
 
     // MARK: - View objects
 
@@ -27,7 +31,7 @@ class MainView: UIView {
         return label
     }()
 
-    lazy var generationCounterLabel: UILabel = {
+    lazy var generationLabel: UILabel = {
         let label = UILabel()
         label.text = "Lv: 0"
         label.font = UIFont.systemFont(ofSize: 16)
@@ -36,19 +40,19 @@ class MainView: UIView {
         return label
     }()
 
-    lazy var terraFormValueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "TF: 0"
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    lazy var terraFormValueButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("TF: 0", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
 
     lazy var resetButton: UIButton = {
         let button = UIButton()
         button.setTitle("Reset", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(resetValues), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -59,7 +63,7 @@ class MainView: UIView {
                                       preferredStyle: .alert)
         return alert
     }()
-
+    
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
@@ -91,9 +95,15 @@ class MainView: UIView {
 
     // MARK: - Initializer
 
-    init(nextGenAction: @escaping () -> Void) {
+    init(with tfmBoard: TFMBoard, nextGenAction: @escaping () -> Void,
+         resetValuesAction: @escaping () -> Void) {
+        self.tfmBoard = tfmBoard
         self.nextGenAction = nextGenAction
+        self.resetValuesAction = resetValuesAction
         super.init(frame: .zero)
+        
+        // Clojures
+        tfmBoard.didChangeGeneration = didChangeGeneration
         
         backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
         setupViews()
@@ -113,8 +123,8 @@ class MainView: UIView {
 
     private func addSubviews() {
         addSubview(titleLabel)
-        addSubview(generationCounterLabel)
-        addSubview(terraFormValueLabel)
+        addSubview(generationLabel)
+        addSubview(terraFormValueButton)
         addSubview(resetButton)
         addSubview(collectionView)
         addSubview(gradientBackgroundView)
@@ -131,22 +141,16 @@ class MainView: UIView {
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
 
             // Generation counter label
-            generationCounterLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            generationCounterLabel.bottomAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            generationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            generationLabel.bottomAnchor.constraint(equalTo: titleLabel.centerYAnchor),
 
             // Terra Form Value Label
-            terraFormValueLabel.topAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            terraFormValueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            terraFormValueButton.topAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            terraFormValueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
 
             // Reset Button
             resetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             resetButton.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor),
-
-            // Gradient Background
-//            gradientBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            gradientBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            gradientBackgroundView.heightAnchor.constraint(equalToConstant: 100),
-//            gradientBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
 
             // Collection View
             collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,
@@ -162,8 +166,19 @@ class MainView: UIView {
         ])
     }
     
+    // MARK: - Methods
+    
     @objc func nextGeneration() {
         nextGenAction?()
     }
     
+    @objc func resetValues() {
+        resetValuesAction?()
+    }
+    
+    func didChangeGeneration() {
+        generationLabel.text = "Lvl: \(tfmBoard.generation)"
+    }
+
 }
+

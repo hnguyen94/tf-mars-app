@@ -4,7 +4,7 @@ class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
 
     // MARK: - Properties
 
-    var collectionViewController: MainCollectionViewController? = nil
+    var collectionViewController: MainViewController? = nil
     var tfmProperties = [TFMPropertyModel]()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

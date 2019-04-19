@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4C2229C5D800067636 /* AppDelegate.swift */; };
-		CD1D5B4F2229C5D800067636 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4E2229C5D800067636 /* MainCollectionViewController.swift */; };
+		CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4E2229C5D800067636 /* MainViewController.swift */; };
 		CD1D5B522229C5D800067636 /* Prototype.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B502229C5D800067636 /* Prototype.storyboard */; };
 		CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B532229C5D800067636 /* tf_mars_app.xcdatamodeld */; };
 		CD1D5B572229C5D900067636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B562229C5D900067636 /* Assets.xcassets */; };
@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		CD1D5B492229C5D800067636 /* tf-mars-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tf-mars-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1D5B4C2229C5D800067636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD1D5B4E2229C5D800067636 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		CD1D5B4E2229C5D800067636 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CD1D5B512229C5D800067636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Prototype.storyboard; sourceTree = "<group>"; };
 		CD1D5B542229C5D800067636 /* tf_mars_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tf_mars_app.xcdatamodel; sourceTree = "<group>"; };
 		CD1D5B562229C5D900067636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				CD1D5B4C2229C5D800067636 /* AppDelegate.swift */,
 				CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */,
 				CD573A12222B208600CA943B /* Models */,
-				CD573A30222B54E100CA943B /* BusinessLogic */,
+				CD573A30222B54E100CA943B /* Business Logic */,
 				CD573A15222B2F9500CA943B /* Controllers */,
 				EC5D6FB222481FBC0094CA10 /* Datasources */,
 				CD573A0F222B0D1E00CA943B /* Views */,
@@ -165,19 +165,19 @@
 		CD573A15222B2F9500CA943B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD1D5B4E2229C5D800067636 /* MainCollectionViewController.swift */,
+				CD1D5B4E2229C5D800067636 /* MainViewController.swift */,
 				EC6D279122563C31003A471B /* MainTabBarController.swift */,
 				EC6D2795225642E4003A471B /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CD573A30222B54E100CA943B /* BusinessLogic */ = {
+		CD573A30222B54E100CA943B /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
 				CD573A31222B551B00CA943B /* TFMBoard.swift */,
 			);
-			path = BusinessLogic;
+			path = "Business Logic";
 			sourceTree = "<group>";
 		};
 		CDBC6C14222BE6530012AA99 /* Prototypes */ = {
@@ -338,7 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */,
-				CD1D5B4F2229C5D800067636 /* MainCollectionViewController.swift in Sources */,
+				CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */,
 				EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
