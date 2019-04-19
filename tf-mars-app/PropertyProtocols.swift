@@ -17,12 +17,3 @@ protocol TFMPropertyProtocol {
     var maximumProductionNumber: Double { get }
     var quantity: Int { get set }
 }
-
-
-protocol TerraFormable {
-    func upgradeTerraForm() -> Void
-}
-
-protocol EnergyConvertable {
-    func convertEnergy() -> Void
-}

@@ -17,6 +17,7 @@ class MainView: UIView {
     // MARK: - Properties
     
     let tfmBoard: TFMBoard
+    let viewModel = MainViewModel()
     var nextGenAction: (() -> Void)?
     var resetValuesAction: (() -> Void)?
 
@@ -33,12 +34,12 @@ class MainView: UIView {
 
     lazy var generationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lv: 0"
+        label.text = viewModel.displayGeneration(with: $0)
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
+    }(tfmBoard.generation)
 
     lazy var terraFormValueButton: UIButton = {
         let button = UIButton()
@@ -177,7 +178,7 @@ class MainView: UIView {
     }
     
     func didChangeGeneration() {
-        generationLabel.text = "Lvl: \(tfmBoard.generation)"
+        generationLabel.text = viewModel.displayGeneration(with: tfmBoard.generation)
     }
 
 }

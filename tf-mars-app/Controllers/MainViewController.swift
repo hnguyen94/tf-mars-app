@@ -7,12 +7,12 @@ class MainViewController: UIViewController {
     // MARK: - Properties
 
     private let tfmBoard = TFMBoard()
-    private var tfmDatasource: TfmPropertyDataSource
+    private var tfmDatasource = TfmPropertyDataSource()
+    private let flowLayoutDelegate = FlowLayoutDelegate()
     private var mainView: MainView!
 
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        self.tfmDatasource = TfmPropertyDataSource()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         tfmDatasource.collectionViewController = self
     }
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
     // MARK: - Methods
 
     private func setupCollectionView() {
-        mainView.collectionView.delegate = self
+        mainView.collectionView.delegate = flowLayoutDelegate
         mainView.collectionView.dataSource = tfmDatasource
         tfmDatasource.tfmProperties = tfmBoard.tfmProperties
     }
@@ -51,34 +51,11 @@ class MainViewController: UIViewController {
 
 //  MARK: - Collection View Settings
 
-
-/// Delegate Flow Layout
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: collectionView.frame.width, height: 110)
-        return size
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForFooterInSection section: Int) -> CGSize {
-        let size = CGSize(width: collectionView.frame.width, height: 110)
-        return size
-    }
-
-}
-
 /// Actions
 extension MainViewController {
     enum Unit {
         case productionFactor
         case quantity
-    }
-    
-    private func makeGenLvlAlert() {
-
     }
 
     private func makeResetAlert() {
@@ -100,7 +77,6 @@ extension MainViewController {
     }
     
     private func loadActions() {
-        makeGenLvlAlert()
         makeResetAlert()
     }
     

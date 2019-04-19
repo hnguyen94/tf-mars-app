@@ -18,6 +18,8 @@
 		CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* TFMPropertyCell.swift */; };
 		CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */; };
 		CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* TFMBoard.swift */; };
+		CD600A092269F055006DC597 /* FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A082269F055006DC597 /* FlowLayoutDelegate.swift */; };
+		CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A0B2269F4D6006DC597 /* MainViewModel.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
 		EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */; };
@@ -60,6 +62,8 @@
 		CD573A13222B255E00CA943B /* TFMPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCell.swift; sourceTree = "<group>"; };
 		CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModel.swift; sourceTree = "<group>"; };
 		CD573A31222B551B00CA943B /* TFMBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMBoard.swift; sourceTree = "<group>"; };
+		CD600A082269F055006DC597 /* FlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutDelegate.swift; sourceTree = "<group>"; };
+		CD600A0B2269F4D6006DC597 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 		EC23C236224E452F008E4785 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfmPropertyDataSource.swift; sourceTree = "<group>"; };
@@ -124,8 +128,10 @@
 				CD573A12222B208600CA943B /* Models */,
 				CD573A30222B54E100CA943B /* Business Logic */,
 				CD573A15222B2F9500CA943B /* Controllers */,
+				CD600A072269F01F006DC597 /* Delegates */,
 				EC5D6FB222481FBC0094CA10 /* Datasources */,
 				CD573A0F222B0D1E00CA943B /* Views */,
+				CD600A0A2269F4AF006DC597 /* ViewModel */,
 				CDBC6C15222BF12B0012AA99 /* Helpers */,
 				CDBC6C14222BE6530012AA99 /* Prototypes */,
 				CD1D5B562229C5D900067636 /* Assets.xcassets */,
@@ -148,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				CD573A13222B255E00CA943B /* TFMPropertyCell.swift */,
-				CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */,
 				EC23C236224E452F008E4785 /* MainView.swift */,
+				CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +184,22 @@
 				CD573A31222B551B00CA943B /* TFMBoard.swift */,
 			);
 			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		CD600A072269F01F006DC597 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				CD600A082269F055006DC597 /* FlowLayoutDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		CD600A0A2269F4AF006DC597 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD600A0B2269F4D6006DC597 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CDBC6C14222BE6530012AA99 /* Prototypes */ = {
@@ -340,9 +362,11 @@
 				CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */,
 				EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */,
+				CD600A092269F055006DC597 /* FlowLayoutDelegate.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
 				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
+				CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
 				EC23C237224E452F008E4785 /* MainView.swift in Sources */,
 				EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */,
