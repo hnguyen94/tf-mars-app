@@ -1,7 +1,7 @@
 import Foundation
 
 struct MainViewModel {
-    func displayGeneration(with lvl: Int) -> String {
-        return "Lvl: \(lvl)"
-    }
+  func displayGeneration(with lvl: Int) -> String {
+    return "Lvl: \(lvl)"
+  }
 }
