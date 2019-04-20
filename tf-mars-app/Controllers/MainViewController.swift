@@ -8,7 +8,7 @@ class MainViewController: UIViewController {
 
     private let tfmBoard = TFMBoard()
     private var tfmDatasource = TfmPropertyDataSource()
-    private let flowLayoutDelegate = FlowLayoutDelegate()
+    private let mainCollectionViewDelegate = MainCollectionViewDelegate()
     private var mainView: MainView!
 
     // MARK: - Init
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
     // MARK: - Methods
 
     private func setupCollectionView() {
-        mainView.collectionView.delegate = flowLayoutDelegate
+        mainView.collectionView.delegate = mainCollectionViewDelegate
         mainView.collectionView.dataSource = tfmDatasource
         tfmDatasource.tfmProperties = tfmBoard.tfmProperties
     }

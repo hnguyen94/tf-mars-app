@@ -1,6 +1,6 @@
 import UIKit
 
-class FlowLayoutDelegate: NSObject, UICollectionViewDelegateFlowLayout {
+class MainCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
