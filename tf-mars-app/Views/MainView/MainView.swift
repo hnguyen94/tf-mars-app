@@ -39,13 +39,14 @@ class MainView: UIView {
     return label
   }(tfmBoard.generation)
   
-  lazy var terraFormValueButton: UIButton = {
+  lazy var terraFormButton: UIButton = {
     let button = UIButton()
-    button.setTitle("TF: 0", for: .normal)
+    button.setTitle($0, for: .normal)
     button.setTitleColor(.white, for: .normal)
+    button.addTarget(self, action: #selector(toggleGenerationPickerView), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
-  }()
+  }(viewModel.displayTerraForm(with: 0))
   
   lazy var resetButton: UIButton = {
     let button = UIButton()
@@ -92,6 +93,8 @@ class MainView: UIView {
     return aView
   }()
   
+  /// `generationPickerView.isHidden` is default set
+  /// to `true` in the init method
   lazy var generationPickerView: UIPickerView = {
     let picker = UIPickerView()
     picker.backgroundColor = .white
@@ -110,7 +113,9 @@ class MainView: UIView {
     
     // Clojures
     tfmBoard.didChangeGeneration = didChangeGeneration
+    tfmBoard.didChangeTerraForm = didChangeTerraForm
     
+    generationPickerView.isHidden = true
     backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
     setupViews()
   }
@@ -120,91 +125,8 @@ class MainView: UIView {
   }
   
   // MARK: - Constraints
-  
-  /// Setup all views with its constraints
-  private func setupViews() {
-    addSubviews()
-    setupConstraints()
-  }
-  
-  private func addSubviews() {
-    addSubview(titleLabel)
-    addSubview(generationLabel)
-    addSubview(terraFormValueButton)
-    addSubview(resetButton)
-    addSubview(collectionView)
-    addSubview(gradientBackgroundView)
-    addSubview(nextGenButton)
-    addSubview(generationPickerView)
-  }
-  
-  /// A function for setting the constraints.
-  private func setupConstraints() {
-    setupTitleLabelConstraints()
-    setupGenerationCounterConstraints()
-    setupTerraFormValueButton()
-    setupResetButtonConstraints()
-    setupCollectionViewConstraints()
-    setupNextGenButtonConstraints()
-    setupGenrationPickerViewConstraints()
-  }
-  
-  private func setupTitleLabelConstraints() {
-    NSLayoutConstraint.activate([
-      titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
-      ])
-  }
-  
-  private func setupGenerationCounterConstraints() {
-    NSLayoutConstraint.activate([
-      generationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-      generationLabel.bottomAnchor.constraint(equalTo: titleLabel.centerYAnchor)
-      ])
-  }
-  
-  private func setupTerraFormValueButton() {
-    NSLayoutConstraint.activate([
-      terraFormValueButton.topAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-      terraFormValueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24)
-      ])
-  }
-  
-  private func setupResetButtonConstraints() {
-    NSLayoutConstraint.activate([
-      resetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-      resetButton.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor)
-      ])
-  }
-  
-  private func setupCollectionViewConstraints() {
-    let stackLeadingTrailingMargin = Layout.Padding.standard24
-    
-    NSLayoutConstraint.activate([
-      collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,
-                                              constant: stackLeadingTrailingMargin),
-      collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,
-                                               constant: -stackLeadingTrailingMargin),
-      collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
-      collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-      ])
-  }
-  
-  private func setupNextGenButtonConstraints() {
-    NSLayoutConstraint.activate([
-      nextGenButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-      nextGenButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                            constant: -Layout.Padding.standard)
-      ])
-  }
-  
-  private func setupGenrationPickerViewConstraints() {
-    NSLayoutConstraint.activate([
-      generationPickerView.centerXAnchor.constraint(equalTo: centerXAnchor),
-      generationPickerView.centerYAnchor.constraint(equalTo: centerYAnchor)
-      ])
-  }
-  
+  // Constraints are defined in `MainViewConstraints.swift`
+
   // MARK: - Methods
   
   @objc func nextGeneration() {
@@ -215,8 +137,17 @@ class MainView: UIView {
     resetValuesAction?()
   }
   
+  @objc func toggleGenerationPickerView() {
+    generationPickerView.isHidden = !generationPickerView.isHidden
+  }
+  
   func didChangeGeneration() {
     generationLabel.text = viewModel.displayGeneration(with: tfmBoard.generation)
+  }
+  
+  func didChangeTerraForm() {
+    let terraForm = viewModel.displayTerraForm(with: tfmBoard.terraForm)
+    terraFormButton.setTitle(terraForm, for: .normal)
   }
   
 }

@@ -21,9 +21,15 @@ class TFMBoard {
     }
   }
   
-  var tfmProperties: [TFMPropertyModel]
+  var terraForm: Int = 20 {
+    didSet {
+      didChangeTerraForm?()
+    }
+  }
   
+  var tfmProperties: [TFMPropertyModel]
   var didChangeGeneration: (() -> Void)?
+  var didChangeTerraForm: (() -> Void)?
   
   // MARK: - Init
   

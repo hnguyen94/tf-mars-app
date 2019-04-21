@@ -8,7 +8,7 @@ class MainViewController: UIViewController {
   
   private let tfmBoard = TFMBoard()
   private let tfmDatasource = TfmPropertyDataSource()
-  private let generationPickerDatasourceDelegate = GenerationPickerDatasourceDelegate()
+  private let generationPickerData = GenerationPickerData()
   private let mainCollectionViewDelegate = MainCollectionViewDelegate()
   
   private var mainView: MainView!
@@ -51,9 +51,9 @@ class MainViewController: UIViewController {
   }
   
   private func setupGenerationPickerView() {
-    generationPickerDatasourceDelegate.items = Array(20...150)
-    mainView.generationPickerView.dataSource = generationPickerDatasourceDelegate
-    mainView.generationPickerView.delegate = generationPickerDatasourceDelegate
+    mainView.generationPickerView.dataSource = generationPickerData
+    mainView.generationPickerView.delegate = generationPickerData
+    generationPickerData.tfmBoard = tfmBoard
   }
   
 }

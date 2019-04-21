@@ -21,7 +21,8 @@
 		CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */; };
 		CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A0B2269F4D6006DC597 /* MainViewModel.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
-		CDF2576F226B4BD20024332E /* GenerationPickerDatasourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerDatasourceDelegate.swift */; };
+		CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerData.swift */; };
+		CDF25777226C7EF90024332E /* MainViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF25776226C7EF90024332E /* MainViewConstraints.swift */; };
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
 		EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */; };
 		EC6D278B22561196003A471B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC6D278D22561196003A471B /* Localizable.strings */; };
@@ -66,7 +67,8 @@
 		CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		CD600A0B2269F4D6006DC597 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
-		CDF2576E226B4BD20024332E /* GenerationPickerDatasourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerDatasourceDelegate.swift; sourceTree = "<group>"; };
+		CDF2576E226B4BD20024332E /* GenerationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerData.swift; sourceTree = "<group>"; };
+		CDF25776226C7EF90024332E /* MainViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewConstraints.swift; sourceTree = "<group>"; };
 		EC23C236224E452F008E4785 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfmPropertyDataSource.swift; sourceTree = "<group>"; };
 		EC6D278C22561196003A471B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -154,8 +156,8 @@
 		CD573A0F222B0D1E00CA943B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD573A13222B255E00CA943B /* TFMPropertyCell.swift */,
-				EC23C236224E452F008E4785 /* MainView.swift */,
+				CDF25773226C7E220024332E /* Cells */,
+				CDF25772226C7E160024332E /* MainView */,
 				CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -216,9 +218,26 @@
 			children = (
 				EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */,
 				CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */,
-				CDF2576E226B4BD20024332E /* GenerationPickerDatasourceDelegate.swift */,
+				CDF2576E226B4BD20024332E /* GenerationPickerData.swift */,
 			);
 			path = "Datasources Delegates";
+			sourceTree = "<group>";
+		};
+		CDF25772226C7E160024332E /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				EC23C236224E452F008E4785 /* MainView.swift */,
+				CDF25776226C7EF90024332E /* MainViewConstraints.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		CDF25773226C7E220024332E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CD573A13222B255E00CA943B /* TFMPropertyCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +385,8 @@
 				EC23C237224E452F008E4785 /* MainView.swift in Sources */,
 				EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
-				CDF2576F226B4BD20024332E /* GenerationPickerDatasourceDelegate.swift in Sources */,
+				CDF25777226C7EF90024332E /* MainViewConstraints.swift in Sources */,
+				CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */,
 				CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
 			);
