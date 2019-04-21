@@ -46,9 +46,15 @@ class TFMBoard {
   
   // MARK: - Functions
   
-  func recalculateQuantity(_ oldProperties: [TFMPropertyModel]) -> [TFMPropertyModel] {
+  func recalculateQuantity(_ oldProperties: [TFMPropertyModel], with terraForm: Int) -> [TFMPropertyModel] {
     var energyQuantity = 0
+    
     let nextGenProperties = oldProperties.map { currentProperty -> TFMPropertyModel in
+      if currentProperty.isMegaCredit {
+        let newProperty = makeMegaCreditProperty(of: currentProperty, with: terraForm)
+        return newProperty
+      }
+      
       if currentProperty.isEnergy {
         energyQuantity = currentProperty.quantity
         
@@ -86,6 +92,17 @@ class TFMBoard {
                             productionFactor: currentProperty.productionFactor)
   }
   
+  private func makeMegaCreditProperty(of currentProperty: TFMPropertyModel,
+                                      with terraForm: Int) -> TFMPropertyModel {
+    let newQuantity = currentProperty.quantity
+                    + currentProperty.productionFactor
+                    + terraForm
+    
+    return TFMPropertyModel(type: currentProperty.type,
+                            quantity: newQuantity,
+                            productionFactor: currentProperty.productionFactor)
+  }
+  
   private func makeNewEnergyProperty(of currentEnergyProperty: TFMPropertyModel) -> TFMPropertyModel {
     let newQuantity = currentEnergyProperty.productionFactor
     
@@ -105,6 +122,10 @@ class TFMBoard {
 }
 
 extension TFMPropertyModel {
+  var isMegaCredit: Bool {
+    return type == .megaCredit
+  }
+  
   var isEnergy: Bool {
     return type == .energy
   }

@@ -74,6 +74,7 @@ extension MainViewController {
       self.tfmDatasource.tfmProperties = resettedProperties
       
       self.tfmBoard.generation = 0
+      self.tfmBoard.terraForm = 0
       
       UIView.performWithoutAnimation {
         self.mainView.collectionView.reloadData()
@@ -121,7 +122,7 @@ extension MainViewController {
   }
   
   private func nextGenerationAction() {
-    let nextGenerationProperties = tfmBoard.recalculateQuantity(tfmDatasource.tfmProperties)
+    let nextGenerationProperties = tfmBoard.recalculateQuantity(tfmDatasource.tfmProperties, with: tfmBoard.terraForm)
     tfmDatasource.tfmProperties = nextGenerationProperties
     tfmBoard.generation += 1
     mainView.collectionView.reloadData()

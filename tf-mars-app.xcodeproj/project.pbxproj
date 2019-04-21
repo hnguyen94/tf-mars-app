@@ -38,13 +38,6 @@
 			remoteGlobalIDString = CD1D5B482229C5D800067636;
 			remoteInfo = "tf-mars-app";
 		};
-		CD1D5B6C2229C5D900067636 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD1D5B412229C5D800067636 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD1D5B482229C5D800067636;
-			remoteInfo = "tf-mars-app";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +52,6 @@
 		CD1D5B602229C5D900067636 /* tf-mars-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tf-mars-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_mars_appTests.swift; sourceTree = "<group>"; };
 		CD1D5B662229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD1D5B6B2229C5D900067636 /* tf-mars-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tf-mars-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
 		CD573A13222B255E00CA943B /* TFMPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCell.swift; sourceTree = "<group>"; };
 		CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModel.swift; sourceTree = "<group>"; };
@@ -94,13 +86,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD1D5B682229C5D900067636 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -119,7 +104,6 @@
 			children = (
 				CD1D5B492229C5D800067636 /* tf-mars-app.app */,
 				CD1D5B602229C5D900067636 /* tf-mars-appTests.xctest */,
-				CD1D5B6B2229C5D900067636 /* tf-mars-appUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,24 +262,6 @@
 			productReference = CD1D5B602229C5D900067636 /* tf-mars-appTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CD1D5B6A2229C5D900067636 /* tf-mars-appUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD1D5B7A2229C5D900067636 /* Build configuration list for PBXNativeTarget "tf-mars-appUITests" */;
-			buildPhases = (
-				CD1D5B672229C5D900067636 /* Sources */,
-				CD1D5B682229C5D900067636 /* Frameworks */,
-				CD1D5B692229C5D900067636 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD1D5B6D2229C5D900067636 /* PBXTargetDependency */,
-			);
-			name = "tf-mars-appUITests";
-			productName = "tf-mars-appUITests";
-			productReference = CD1D5B6B2229C5D900067636 /* tf-mars-appUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -310,10 +276,6 @@
 						CreatedOnToolsVersion = 10.0;
 					};
 					CD1D5B5F2229C5D900067636 = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = CD1D5B482229C5D800067636;
-					};
-					CD1D5B6A2229C5D900067636 = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = CD1D5B482229C5D800067636;
 					};
@@ -335,7 +297,6 @@
 			targets = (
 				CD1D5B482229C5D800067636 /* tf-mars-app */,
 				CD1D5B5F2229C5D900067636 /* tf-mars-appTests */,
-				CD1D5B6A2229C5D900067636 /* tf-mars-appUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,13 +314,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD1D5B5E2229C5D900067636 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD1D5B692229C5D900067636 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,13 +354,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD1D5B672229C5D900067636 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -414,11 +361,6 @@
 			isa = PBXTargetDependency;
 			target = CD1D5B482229C5D800067636 /* tf-mars-app */;
 			targetProxy = CD1D5B612229C5D900067636 /* PBXContainerItemProxy */;
-		};
-		CD1D5B6D2229C5D900067636 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD1D5B482229C5D800067636 /* tf-mars-app */;
-			targetProxy = CD1D5B6C2229C5D900067636 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -650,46 +592,6 @@
 			};
 			name = Release;
 		};
-		CD1D5B7B2229C5D900067636 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8Q64HL9M7Y;
-				INFOPLIST_FILE = "tf-mars-appUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hoang-nguyen.tf-mars-appUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "tf-mars-app";
-			};
-			name = Debug;
-		};
-		CD1D5B7C2229C5D900067636 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8Q64HL9M7Y;
-				INFOPLIST_FILE = "tf-mars-appUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hoang-nguyen.tf-mars-appUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "tf-mars-app";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -716,15 +618,6 @@
 			buildConfigurations = (
 				CD1D5B782229C5D900067636 /* Debug */,
 				CD1D5B792229C5D900067636 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD1D5B7A2229C5D900067636 /* Build configuration list for PBXNativeTarget "tf-mars-appUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD1D5B7B2229C5D900067636 /* Debug */,
-				CD1D5B7C2229C5D900067636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

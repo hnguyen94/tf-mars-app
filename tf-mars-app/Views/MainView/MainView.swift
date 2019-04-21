@@ -46,7 +46,7 @@ class MainView: UIView {
     button.addTarget(self, action: #selector(toggleGenerationPickerView), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
-  }(viewModel.displayTerraForm(with: 0))
+  }(viewModel.displayTerraForm(with: tfmBoard.terraForm))
   
   lazy var resetButton: UIButton = {
     let button = UIButton()
