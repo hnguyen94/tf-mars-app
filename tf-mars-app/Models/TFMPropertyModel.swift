@@ -1,6 +1,7 @@
 import Foundation
 
 class TFMPropertyModel: TFMPropertyProtocol {
+  
   var type: TFMProperty
   var quantity: Int
   var productionFactor: Int
@@ -26,5 +27,6 @@ class TFMPropertyModel: TFMPropertyProtocol {
     self.quantity = quantity
     self.productionFactor = productionFactor
   }
+  
 }
 

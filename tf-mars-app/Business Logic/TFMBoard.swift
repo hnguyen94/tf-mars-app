@@ -46,7 +46,8 @@ class TFMBoard {
   
   // MARK: - Functions
   
-  func recalculateQuantity(_ oldProperties: [TFMPropertyModel], with terraForm: Int) -> [TFMPropertyModel] {
+  func recalculateQuantity(_ oldProperties: [TFMPropertyModel],
+                           with terraForm: Int) -> [TFMPropertyModel] {
     var energyQuantity = 0
     
     let nextGenProperties = oldProperties.map { currentProperty -> TFMPropertyModel in

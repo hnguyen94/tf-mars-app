@@ -153,4 +153,5 @@ class TFMPropertyCell: UICollectionViewCell {
       print("Tapped \(model.type)")
     }
   }
+  
 }
