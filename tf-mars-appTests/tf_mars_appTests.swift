@@ -191,6 +191,20 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, expectedResult)
   }
   
+  func testResetBoard() {
+    // WHEN
+    let board = TFMBoard()
+    let expectedGeneration = 0
+    let expectedTerraForm = 20
+    
+    board.generation = 45
+    board.terraForm = 45
+    board.makeReset()
+   
+    XCTAssertEqual(board.generation, expectedGeneration)
+    XCTAssertEqual(board.terraForm, expectedTerraForm)
+  }
+  
   func testPerformanceExample() {
     // This is an example of a performance test case.
     self.measure {

@@ -15,6 +15,9 @@ class TFMBoard {
   
   // MARK: Public
   
+  private let defaultGeneration = 0
+  private let defaultTerraForm = 20
+  
   var generation: Int = 0 {
     didSet {
       didChangeGeneration?()
@@ -120,6 +123,11 @@ class TFMBoard {
                             productionFactor: property.productionFactor)
   }
   
+  func makeReset() {
+    generation = defaultGeneration
+    terraForm = defaultTerraForm
+  }
+
 }
 
 extension TFMPropertyModel {

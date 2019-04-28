@@ -23,6 +23,7 @@
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 		CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerData.swift */; };
 		CDF25777226C7EF90024332E /* MainViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF25776226C7EF90024332E /* MainViewConstraints.swift */; };
+		CDF2577B2275CDFC0024332E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2577A2275CDFC0024332E /* HeaderView.swift */; };
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
 		EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */; };
 		EC6D278B22561196003A471B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC6D278D22561196003A471B /* Localizable.strings */; };
@@ -61,6 +62,7 @@
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 		CDF2576E226B4BD20024332E /* GenerationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerData.swift; sourceTree = "<group>"; };
 		CDF25776226C7EF90024332E /* MainViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewConstraints.swift; sourceTree = "<group>"; };
+		CDF2577A2275CDFC0024332E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EC23C236224E452F008E4785 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfmPropertyDataSource.swift; sourceTree = "<group>"; };
 		EC6D278C22561196003A471B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				EC23C236224E452F008E4785 /* MainView.swift */,
 				CDF25776226C7EF90024332E /* MainViewConstraints.swift */,
+				CDF2577A2275CDFC0024332E /* HeaderView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
+				CDF2577B2275CDFC0024332E /* HeaderView.swift in Sources */,
 				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
 				CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,

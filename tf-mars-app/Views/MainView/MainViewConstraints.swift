@@ -11,55 +11,26 @@ extension MainView {
   }
   
   private func addSubviews() {
-    addSubview(titleLabel)
-    addSubview(generationLabel)
-    addSubview(terraFormButton)
-    addSubview(resetButton)
+    addSubview(headerView)
     addSubview(collectionView)
-    addSubview(gradientBackgroundView)
     addSubview(nextGenButton)
     addSubview(generationPickerView)
   }
   
   /// A function for setting the constraints.
   private func setupConstraints() {
-    setupTitleLabelConstraints()
-    setupGenerationCounterConstraints()
-    setupTerraFormValueButton()
-    setupResetButtonConstraints()
+    NSLayoutConstraint.activate([
+      headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+      headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+    ])
+    
     setupCollectionViewConstraints()
     setupNextGenButtonConstraints()
     setupGenrationPickerViewConstraints()
   }
   
-  private func setupTitleLabelConstraints() {
-    NSLayoutConstraint.activate([
-      titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
-      ])
-  }
-  
-  private func setupGenerationCounterConstraints() {
-    NSLayoutConstraint.activate([
-      generationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-      generationLabel.bottomAnchor.constraint(equalTo: titleLabel.centerYAnchor)
-      ])
-  }
-  
-  private func setupTerraFormValueButton() {
-    NSLayoutConstraint.activate([
-      terraFormButton.topAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-      terraFormButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24)
-      ])
-  }
-  
-  private func setupResetButtonConstraints() {
-    NSLayoutConstraint.activate([
-      resetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-      resetButton.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor)
-      ])
-  }
-  
+
   private func setupCollectionViewConstraints() {
     let stackLeadingTrailingMargin = Layout.Padding.standard24
     
@@ -68,7 +39,7 @@ extension MainView {
                                               constant: stackLeadingTrailingMargin),
       collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,
                                                constant: -stackLeadingTrailingMargin),
-      collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Layout.Padding.standard24),
+      collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Layout.Padding.standard24),
       collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
       ])
   }

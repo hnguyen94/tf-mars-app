@@ -2,7 +2,7 @@ import Foundation
 
 struct MainViewModel {
   func displayGeneration(with lvl: Int) -> String {
-    return "Lvl: \(lvl)"
+    return "Level: \(lvl)"
   }
   
   func displayTerraForm(with value: Int) -> String {

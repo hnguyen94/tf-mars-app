@@ -21,41 +21,7 @@ class MainView: UIView {
   
   // MARK: - View objects
   
-  lazy var titleLabel: UILabel = {
-    let label = UILabel()
-    label.text = "Terra Forming Board"
-    label.font = UIFont.systemFont(ofSize: 24)
-    label.textColor = .white
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
-  }()
-  
-  lazy var generationLabel: UILabel = {
-    let label = UILabel()
-    label.text = viewModel.displayGeneration(with: $0)
-    label.font = UIFont.systemFont(ofSize: 16)
-    label.textColor = .white
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
-  }(tfmBoard.generation)
-  
-  lazy var terraFormButton: UIButton = {
-    let button = UIButton()
-    button.setTitle($0, for: .normal)
-    button.setTitleColor(.white, for: .normal)
-    button.addTarget(self, action: #selector(toggleGenerationPickerView), for: .touchUpInside)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    return button
-  }(viewModel.displayTerraForm(with: tfmBoard.terraForm))
-  
-  lazy var resetButton: UIButton = {
-    let button = UIButton()
-    button.setTitle("Reset", for: .normal)
-    button.setTitleColor(.white, for: .normal)
-    button.addTarget(self, action: #selector(resetValues), for: .touchUpInside)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    return button
-  }()
+  let headerView: HeaderView
   
   lazy var resetAlert: UIAlertController = {
     let alert = UIAlertController(title: "Reset",
@@ -86,13 +52,6 @@ class MainView: UIView {
     return button
   }()
   
-  lazy var gradientBackgroundView: UIView = {
-    let aView = UIView()
-    aView.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 0.601975132)
-    aView.translatesAutoresizingMaskIntoConstraints = false
-    return aView
-  }()
-  
   /// `generationPickerView.isHidden` is default set
   /// to `true` in the init method
   lazy var generationPickerView: UIPickerView = {
@@ -104,19 +63,20 @@ class MainView: UIView {
   
   // MARK: - Initializer
   
-  init(with tfmBoard: TFMBoard, nextGenAction: @escaping () -> Void,
+  init(with tfmBoard: TFMBoard,
+       nextGenAction: @escaping () -> Void,
        resetValuesAction: @escaping () -> Void) {
     self.tfmBoard = tfmBoard
     self.nextGenAction = nextGenAction
     self.resetValuesAction = resetValuesAction
+    self.headerView = HeaderView(with: tfmBoard)
+
     super.init(frame: .zero)
     
-    // Clojures
-    tfmBoard.didChangeGeneration = didChangeGeneration
-    tfmBoard.didChangeTerraForm = didChangeTerraForm
-    
+    headerView.toggleGenerationPicker = toggleGenerationPickerView
+    headerView.resetValuesAction = resetValuesAction
     generationPickerView.isHidden = true
-    backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
+    backgroundColor = #colorLiteral(red: 0.137254902, green: 0.003921568627, blue: 0.09803921569, alpha: 1)
     setupViews()
   }
   
@@ -133,22 +93,8 @@ class MainView: UIView {
     nextGenAction?()
   }
   
-  @objc func resetValues() {
-    resetValuesAction?()
-  }
-  
   @objc func toggleGenerationPickerView() {
     generationPickerView.isHidden = !generationPickerView.isHidden
   }
-  
-  func didChangeGeneration() {
-    generationLabel.text = viewModel.displayGeneration(with: tfmBoard.generation)
-  }
-  
-  func didChangeTerraForm() {
-    let terraForm = viewModel.displayTerraForm(with: tfmBoard.terraForm)
-    terraFormButton.setTitle(terraForm, for: .normal)
-  }
-  
-}
 
+}
