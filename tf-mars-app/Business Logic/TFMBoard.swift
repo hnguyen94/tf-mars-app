@@ -1,5 +1,19 @@
 import Foundation
 
+extension TFMPropertyModel {
+  var isMegaCredit: Bool {
+    return type == .megaCredit
+  }
+
+  var isEnergy: Bool {
+    return type == .energy
+  }
+
+  var isHeat: Bool {
+    return type == .heat
+  }
+}
+
 class TFMBoard {
   
   // MARK: - Properties
@@ -12,7 +26,7 @@ class TFMBoard {
   private let plant = TFMPropertyModel(type: .plant)
   private let energy = TFMPropertyModel(type: .energy)
   private let heat = TFMPropertyModel(type: .heat)
-  
+
   // MARK: Public
   
   private let defaultGeneration = 0
@@ -130,16 +144,3 @@ class TFMBoard {
 
 }
 
-extension TFMPropertyModel {
-  var isMegaCredit: Bool {
-    return type == .megaCredit
-  }
-  
-  var isEnergy: Bool {
-    return type == .energy
-  }
-  
-  var isHeat: Bool {
-    return type == .heat
-  }
-}

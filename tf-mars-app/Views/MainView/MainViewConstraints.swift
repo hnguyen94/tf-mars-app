@@ -37,7 +37,7 @@ extension MainView {
                                               constant: stackLeadingTrailingMargin),
       collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,
                                                constant: -stackLeadingTrailingMargin),
-      collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Layout.Padding.standard24),
+      collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Layout.Padding.standard),
       collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
       ])
   }

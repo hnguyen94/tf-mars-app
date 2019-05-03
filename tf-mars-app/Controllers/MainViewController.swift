@@ -66,7 +66,8 @@ extension MainViewController {
     case productionFactor
     case quantity
   }
-  
+
+    // TODO: Extract ResetAlert -> ViewController
   private func makeResetAlert() {
     // Reset Alert ViewController
     mainView.resetAlert.addAction(.init(title: "OK", style: .default, handler: { (action: UIAlertAction!) in

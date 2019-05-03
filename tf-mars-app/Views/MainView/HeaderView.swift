@@ -21,7 +21,7 @@ class HeaderView: UIView {
     let label = UILabel()
     label.text = "Terra Forming Board"
     label.font = UIFont.systemFont(ofSize: 24)
-    label.textColor = .white
+    label.textColor = UIColor.TFMOrange.light
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -38,7 +38,7 @@ class HeaderView: UIView {
     let label = UILabel()
     label.text = viewModel.displayGeneration(with: $0)
     label.font = UIFont.systemFont(ofSize: 16)
-    label.textColor = .white
+    label.textColor = UIColor.TFMOrange.light
     label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -47,7 +47,7 @@ class HeaderView: UIView {
   lazy var terraFormButton: UIButton = {
     let button = UIButton()
     button.setTitle($0, for: .normal)
-    button.setTitleColor(.white, for: .normal)
+    button.setTitleColor(UIColor.TFMOrange.light, for: .normal)
     button.addTarget(self, action: #selector(toggleGenerationPickerView), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
@@ -56,7 +56,7 @@ class HeaderView: UIView {
   lazy var resetButton: UIButton = {
     let button = UIButton()
     button.setTitle("Reset", for: .normal)
-    button.setTitleColor(.white, for: .normal)
+    button.setTitleColor(UIColor.TFMOrange.light, for: .normal)
     button.addTarget(self, action: #selector(resetValues), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button

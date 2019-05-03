@@ -22,7 +22,7 @@ class MainView: UIView {
   // MARK: - View objects
   
   let headerView: HeaderView
-  
+
   lazy var resetAlert: UIAlertController = {
     let alert = UIAlertController(title: "Reset",
                                   message: NSLocalizedString("All data in units will be resetted.", comment: "Alert"),
@@ -51,7 +51,8 @@ class MainView: UIView {
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
-  
+
+  // TODO: Extract
   /// `generationPickerView.isHidden` is default set
   /// to `true` in the init method
   lazy var generationPickerView: UIPickerView = {

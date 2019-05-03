@@ -16,8 +16,8 @@ class TFMPropertyCell: UICollectionViewCell {
   }
   
   struct FontSize {
-    static let big: CGFloat = 20
-    static let normal: CGFloat = 18
+    static let big: CGFloat = 18
+    static let normal: CGFloat = 16
   }
   
   // MARK: - Properties
@@ -33,7 +33,7 @@ class TFMPropertyCell: UICollectionViewCell {
   
   lazy var titleLabel: UILabel = {
     let label = UILabel()
-    label.textColor = .black
+    label.textColor = .white
     label.font = UIFont.systemFont(ofSize: FontSize.big, weight: .bold)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -41,7 +41,7 @@ class TFMPropertyCell: UICollectionViewCell {
   
   lazy var productionFactorLabel: UILabel = {
     let label = UILabel()
-    label.textColor = .black
+    label.textColor = .white
     label.font = UIFont.systemFont(ofSize: FontSize.normal)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -49,7 +49,8 @@ class TFMPropertyCell: UICollectionViewCell {
   
   lazy var quantityLabel: UILabel = {
     let label = UILabel()
-    label.textColor = .black
+    label.textColor = .white
+    label.font = UIFont.systemFont(ofSize: FontSize.normal)
     label.font = UIFont.systemFont(ofSize: FontSize.normal)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -116,8 +117,6 @@ class TFMPropertyCell: UICollectionViewCell {
   
   /// Styling for the view itself
   private func configureView() {
-    backgroundColor = .white
-    
     layer.cornerRadius = Layout.Cell.cornerRadius
     layer.masksToBounds = true
   }

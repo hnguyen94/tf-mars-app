@@ -30,6 +30,7 @@
 		EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D279122563C31003A471B /* MainTabBarController.swift */; };
 		EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D2795225642E4003A471B /* SettingsTableViewController.swift */; };
 		EC9D5AD9227C23750011DE04 /* Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D5AD8227C23750011DE04 /* Subview.swift */; };
+		EC9D5ADB227C45210011DE04 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D5ADA227C45210011DE04 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		EC6D279122563C31003A471B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		EC6D2795225642E4003A471B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		EC9D5AD8227C23750011DE04 /* Subview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.swift; sourceTree = "<group>"; };
+		EC9D5ADA227C45210011DE04 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			children = (
 				CDBC6C16222BF1400012AA99 /* CellTouchable.swift */,
 				EC9D5AD8227C23750011DE04 /* Subview.swift */,
+				EC9D5ADA227C45210011DE04 /* Color.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
 				CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
+				EC9D5ADB227C45210011DE04 /* Color.swift in Sources */,
 				EC23C237224E452F008E4785 /* MainView.swift in Sources */,
 				EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
