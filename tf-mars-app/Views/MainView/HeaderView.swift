@@ -9,9 +9,9 @@ class HeaderView: UIView {
   var resetValuesAction: (() -> Void)?
   
   override var intrinsicContentSize: CGSize {
-//    let height = titleLabel.intrinsicContentSize.height + stackView.intrinsicContentSize.height
-    let height = CGFloat(200)
-
+    let titleLabelHeight = titleLabel.intrinsicContentSize.height
+    let stackViewHeight = stackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+    let height = titleLabelHeight + stackViewHeight
     return CGSize(width: UIView.noIntrinsicMetric, height: height)
   }
   
@@ -63,8 +63,7 @@ class HeaderView: UIView {
   }()
   
   // MARK: - Initializer
-  
-  
+
   init(with tfmBoard: TFMBoard) {
     self.tfmBoard = tfmBoard
     super.init(frame: .zero)
@@ -74,8 +73,7 @@ class HeaderView: UIView {
     tfmBoard.didChangeTerraForm = didChangeTerraForm
 
     translatesAutoresizingMaskIntoConstraints = false
-    backgroundColor = .red
-    
+
     setupViews()
   }
   
@@ -86,17 +84,16 @@ class HeaderView: UIView {
   // MARK: - Methods
   
   private func setupViews() {
-    addSubviews()
+    addSubViews()
     setupConstraints()
   }
   
-  private func addSubviews() {
-    addSubview(titleLabel)
-    addSubview(stackView)
-    
-    stackView.addArrangedSubview(generationLabel)
-    stackView.addArrangedSubview(terraFormButton)
-    stackView.addArrangedSubview(resetButton)
+  private func addSubViews() {
+    addSubviews(titleLabel, stackView)
+
+    stackView.addArrangedSubviews(generationLabel,
+                                  terraFormButton,
+                                  resetButton)
   }
   
   private func setupConstraints() {

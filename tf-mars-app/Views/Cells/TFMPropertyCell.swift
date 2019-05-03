@@ -86,14 +86,7 @@ class TFMPropertyCell: UICollectionViewCell {
   
   // MARK: - Constraints
   
-  fileprivate func addSubViews() {
-    addSubview(titleLabel)
-    addSubview(quantityLabel)
-    addSubview(productionFactorLabel)
-    addSubview(productionStepper)
-    addSubview(quantityStepper)
-  }
-  
+
   fileprivate func setupConstraints() {
     NSLayoutConstraint.activate([
       // TitleLabel
@@ -130,7 +123,12 @@ class TFMPropertyCell: UICollectionViewCell {
   }
   
   private func setupViews() {
-    addSubViews()
+    addSubviews(titleLabel,
+                quantityLabel,
+                productionFactorLabel,
+                productionStepper,
+                quantityStepper)
+
     setupConstraints()
   }
   

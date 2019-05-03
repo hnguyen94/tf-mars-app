@@ -6,17 +6,15 @@ extension MainView {
 
   /// Setup all views with its constraints
   func setupViews() {
-    addSubviews()
+    addSubviews(headerView,
+                collectionView,
+                nextGenButton,
+                generationPickerView)
+
+
     setupConstraints()
   }
-  
-  private func addSubviews() {
-    addSubview(headerView)
-    addSubview(collectionView)
-    addSubview(nextGenButton)
-    addSubview(generationPickerView)
-  }
-  
+
   /// A function for setting the constraints.
   private func setupConstraints() {
     NSLayoutConstraint.activate([

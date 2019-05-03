@@ -3,7 +3,7 @@ import UIKit
 let customCellIdentifier = "tfmCellId"
 
 class MainViewController: UIViewController {
-  
+
   // MARK: - Properties
   
   private let tfmBoard = TFMBoard()

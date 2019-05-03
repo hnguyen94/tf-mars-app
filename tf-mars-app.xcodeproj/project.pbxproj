@@ -29,6 +29,7 @@
 		EC6D278B22561196003A471B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC6D278D22561196003A471B /* Localizable.strings */; };
 		EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D279122563C31003A471B /* MainTabBarController.swift */; };
 		EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D2795225642E4003A471B /* SettingsTableViewController.swift */; };
+		EC9D5AD9227C23750011DE04 /* Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D5AD8227C23750011DE04 /* Subview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		EC6D279022561203003A471B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EC6D279122563C31003A471B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		EC6D2795225642E4003A471B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		EC9D5AD8227C23750011DE04 /* Subview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				CDBC6C16222BF1400012AA99 /* CellTouchable.swift */,
+				EC9D5AD8227C23750011DE04 /* Subview.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */,
 				EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */,
+				EC9D5AD9227C23750011DE04 /* Subview.swift in Sources */,
 				CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
 				CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */,
