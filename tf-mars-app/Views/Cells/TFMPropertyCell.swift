@@ -30,6 +30,10 @@ class TFMPropertyCell: UICollectionViewCell {
   }
   
   // MARK: - View Properties
+
+//  lazy var icon: UIImageView = {
+//    let icon = UIImageView()
+//  }()
   
   lazy var titleLabel: UILabel = {
     let label = UILabel()
@@ -87,7 +91,6 @@ class TFMPropertyCell: UICollectionViewCell {
   
   // MARK: - Constraints
   
-
   fileprivate func setupConstraints() {
     NSLayoutConstraint.activate([
       // TitleLabel

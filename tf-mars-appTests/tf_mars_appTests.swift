@@ -1,29 +1,21 @@
-//
-//  tf_mars_appTests.swift
-//  tf-mars-appTests
-//
-//  Created by Hoang Duc Nguyen on 01.03.19.
-//  Copyright © 2019 Hoang Duc Nguyen. All rights reserved.
-//
-
 import XCTest
 @testable import tf_mars_app
 
 class tf_mars_appTests: XCTestCase {
-  
+
   let tfmPropertyModels = TFMBoard()
-  
+
   override func setUp() {
     // Put setup code here. This method is called before the invocation of each test method in the class.
   }
-  
+
   override func tearDown() {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
-  
+
   // MARK: - Number of cells
   
-  func testNumberOfCells() {
+  func test_NumberOfCells() {
     // WHEN
     let result = tfmPropertyModels.tfmProperties.count
     let expectedNumber = 6
@@ -34,7 +26,7 @@ class tf_mars_appTests: XCTestCase {
   
   // MARK: - Minimum production
   
-  func testMinimumProductionNumberMegaCredit() {
+  func test_MinimumProductionNumberMegaCredit() {
     // WHEN
     let result = TFMPropertyModel(type: .megaCredit).minimumProductionNumber
     let expectedNumber = -10
@@ -43,7 +35,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, Double(expectedNumber))
   }
   
-  func testMinimumProductionNumberSteel() {
+  func test_MinimumProductionNumberSteel() {
     // WHEN
     let result = TFMPropertyModel(type: .steel).minimumProductionNumber
     let expectedNumber = 0
@@ -52,7 +44,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, Double(expectedNumber))
   }
   
-  func testMinimumProductionNumberTitan() {
+  func test_MinimumProductionNumberTitan() {
     // WHEN
     let result = TFMPropertyModel(type: .titan).minimumProductionNumber
     let expectedNumber = 0
@@ -61,7 +53,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, Double(expectedNumber))
   }
   
-  func testMinimumProductionNumberPlant() {
+  func test_MinimumProductionNumberPlant() {
     // WHEN
     let result = TFMPropertyModel(type: .plant).minimumProductionNumber
     let expectedNumber = 0
@@ -70,7 +62,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, Double(expectedNumber))
   }
   
-  func testMinimumProductionNumberEnergy() {
+  func test_MinimumProductionNumberEnergy() {
     // WHEN
     let result = TFMPropertyModel(type: .energy).minimumProductionNumber
     let expectedNumber = 0
@@ -79,7 +71,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, Double(expectedNumber))
   }
   
-  func testMinimumProductionNumberHeat() {
+  func test_MinimumProductionNumberHeat() {
     // WHEN
     let result = TFMPropertyModel(type: .heat).minimumProductionNumber
     let expectedNumber = 0
@@ -90,7 +82,7 @@ class tf_mars_appTests: XCTestCase {
   
   // MARK: - Maximum production
   
-  func testMaximumProductionValue() {
+  func test_MaximumProductionValue() {
     // WHEN
     let resultList = tfmPropertyModels.tfmProperties
     
@@ -108,7 +100,7 @@ class tf_mars_appTests: XCTestCase {
   // MARK: - Next Generation Button
   
   
-  func testNextGenProperties() {
+  func test_NextGenProperties() {
     // WHEN
     let container = TFMBoard()
     let expectedResult = 20
@@ -135,7 +127,7 @@ class tf_mars_appTests: XCTestCase {
     
   }
   
-  func testNextGenMegaCredit() {
+  func test_NextGenMegaCredit() {
     // WHEN
     let container = TFMBoard()
     container.terraForm = 20
@@ -154,7 +146,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, expectedResult)
   }
 
-  func testNextGenEnergy() {
+  func test_NextGenEnergy() {
     // WHEN
     let container = TFMBoard()
     let expectedResult = 20
@@ -172,7 +164,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, expectedResult)
   }
   
-  func testNextGenHeat() {
+  func test_NextGenHeat() {
     // WHEN
     let container = TFMBoard()
     let expectedResult = 30
@@ -191,7 +183,7 @@ class tf_mars_appTests: XCTestCase {
     XCTAssertEqual(result, expectedResult)
   }
   
-  func testResetBoard() {
+  func test_ResetBoard() {
     // WHEN
     let board = TFMBoard()
     let expectedGeneration = 0
@@ -200,11 +192,12 @@ class tf_mars_appTests: XCTestCase {
     board.generation = 45
     board.terraForm = 45
     board.makeReset()
-   
+
+    // THEN
     XCTAssertEqual(board.generation, expectedGeneration)
     XCTAssertEqual(board.terraForm, expectedTerraForm)
   }
-  
+
   func testPerformanceExample() {
     // This is an example of a performance test case.
     self.measure {

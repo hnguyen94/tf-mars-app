@@ -11,7 +11,7 @@ enum TFMProperty: String {
 }
 
 protocol TFMPropertyProtocol {
-  var type: TFMProperty { get set }
+  var type: TFMProperty { get }
   var productionFactor: Int { get set }
   var minimumProductionNumber: Double { get}
   var maximumProductionNumber: Double { get }
