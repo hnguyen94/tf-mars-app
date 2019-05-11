@@ -19,38 +19,20 @@ class MainView: UIView {
   let tfmBoard: TFMBoard
   let viewModel = MainViewModel()
   var nextGenAction: (() -> Void)?
-  var resetValuesAction: (() -> Void)?
-  
+
+  var resetValuesAction: (() -> Void)? {
+    didSet {
+      headerView.resetValuesAction = resetValuesAction
+    }
+  }
   // MARK: - View objects
   
   let headerView: HeaderView
+  lazy var collectionView = UICollectionView.main
 
-  lazy var resetAlert: UIAlertController = {
-    let alert = UIAlertController(title: "Reset",
-                                  message: NSLocalizedString("All data in units will be resetted.", comment: "Alert"),
-                                  preferredStyle: .alert)
-    return alert
-  }()
-  
-  lazy var collectionView: UICollectionView = {
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
-    collectionView.alwaysBounceVertical = true
-    collectionView.register(TFMPropertyCell.self, forCellWithReuseIdentifier: customCellIdentifier)
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
-    return collectionView
-  }()
-  
   lazy var nextGenButton: UIButton = {
-    let button = UIButton()
-    button.setTitle("Next Generation", for: .normal)
-    button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = .red
-    button.layer.cornerRadius = 8
-    button.clipsToBounds = true
-    button.contentEdgeInsets  = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    let button = UIButton.nextGeneration
     button.addTarget(self, action: #selector(nextGeneration), for: .touchUpInside)
-    button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
 
@@ -66,18 +48,13 @@ class MainView: UIView {
   
   // MARK: - Initializer
   
-  init(with tfmBoard: TFMBoard,
-       nextGenAction: @escaping () -> Void,
-       resetValuesAction: @escaping () -> Void) {
+  init(with tfmBoard: TFMBoard) {
     self.tfmBoard = tfmBoard
-    self.nextGenAction = nextGenAction
-    self.resetValuesAction = resetValuesAction
     self.headerView = HeaderView(with: tfmBoard)
 
     super.init(frame: .zero)
     
     headerView.toggleGenerationPicker = toggleGenerationPickerView
-    headerView.resetValuesAction = resetValuesAction
     generationPickerView.isHidden = true
     backgroundColor = #colorLiteral(red: 0.137254902, green: 0.003921568627, blue: 0.09803921569, alpha: 1)
     setupViews()
@@ -88,7 +65,59 @@ class MainView: UIView {
   }
   
   // MARK: - Constraints
-  // Constraints are defined in `MainViewConstraints.swift`
+  
+  /// Setup all views with its constraints
+  func setupViews() {
+    addSubviews(headerView,
+                collectionView,
+                nextGenButton,
+                generationPickerView)
+
+    setupConstraints()
+  }
+
+  /// A function for setting the constraints.
+  private func setupConstraints() {
+    NSLayoutConstraint.activate([
+      headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+      headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      headerView.trailingAnchor.constraint(equalTo: trailingAnchor)
+      ])
+
+    setupCollectionViewConstraints()
+    setupNextGenButtonConstraints()
+    setupGenrationPickerViewConstraints()
+  }
+
+  private func setupCollectionViewConstraints() {
+    let stackLeadingTrailingMargin = Layout.Padding.standard24
+
+    NSLayoutConstraint.activate([
+      collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,
+                                              constant: stackLeadingTrailingMargin),
+      collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,
+                                               constant: -stackLeadingTrailingMargin),
+      collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Layout.Padding.standard),
+      collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+      ])
+  }
+
+  private func setupNextGenButtonConstraints() {
+    NSLayoutConstraint.activate([
+      nextGenButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+      nextGenButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
+                                            constant: -Layout.Padding.standard)
+      ])
+  }
+
+  private func setupGenrationPickerViewConstraints() {
+    NSLayoutConstraint.activate([
+      generationPickerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+      generationPickerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      generationPickerView.widthAnchor.constraint(equalTo: widthAnchor),
+      generationPickerView.heightAnchor.constraint(equalToConstant: 300)
+    ])
+  }
 
   // MARK: - Methods
   

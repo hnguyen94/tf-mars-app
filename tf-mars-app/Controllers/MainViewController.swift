@@ -14,7 +14,11 @@ class MainViewController: UIViewController {
   private let mainCollectionViewDelegate = MainCollectionViewDelegate()
 
   private var mainView: MainView!
-  
+
+  private lazy var resetAlert = UIAlertController(title: "Reset",
+                                                  message: NSLocalizedString("All data will be resetted.", comment: "Alert"),
+                                                  preferredStyle: .alert)
+
   // MARK: - Init
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -29,10 +33,11 @@ class MainViewController: UIViewController {
   
   override func loadView() {
     super.loadView()
-    mainView = MainView(with: tfmBoard,
-                        nextGenAction: nextGenerationAction,
-                        resetValuesAction: resetValuesAction)
-    
+
+    mainView = MainView(with: tfmBoard)
+    mainView.nextGenAction = nextGenerationAction
+    mainView.resetValuesAction = resetValuesAction
+
     view = mainView
   }
   
@@ -72,7 +77,7 @@ extension MainViewController {
     // TODO: Extract ResetAlert -> ViewController
   private func makeResetAlert() {
     // Reset Alert ViewController
-    mainView.resetAlert.addAction(.init(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+    resetAlert.addAction(.init(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
       let resettedProperties = self.tfmBoard.resetProperties(self.tfmDatasource.tfmProperties)
       self.tfmDatasource.tfmProperties = resettedProperties
       
@@ -83,8 +88,8 @@ extension MainViewController {
       }
     }))
     
-    mainView.resetAlert.addAction(.init(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-      self.mainView.resetAlert .dismiss(animated: true, completion: nil)
+    resetAlert.addAction(.init(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+      self.resetAlert .dismiss(animated: true, completion: nil)
     }))
   }
   
@@ -94,7 +99,7 @@ extension MainViewController {
   
   /// Reset all values (Generation counter, quantity, property).
   func resetValuesAction() {
-    present(mainView.resetAlert, animated: true, completion: nil)
+    present(resetAlert, animated: true, completion: nil)
   }
   
   @objc func productionStepperValueChanged(_ sender: UIStepper) {

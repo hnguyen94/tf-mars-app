@@ -24,7 +24,6 @@
 		CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A0B2269F4D6006DC597 /* MainViewModel.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 		CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerData.swift */; };
-		CDF25777226C7EF90024332E /* MainViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF25776226C7EF90024332E /* MainViewConstraints.swift */; };
 		CDF2577B2275CDFC0024332E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2577A2275CDFC0024332E /* HeaderView.swift */; };
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
 		EC4AD7FF22859DA00013E673 /* TFMPropertyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4AD7FE22859DA00013E673 /* TFMPropertyModelTests.swift */; };
@@ -36,6 +35,8 @@
 		EC9D5ADB227C45210011DE04 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9D5ADA227C45210011DE04 /* Color.swift */; };
 		ECC529B22286D0FA0098BBE1 /* UnitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529B12286D0FA0098BBE1 /* UnitButton.swift */; };
 		ECC529B52286D4440098BBE1 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529B42286D4440098BBE1 /* Layout.swift */; };
+		ECC529B7228726800098BBE1 /* NextGenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529B6228726800098BBE1 /* NextGenButton.swift */; };
+		ECC529B922872AC80098BBE1 /* MainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529B822872AC80098BBE1 /* MainCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +74,6 @@
 		CD600A0B2269F4D6006DC597 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 		CDF2576E226B4BD20024332E /* GenerationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerData.swift; sourceTree = "<group>"; };
-		CDF25776226C7EF90024332E /* MainViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewConstraints.swift; sourceTree = "<group>"; };
 		CDF2577A2275CDFC0024332E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EC23C236224E452F008E4785 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EC4AD7FE22859DA00013E673 /* TFMPropertyModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModelTests.swift; sourceTree = "<group>"; };
@@ -88,6 +88,8 @@
 		EC9D5ADA227C45210011DE04 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		ECC529B12286D0FA0098BBE1 /* UnitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitButton.swift; sourceTree = "<group>"; };
 		ECC529B42286D4440098BBE1 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		ECC529B6228726800098BBE1 /* NextGenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextGenButton.swift; sourceTree = "<group>"; };
+		ECC529B822872AC80098BBE1 /* MainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
 		FAB45F0B639488434A088F14 /* Pods_tf_mars_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tf_mars_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -260,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				EC23C236224E452F008E4785 /* MainView.swift */,
-				CDF25776226C7EF90024332E /* MainViewConstraints.swift */,
 				CDF2577A2275CDFC0024332E /* HeaderView.swift */,
 			);
 			path = MainView;
@@ -278,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				ECC529B12286D0FA0098BBE1 /* UnitButton.swift */,
+				ECC529B6228726800098BBE1 /* NextGenButton.swift */,
+				ECC529B822872AC80098BBE1 /* MainCollectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */,
 				CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */,
 				EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */,
+				ECC529B922872AC80098BBE1 /* MainCollectionView.swift in Sources */,
 				EC9D5AD9227C23750011DE04 /* Subview.swift in Sources */,
 				CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */,
 				EC5D6FB422481FF20094CA10 /* TfmPropertyDataSource.swift in Sources */,
@@ -476,8 +480,8 @@
 				EC23C237224E452F008E4785 /* MainView.swift in Sources */,
 				EC6D2796225642E4003A471B /* SettingsTableViewController.swift in Sources */,
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
+				ECC529B7228726800098BBE1 /* NextGenButton.swift in Sources */,
 				ECC529B22286D0FA0098BBE1 /* UnitButton.swift in Sources */,
-				CDF25777226C7EF90024332E /* MainViewConstraints.swift in Sources */,
 				CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */,
 				CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
