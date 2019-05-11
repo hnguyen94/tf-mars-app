@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84C2DE64950650882B8EF614 /* Pods_tf_mars_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB45F0B639488434A088F14 /* Pods_tf_mars_appTests.framework */; };
+		9471D552DCB5FDE2CAC29457 /* Pods_tf_mars_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB59E61CCE5D23CC7DEE079 /* Pods_tf_mars_app.framework */; };
 		CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4C2229C5D800067636 /* AppDelegate.swift */; };
 		CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B4E2229C5D800067636 /* MainViewController.swift */; };
 		CD1D5B522229C5D800067636 /* Prototype.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B502229C5D800067636 /* Prototype.storyboard */; };
 		CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B532229C5D800067636 /* tf_mars_app.xcdatamodeld */; };
 		CD1D5B572229C5D900067636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B562229C5D900067636 /* Assets.xcassets */; };
 		CD1D5B5A2229C5D900067636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1D5B582229C5D900067636 /* LaunchScreen.storyboard */; };
-		CD1D5B652229C5D900067636 /* tf_mars_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */; };
+		CD1D5B652229C5D900067636 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1D5B642229C5D900067636 /* AppTests.swift */; };
 		CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */; };
 		CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A13222B255E00CA943B /* TFMPropertyCell.swift */; };
 		CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A24222B4D5800CA943B /* TFMPropertyModel.swift */; };
@@ -45,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CB59E61CCE5D23CC7DEE079 /* Pods_tf_mars_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tf_mars_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59EA7E8591564D5B146D8D63 /* Pods-tf-mars-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tf-mars-appTests.release.xcconfig"; path = "Target Support Files/Pods-tf-mars-appTests/Pods-tf-mars-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C7D1C01082BB89101A04EB1 /* Pods-tf-mars-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tf-mars-appTests.debug.xcconfig"; path = "Target Support Files/Pods-tf-mars-appTests/Pods-tf-mars-appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC7619E65FDA1B0A4DF65A43 /* Pods-tf-mars-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tf-mars-app.debug.xcconfig"; path = "Target Support Files/Pods-tf-mars-app/Pods-tf-mars-app.debug.xcconfig"; sourceTree = "<group>"; };
+		B639F8647B6D207C7C0A6D76 /* Pods-tf-mars-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tf-mars-app.release.xcconfig"; path = "Target Support Files/Pods-tf-mars-app/Pods-tf-mars-app.release.xcconfig"; sourceTree = "<group>"; };
 		CD1D5B492229C5D800067636 /* tf-mars-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tf-mars-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1D5B4C2229C5D800067636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1D5B4E2229C5D800067636 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +61,7 @@
 		CD1D5B592229C5D900067636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD1D5B5B2229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD1D5B602229C5D900067636 /* tf-mars-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tf-mars-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tf_mars_appTests.swift; sourceTree = "<group>"; };
+		CD1D5B642229C5D900067636 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		CD1D5B662229C5D900067636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD573A10222B0D4A00CA943B /* PropertyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyProtocols.swift; sourceTree = "<group>"; };
 		CD573A13222B255E00CA943B /* TFMPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCell.swift; sourceTree = "<group>"; };
@@ -77,6 +84,7 @@
 		EC6D2795225642E4003A471B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		EC9D5AD8227C23750011DE04 /* Subview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.swift; sourceTree = "<group>"; };
 		EC9D5ADA227C45210011DE04 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FAB45F0B639488434A088F14 /* Pods_tf_mars_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tf_mars_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9471D552DCB5FDE2CAC29457 /* Pods_tf_mars_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +100,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C2DE64950650882B8EF614 /* Pods_tf_mars_appTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3DEEFBE82B3D288A370454 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC7619E65FDA1B0A4DF65A43 /* Pods-tf-mars-app.debug.xcconfig */,
+				B639F8647B6D207C7C0A6D76 /* Pods-tf-mars-app.release.xcconfig */,
+				6C7D1C01082BB89101A04EB1 /* Pods-tf-mars-appTests.debug.xcconfig */,
+				59EA7E8591564D5B146D8D63 /* Pods-tf-mars-appTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B8F019FF9E0971B1848F74C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CB59E61CCE5D23CC7DEE079 /* Pods_tf_mars_app.framework */,
+				FAB45F0B639488434A088F14 /* Pods_tf_mars_appTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CD1D5B402229C5D800067636 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +134,8 @@
 				CD1D5B4B2229C5D800067636 /* tf-mars-app */,
 				CD1D5B632229C5D900067636 /* tf-mars-appTests */,
 				CD1D5B4A2229C5D800067636 /* Products */,
+				1B3DEEFBE82B3D288A370454 /* Pods */,
+				B8F019FF9E0971B1848F74C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,7 +171,7 @@
 		CD1D5B632229C5D900067636 /* tf-mars-appTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD1D5B642229C5D900067636 /* tf_mars_appTests.swift */,
+				CD1D5B642229C5D900067636 /* AppTests.swift */,
 				CD1D5B662229C5D900067636 /* Info.plist */,
 				EC4AD7FE22859DA00013E673 /* TFMPropertyModelTests.swift */,
 			);
@@ -243,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD1D5B742229C5D900067636 /* Build configuration list for PBXNativeTarget "tf-mars-app" */;
 			buildPhases = (
+				F11D6E75D71256813BAC8900 /* [CP] Check Pods Manifest.lock */,
 				CD1D5B452229C5D800067636 /* Sources */,
 				CD1D5B462229C5D800067636 /* Frameworks */,
 				CD1D5B472229C5D800067636 /* Resources */,
+				EC4AD8002286BAB10013E673 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -260,6 +294,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD1D5B772229C5D900067636 /* Build configuration list for PBXNativeTarget "tf-mars-appTests" */;
 			buildPhases = (
+				69ED57126691A3BBA70BE308 /* [CP] Check Pods Manifest.lock */,
 				CD1D5B5C2229C5D900067636 /* Sources */,
 				CD1D5B5D2229C5D900067636 /* Frameworks */,
 				CD1D5B5E2229C5D900067636 /* Resources */,
@@ -334,6 +369,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69ED57126691A3BBA70BE308 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tf-mars-appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC4AD8002286BAB10013E673 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F11D6E75D71256813BAC8900 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tf-mars-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD1D5B452229C5D800067636 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -366,7 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4AD7FF22859DA00013E673 /* TFMPropertyModelTests.swift in Sources */,
-				CD1D5B652229C5D900067636 /* tf_mars_appTests.swift in Sources */,
+				CD1D5B652229C5D900067636 /* AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +631,7 @@
 		};
 		CD1D5B752229C5D900067636 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC7619E65FDA1B0A4DF65A43 /* Pods-tf-mars-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +650,7 @@
 		};
 		CD1D5B762229C5D900067636 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B639F8647B6D207C7C0A6D76 /* Pods-tf-mars-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -568,6 +669,7 @@
 		};
 		CD1D5B782229C5D900067636 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C7D1C01082BB89101A04EB1 /* Pods-tf-mars-appTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -589,6 +691,7 @@
 		};
 		CD1D5B792229C5D900067636 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59EA7E8591564D5B146D8D63 /* Pods-tf-mars-appTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

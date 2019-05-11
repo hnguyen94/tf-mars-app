@@ -81,4 +81,3 @@ extension MainView {
     return picker
   }()
 }
-

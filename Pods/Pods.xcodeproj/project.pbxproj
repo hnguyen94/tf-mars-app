@@ -1,0 +1,687 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		C88FBB76F217EBA0AE4567D3517ECD5C /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F31E06B306F6947A32F5F2CE7C9A6ECB /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0FE5F38DB92325075E6A8E27C8CBFCE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		2E9B7982DA200035B527BF5361407161 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		3EF600C479C45C8DC0A3B4D2586D2FB6 /* Pods-tf-mars-app-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D094920E15A5CD503F76F2DB30AEB5 /* Pods-tf-mars-app-dummy.m */; };
+		5581BDDD2496A565ACDA38180D1050AA /* Pods-tf-mars-appTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF44CE16C6367F6E846E0D0837F9085 /* Pods-tf-mars-appTests-dummy.m */; };
+		5AD4715EF8069B3BFE13B9ABA92CCE1F /* Pods-tf-mars-appTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30744076D8836F81F78C90D085250E96 /* Pods-tf-mars-appTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DE20C87145799FBCF7380A6D43F0973 /* Pods-tf-mars-app-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AA0E87EEF04D00AA7A0780452784521 /* Pods-tf-mars-app-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8C842A0324A0E280886D5F9B636D162 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C88FBB76F217EBA0AE4567D3517ECD5C;
+			remoteInfo = SwiftLint;
+		};
+		CA5CBC07451ECD4930706B57070F4331 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE5D972CD93D10436A63D79CA9ED49AA;
+			remoteInfo = "Pods-tf-mars-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		224268DAF8B4F4725245C31A9D52FA01 /* Pods-tf-mars-app-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tf-mars-app-acknowledgements.markdown"; sourceTree = "<group>"; };
+		25DED2AA477A58DFC7CDB722CE534123 /* Pods-tf-mars-appTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tf-mars-appTests-Info.plist"; sourceTree = "<group>"; };
+		30744076D8836F81F78C90D085250E96 /* Pods-tf-mars-appTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tf-mars-appTests-umbrella.h"; sourceTree = "<group>"; };
+		39D838FCF5415753374F429BB229BF85 /* Pods-tf-mars-app-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tf-mars-app-acknowledgements.plist"; sourceTree = "<group>"; };
+		4FE5D101BAD9ACADE31AAADD97C0959E /* Pods-tf-mars-appTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tf-mars-appTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		603A48EA118A72949C6A194F336005FA /* Pods_tf_mars_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tf_mars_app.framework; path = "Pods-tf-mars-app.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60F7B39C3A8D66166EF8FBEDBD1442B8 /* Pods-tf-mars-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tf-mars-appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6AA0E87EEF04D00AA7A0780452784521 /* Pods-tf-mars-app-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tf-mars-app-umbrella.h"; sourceTree = "<group>"; };
+		86993FC75BCF70889A20FA548540C38C /* Pods-tf-mars-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tf-mars-app.debug.xcconfig"; sourceTree = "<group>"; };
+		88D094920E15A5CD503F76F2DB30AEB5 /* Pods-tf-mars-app-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tf-mars-app-dummy.m"; sourceTree = "<group>"; };
+		89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
+		8EA755ABF0FEE098E48D7EF33FC500F9 /* Pods_tf_mars_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tf_mars_appTests.framework; path = "Pods-tf-mars-appTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9419A2C8153FF652B4FEE825E729A5BE /* Pods-tf-mars-appTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tf-mars-appTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		987FF793973BF24B9732A69938764315 /* Pods-tf-mars-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tf-mars-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		9AF8446AA66C59602601B240977E9659 /* Pods-tf-mars-appTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tf-mars-appTests.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A753ADBD7E07612A082500B8CD69DF2F /* Pods-tf-mars-app.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tf-mars-app.modulemap"; sourceTree = "<group>"; };
+		C00E5DFDA282B434C8182B8D7E1F22B0 /* Pods-tf-mars-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tf-mars-app.release.xcconfig"; sourceTree = "<group>"; };
+		C3A7743F3BDED8909150339C7AC2CABB /* Pods-tf-mars-app-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tf-mars-app-Info.plist"; sourceTree = "<group>"; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DEF44CE16C6367F6E846E0D0837F9085 /* Pods-tf-mars-appTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tf-mars-appTests-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44195DCA009AB80B14AD79EABC0871AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE5F38DB92325075E6A8E27C8CBFCE0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E52CEE1461004CBBFC1F4B1D4C1937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E9B7982DA200035B527BF5361407161 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05FCFE9083144CAB496D8DF319E3EBE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				603A48EA118A72949C6A194F336005FA /* Pods_tf_mars_app.framework */,
+				8EA755ABF0FEE098E48D7EF33FC500F9 /* Pods_tf_mars_appTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D3CC02D2AC61FF6C16EC02628B21897 /* Pods-tf-mars-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				9AF8446AA66C59602601B240977E9659 /* Pods-tf-mars-appTests.modulemap */,
+				4FE5D101BAD9ACADE31AAADD97C0959E /* Pods-tf-mars-appTests-acknowledgements.markdown */,
+				9419A2C8153FF652B4FEE825E729A5BE /* Pods-tf-mars-appTests-acknowledgements.plist */,
+				DEF44CE16C6367F6E846E0D0837F9085 /* Pods-tf-mars-appTests-dummy.m */,
+				25DED2AA477A58DFC7CDB722CE534123 /* Pods-tf-mars-appTests-Info.plist */,
+				30744076D8836F81F78C90D085250E96 /* Pods-tf-mars-appTests-umbrella.h */,
+				60F7B39C3A8D66166EF8FBEDBD1442B8 /* Pods-tf-mars-appTests.debug.xcconfig */,
+				987FF793973BF24B9732A69938764315 /* Pods-tf-mars-appTests.release.xcconfig */,
+			);
+			name = "Pods-tf-mars-appTests";
+			path = "Target Support Files/Pods-tf-mars-appTests";
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AED61B9A1CFA211C061344F741DBA07 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AED61B9A1CFA211C061344F741DBA07 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				EEA599FE5C15138FF0981CCFB01E55AA /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				05FCFE9083144CAB496D8DF319E3EBE3 /* Products */,
+				F8D0D6932388826F8F3ADA000F620E84 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEA599FE5C15138FF0981CCFB01E55AA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		F8D0D6932388826F8F3ADA000F620E84 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC42967760EFB0A04D7189A77706A441 /* Pods-tf-mars-app */,
+				4D3CC02D2AC61FF6C16EC02628B21897 /* Pods-tf-mars-appTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		FC42967760EFB0A04D7189A77706A441 /* Pods-tf-mars-app */ = {
+			isa = PBXGroup;
+			children = (
+				A753ADBD7E07612A082500B8CD69DF2F /* Pods-tf-mars-app.modulemap */,
+				224268DAF8B4F4725245C31A9D52FA01 /* Pods-tf-mars-app-acknowledgements.markdown */,
+				39D838FCF5415753374F429BB229BF85 /* Pods-tf-mars-app-acknowledgements.plist */,
+				88D094920E15A5CD503F76F2DB30AEB5 /* Pods-tf-mars-app-dummy.m */,
+				C3A7743F3BDED8909150339C7AC2CABB /* Pods-tf-mars-app-Info.plist */,
+				6AA0E87EEF04D00AA7A0780452784521 /* Pods-tf-mars-app-umbrella.h */,
+				86993FC75BCF70889A20FA548540C38C /* Pods-tf-mars-app.debug.xcconfig */,
+				C00E5DFDA282B434C8182B8D7E1F22B0 /* Pods-tf-mars-app.release.xcconfig */,
+			);
+			name = "Pods-tf-mars-app";
+			path = "Target Support Files/Pods-tf-mars-app";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7E159AD4BDF146930F97CDE7C0C4BBF2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AD4715EF8069B3BFE13B9ABA92CCE1F /* Pods-tf-mars-appTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC2FBFB95246147AA37CA8E972A40383 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE20C87145799FBCF7380A6D43F0973 /* Pods-tf-mars-app-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C25AC1DB103B92F059FC9169C706F579 /* Pods-tf-mars-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4443025227FEBC1D7DED4DE511827BEA /* Build configuration list for PBXNativeTarget "Pods-tf-mars-appTests" */;
+			buildPhases = (
+				7E159AD4BDF146930F97CDE7C0C4BBF2 /* Headers */,
+				1964728C1E4D4CBDFC63062EFF424507 /* Sources */,
+				44195DCA009AB80B14AD79EABC0871AE /* Frameworks */,
+				8F88400855941501BCAFEEBC698A3845 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9783C867546406D8AD151D081682F734 /* PBXTargetDependency */,
+			);
+			name = "Pods-tf-mars-appTests";
+			productName = "Pods-tf-mars-appTests";
+			productReference = 8EA755ABF0FEE098E48D7EF33FC500F9 /* Pods_tf_mars_appTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DE5D972CD93D10436A63D79CA9ED49AA /* Pods-tf-mars-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2678CDD6DA2EDA5E0F198D15636ECAE /* Build configuration list for PBXNativeTarget "Pods-tf-mars-app" */;
+			buildPhases = (
+				BC2FBFB95246147AA37CA8E972A40383 /* Headers */,
+				8F3FEDCAB3B50AB2DCC04BB0D47FC7B0 /* Sources */,
+				D8E52CEE1461004CBBFC1F4B1D4C1937 /* Frameworks */,
+				889E9A77AE7A2C484F0AA8D9369D9391 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E23CA03BB6094893A12463034CCB475B /* PBXTargetDependency */,
+			);
+			name = "Pods-tf-mars-app";
+			productName = "Pods-tf-mars-app";
+			productReference = 603A48EA118A72949C6A194F336005FA /* Pods_tf_mars_app.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 05FCFE9083144CAB496D8DF319E3EBE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE5D972CD93D10436A63D79CA9ED49AA /* Pods-tf-mars-app */,
+				C25AC1DB103B92F059FC9169C706F579 /* Pods-tf-mars-appTests */,
+				C88FBB76F217EBA0AE4567D3517ECD5C /* SwiftLint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		889E9A77AE7A2C484F0AA8D9369D9391 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F88400855941501BCAFEEBC698A3845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1964728C1E4D4CBDFC63062EFF424507 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5581BDDD2496A565ACDA38180D1050AA /* Pods-tf-mars-appTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F3FEDCAB3B50AB2DCC04BB0D47FC7B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF600C479C45C8DC0A3B4D2586D2FB6 /* Pods-tf-mars-app-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9783C867546406D8AD151D081682F734 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-tf-mars-app";
+			target = DE5D972CD93D10436A63D79CA9ED49AA /* Pods-tf-mars-app */;
+			targetProxy = CA5CBC07451ECD4930706B57070F4331 /* PBXContainerItemProxy */;
+		};
+		E23CA03BB6094893A12463034CCB475B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = C88FBB76F217EBA0AE4567D3517ECD5C /* SwiftLint */;
+			targetProxy = A8C842A0324A0E280886D5F9B636D162 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4093433A309EFE160336AC736594AB22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		473DED7A6851CCA2A59C39117AAAE814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5042144C6CA148B527DE837044801871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 987FF793973BF24B9732A69938764315 /* Pods-tf-mars-appTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tf-mars-appTests/Pods-tf-mars-appTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tf-mars-appTests/Pods-tf-mars-appTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		60C96E6490B288122237820870C50542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86993FC75BCF70889A20FA548540C38C /* Pods-tf-mars-app.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tf-mars-app/Pods-tf-mars-app-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tf-mars-app/Pods-tf-mars-app.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		924D56B1D59CD3049300EAEEA256114E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B032360F78A931AD9281F39107ACFF57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C8CA6356A05BF4F8BF40493CD794B22C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60F7B39C3A8D66166EF8FBEDBD1442B8 /* Pods-tf-mars-appTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tf-mars-appTests/Pods-tf-mars-appTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tf-mars-appTests/Pods-tf-mars-appTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E04B4026B31E2659AB42EACABEE79533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C00E5DFDA282B434C8182B8D7E1F22B0 /* Pods-tf-mars-app.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tf-mars-app/Pods-tf-mars-app-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tf-mars-app/Pods-tf-mars-app.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4443025227FEBC1D7DED4DE511827BEA /* Build configuration list for PBXNativeTarget "Pods-tf-mars-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8CA6356A05BF4F8BF40493CD794B22C /* Debug */,
+				5042144C6CA148B527DE837044801871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4093433A309EFE160336AC736594AB22 /* Debug */,
+				924D56B1D59CD3049300EAEEA256114E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2678CDD6DA2EDA5E0F198D15636ECAE /* Build configuration list for PBXNativeTarget "Pods-tf-mars-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C96E6490B288122237820870C50542 /* Debug */,
+				E04B4026B31E2659AB42EACABEE79533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F31E06B306F6947A32F5F2CE7C9A6ECB /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473DED7A6851CCA2A59C39117AAAE814 /* Debug */,
+				B032360F78A931AD9281F39107ACFF57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -1,7 +1,7 @@
 import XCTest
 @testable import tf_mars_app
 
-class tf_mars_appTests: XCTestCase {
+class AppTests: XCTestCase {
 
   let tfmPropertyModels = TFMBoard()
 
@@ -34,7 +34,7 @@ class tf_mars_appTests: XCTestCase {
     // THEN
     XCTAssertEqual(result, Double(expectedNumber))
   }
-  
+
   func test_MinimumProductionNumberSteel() {
     // WHEN
     let result = TFMPropertyModel(type: .steel).minimumProductionNumber
@@ -98,7 +98,6 @@ class tf_mars_appTests: XCTestCase {
   // MARK: - Minimum quantity
   
   // MARK: - Next Generation Button
-  
   
   func test_NextGenProperties() {
     // WHEN

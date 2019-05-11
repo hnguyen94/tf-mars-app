@@ -11,7 +11,6 @@ extension MainView {
                 nextGenButton,
                 generationPickerView)
 
-
     setupConstraints()
   }
 
@@ -20,14 +19,13 @@ extension MainView {
     NSLayoutConstraint.activate([
       headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
       headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      headerView.trailingAnchor.constraint(equalTo: trailingAnchor)
     ])
     
     setupCollectionViewConstraints()
     setupNextGenButtonConstraints()
     setupGenrationPickerViewConstraints()
   }
-  
 
   private func setupCollectionViewConstraints() {
     let stackLeadingTrailingMargin = Layout.Padding.standard24

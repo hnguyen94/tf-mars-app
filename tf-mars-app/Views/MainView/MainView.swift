@@ -1,5 +1,7 @@
 import UIKit
 
+// swiftlint:disable nesting
+
 class MainView: UIView {
   
   // MARK: - Constants

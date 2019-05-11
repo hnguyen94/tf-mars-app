@@ -2,6 +2,8 @@ import UIKit
 
 let customCellIdentifier = "tfmCellId"
 
+// swiftlint:disable weak_delegate
+
 class MainViewController: UIViewController {
 
   // MARK: - Properties
@@ -10,7 +12,7 @@ class MainViewController: UIViewController {
   private let tfmDatasource = TfmPropertyDataSource()
   private let generationPickerData = GenerationPickerData()
   private let mainCollectionViewDelegate = MainCollectionViewDelegate()
-  
+
   private var mainView: MainView!
   
   // MARK: - Init
@@ -58,7 +60,7 @@ class MainViewController: UIViewController {
   
 }
 
-//  MARK: - Collection View Settings
+// MARK: - Collection View Settings
 
 /// Actions
 extension MainViewController {

@@ -1,5 +1,7 @@
 import UIKit
 
+// swiftlint:disable nesting
+
 class TFMPropertyCell: UICollectionViewCell {
   
   // MARK: - Constants
@@ -129,7 +131,6 @@ class TFMPropertyCell: UICollectionViewCell {
       titleLabel.topAnchor.constraint(equalTo: iconView.bottomAnchor,
                                       constant: Layout.Padding.standard),
 
-
       // ProductonFactorLabel
       productionFactorButton.centerXAnchor.constraint(equalTo: centerXAnchor),
       productionFactorButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
@@ -138,7 +139,7 @@ class TFMPropertyCell: UICollectionViewCell {
       // QuantityLabel
       quantityButton.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
       quantityButton.topAnchor.constraint(equalTo: productionFactorButton.bottomAnchor,
-                                          constant: CGFloat(6)),
+                                          constant: CGFloat(6))
 
       // ProductionStepper
 //      productionStepper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.Padding.standard16),

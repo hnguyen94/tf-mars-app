@@ -38,16 +38,6 @@
                ReferencedContainer = "container:tf-mars-app.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD1D5B6A2229C5D900067636"
-               BuildableName = "tf-mars-appUITests.xctest"
-               BlueprintName = "tf-mars-appUITests"
-               ReferencedContainer = "container:tf-mars-app.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

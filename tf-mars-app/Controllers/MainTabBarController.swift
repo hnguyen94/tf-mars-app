@@ -16,8 +16,6 @@ class MainTabBarController: UITabBarController {
     viewControllers = tabBarList
   }
   
-  
   // MARK: - Navigation
-  
   
 }

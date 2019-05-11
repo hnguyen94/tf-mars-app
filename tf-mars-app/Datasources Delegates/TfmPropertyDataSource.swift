@@ -4,7 +4,7 @@ class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
 
     // MARK: - Properties
 
-    var collectionViewController: MainViewController? = nil
+    var collectionViewController: MainViewController?
     var tfmProperties = [TFMPropertyModel]()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -14,8 +14,13 @@ class TfmPropertyDataSource: NSObject, UICollectionViewDataSource {
 
     // MARK: - Methods
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath) as! TFMPropertyCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier,
+                                                      for: indexPath) as? TFMPropertyCell
+        else { return UICollectionViewCell() }
+
         cell.model = tfmProperties[indexPath.item]
 
         // Stepper
