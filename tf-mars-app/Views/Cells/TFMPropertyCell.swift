@@ -56,35 +56,13 @@ class TFMPropertyCell: UICollectionViewCell {
     return label
   }()
   
-  lazy var productionFactorButton: UIButton = {
-    let button = UIButton()
-    button.setTitleColor(UIColor.TFMOrange.light, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: FontSize.property)
-    button.backgroundColor = .clear
-    button.layer.cornerRadius = Layout.Button.cornerRadius
-    button.layer.borderWidth = Layout.Button.borderWidth
-    button.layer.borderColor = UIColor.TFMOrange.light.cgColor
-    button.contentEdgeInsets = UIEdgeInsets(top: Layout.Button.verticalSpace,
-                                            left: Layout.Button.horizontalSpaceProduction,
-                                            bottom: Layout.Button.verticalSpace,
-                                            right: Layout.Button.horizontalSpaceProduction)
-    button.translatesAutoresizingMaskIntoConstraints = false
+  private lazy var productionFactorButton: UIButton = {
+    let button = UIButton.productionFactor
     return button
   }()
 
   lazy var quantityButton: UIButton = {
-    let button = UIButton()
-    button.setTitleColor(UIColor.TFMOrange.light, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: FontSize.property)
-    button.backgroundColor = .clear
-    button.layer.cornerRadius = Layout.Button.cornerRadius
-    button.layer.borderWidth = Layout.Button.borderWidth
-    button.layer.borderColor = UIColor.TFMOrange.light.cgColor
-    button.contentEdgeInsets = UIEdgeInsets(top: Layout.Button.verticalSpace,
-                                            left: Layout.Button.horizontalSpaceQuantity,
-                                            bottom: Layout.Button.verticalSpace,
-                                            right: Layout.Button.horizontalSpaceQuantity)
-    button.translatesAutoresizingMaskIntoConstraints = false
+    let button = UIButton.quantity
     return button
   }()
 
@@ -202,6 +180,19 @@ class TFMPropertyCell: UICollectionViewCell {
       guard let model = self.model else { return }
       print("Tapped \(model.type)")
     }
+  }
+
+  @objc func didPressProduction(sender: UIButton!) {
+//    guard let button = sender else { return }
+///    productionFactorButton.setTitleColor(.white, for: .focused)
+//    productionFactorButton.backgroundColor = .clear
+//    productionFactorButton.setTitleColor(UIColor.TFMOrange.light, for: .normal)
+    print("Button tapped")
+  }
+
+  @objc func holdDownProduction(sender: UIButton!) {
+//    productionFactorButton.backgroundColor = UIColor.TFMOrange.light
+//    productionFactorButton.setTitleColor(.white, for: .normal)
   }
   
 }
