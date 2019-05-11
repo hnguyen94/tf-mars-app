@@ -58,11 +58,13 @@ class TFMPropertyCell: UICollectionViewCell {
   
   private lazy var productionFactorButton: UIButton = {
     let button = UIButton.productionFactor
+    button.addTarget(self, action: #selector(didPressUnitButton), for: .touchUpInside)
     return button
   }()
 
   lazy var quantityButton: UIButton = {
     let button = UIButton.quantity
+    button.addTarget(self, action: #selector(didPressUnitButton), for: .touchUpInside)
     return button
   }()
 
@@ -175,24 +177,11 @@ class TFMPropertyCell: UICollectionViewCell {
   private func setupActions(with model: TFMPropertyModel) {
     productionStepper.value = Double(model.productionFactor)
     quantityStepper.value = Double(model.quantity)
-    
-    addTapGestureRecognizer {
-      guard let model = self.model else { return }
-      print("Tapped \(model.type)")
-    }
   }
 
-  @objc func didPressProduction(sender: UIButton!) {
-//    guard let button = sender else { return }
-///    productionFactorButton.setTitleColor(.white, for: .focused)
-//    productionFactorButton.backgroundColor = .clear
-//    productionFactorButton.setTitleColor(UIColor.TFMOrange.light, for: .normal)
-    print("Button tapped")
+  @objc func didPressUnitButton(sender: UnitButton!) {
+    guard let button = sender else { return }
+    print("Button tapped: ", button)
   }
 
-  @objc func holdDownProduction(sender: UIButton!) {
-//    productionFactorButton.backgroundColor = UIColor.TFMOrange.light
-//    productionFactorButton.setTitleColor(.white, for: .normal)
-  }
-  
 }

@@ -37,8 +37,8 @@ class UnitButton: UIButton {
   private func toggleButton(_ bool: Bool) {
     isOn = bool
 
-    let color = bool ? .clear : UIColor.TFMOrange.light
-    let titleColor = bool ? UIColor.TFMOrange.light : .white
+    let color = bool ? UIColor.TFMOrange.light : .clear
+    let titleColor = bool ? .white : UIColor.TFMOrange.light
 
     setTitleColor(titleColor, for: .normal)
     backgroundColor = color
