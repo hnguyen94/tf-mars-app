@@ -13,17 +13,9 @@ class TFMPropertyCell: UICollectionViewCell {
     }
     
     struct Padding {
+      static let counter: CGFloat = 6
       static let standard: CGFloat = 8
-      static let standard16: CGFloat = Layout.Padding.standard * 2
       static let standard24: CGFloat = Layout.Padding.standard * 3
-    }
-
-    struct Button {
-      static let borderWidth: CGFloat = 1
-      static let cornerRadius: CGFloat = 8
-      static let horizontalSpaceProduction: CGFloat = 12
-      static let horizontalSpaceQuantity: CGFloat = 18
-      static let verticalSpace: CGFloat = 3
     }
   }
 
@@ -55,18 +47,38 @@ class TFMPropertyCell: UICollectionViewCell {
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
-  
-  private lazy var productionFactorButton: UIButton = {
-    let button = UIButton.productionFactor
-    button.addTarget(self, action: #selector(didPressUnitButton), for: .touchUpInside)
+
+  /// When button is touched, its increment and decrement button will
+  /// shown.
+  private lazy var productionFactorButton: UnitButton = {
+    let button = UnitButton.productionFactor
+    button.addTarget(self, action: #selector(didPressProduction), for: .touchUpInside)
     return button
   }()
 
-  lazy var quantityButton: UIButton = {
-    let button = UIButton.quantity
-    button.addTarget(self, action: #selector(didPressUnitButton), for: .touchUpInside)
+  /// Default `isHidden` is set to `true` and will be set to
+  /// `false` when `productionButton` is clicked.
+  lazy var productionIncrementButton = UIButton.increment
+
+  /// Default `isHidden` is set to `true` and will be set to
+  /// `false` when `productionButton` is clicked.
+  lazy var productionDecrementButton = UIButton.decrement
+
+  /// When button is touched, its increment and decrement button will
+  /// shown.
+  lazy var quantityButton: UnitButton = {
+    let button = UnitButton.quantity
+    button.addTarget(self, action: #selector(didPressQuantity), for: .touchUpInside)
     return button
   }()
+
+  /// Default `isHidden` is set to `true` and will be set to
+  /// `false` when `quantityButton` is clicked.
+  lazy var quantityIncrementButton = UIButton.increment
+
+  /// Default `isHidden` is set to `true` and will be set to
+  /// `false` when `quantityButton` is clicked.
+  lazy var quantityDecrementButton = UIButton.decrement
 
   lazy var productionStepper: UIStepper = {
     let stepper = UIStepper()
@@ -89,7 +101,7 @@ class TFMPropertyCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    configureView()
+    configureCell()
     setupViews()
   }
   
@@ -99,7 +111,7 @@ class TFMPropertyCell: UICollectionViewCell {
   
   // MARK: - Constraints
   
-  fileprivate func setupConstraints() {
+  func setupConstraints() {
     NSLayoutConstraint.activate([
       // Icon
       iconView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -116,33 +128,55 @@ class TFMPropertyCell: UICollectionViewCell {
       productionFactorButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                                   constant: Layout.Padding.standard),
 
+      // Production Increment Button
+      productionIncrementButton.centerYAnchor.constraint(equalTo: productionFactorButton.centerYAnchor),
+      productionIncrementButton.leadingAnchor.constraint(equalTo: productionFactorButton.trailingAnchor,
+                                                          constant: Layout.Padding.counter),
+
+      // Production Decrement Button
+      productionDecrementButton.centerYAnchor.constraint(equalTo: productionFactorButton.centerYAnchor),
+      productionDecrementButton.trailingAnchor.constraint(equalTo: productionFactorButton.leadingAnchor,
+                                                          constant: -Layout.Padding.counter),
+
       // QuantityLabel
       quantityButton.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
       quantityButton.topAnchor.constraint(equalTo: productionFactorButton.bottomAnchor,
-                                          constant: CGFloat(6))
+                                          constant: CGFloat(6)),
 
-      // ProductionStepper
-//      productionStepper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.Padding.standard16),
-//      productionStepper.centerYAnchor.constraint(equalTo: productionFactorLabel.centerYAnchor),
-
-      // Quantity Stepper
-//      quantityStepper.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.Padding.standard16),
-//      quantityStepper.centerYAnchor.constraint(equalTo: quantityLabel.centerYAnchor)
-
+      // Quantity Increment Button
+      quantityIncrementButton.centerYAnchor.constraint(equalTo: quantityButton.centerYAnchor),
+      quantityIncrementButton.leadingAnchor.constraint(equalTo: quantityButton.trailingAnchor,
+                                                          constant: Layout.Padding.counter),
+      // Quantity Decrement Button
+      quantityDecrementButton.centerYAnchor.constraint(equalTo: quantityButton.centerYAnchor),
+      quantityDecrementButton.trailingAnchor.constraint(equalTo: quantityButton.leadingAnchor,
+                                                         constant: -Layout.Padding.counter)
       ])
   }
   
   // MARK: - Methods
   
   /// Styling for the view itself
-  private func configureView() {
+  private func configureCell() {
     // Border radious
     layer.cornerRadius = Layout.Cell.cornerRadius
     layer.masksToBounds = true
 
     // Border line
-    layer.borderColor = UIColor.TFMOrange.light.cgColor
+    layer.borderColor = UIColor.TFMOrange.dark.cgColor
     layer.borderWidth = Layout.Cell.borderWidth
+
+    // Increment Decrement
+    let incrementDecrementList = [
+      productionIncrementButton,
+      productionDecrementButton,
+      quantityIncrementButton,
+      quantityDecrementButton
+    ]
+
+    for button in incrementDecrementList {
+      button.isHidden = true
+    }
 
   }
   
@@ -150,7 +184,11 @@ class TFMPropertyCell: UICollectionViewCell {
     addSubviews(titleLabel,
                 iconView,
                 quantityButton,
-                productionFactorButton)
+                quantityIncrementButton,
+                quantityDecrementButton,
+                productionFactorButton,
+                productionIncrementButton,
+                productionDecrementButton)
 
     setupConstraints()
   }
@@ -179,9 +217,14 @@ class TFMPropertyCell: UICollectionViewCell {
     quantityStepper.value = Double(model.quantity)
   }
 
-  @objc func didPressUnitButton(sender: UnitButton!) {
-    guard let button = sender else { return }
-    print("Button tapped: ", button)
+  @objc func didPressProduction() {
+    productionIncrementButton.toggleHiddenState()
+    productionDecrementButton.toggleHiddenState()
+  }
+
+  @objc func didPressQuantity() {
+    quantityIncrementButton.toggleHiddenState()
+    quantityDecrementButton.toggleHiddenState()
   }
 
 }

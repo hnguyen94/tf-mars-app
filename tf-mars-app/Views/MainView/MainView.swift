@@ -39,13 +39,8 @@ class MainView: UIView {
   // TODO: Extract
   /// `generationPickerView.isHidden` is default set
   /// to `true` in the init method
-  lazy var generationPickerView: UIPickerView = {
-    let picker = UIPickerView()
-    picker.backgroundColor = .white
-    picker.translatesAutoresizingMaskIntoConstraints = false
-    return picker
-  }()
-  
+  lazy var generationPickerView = UIPickerView.terraFormValue
+
   // MARK: - Initializer
   
   init(with tfmBoard: TFMBoard) {

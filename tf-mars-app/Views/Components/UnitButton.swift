@@ -22,6 +22,14 @@ class UnitButton: UIButton {
   override init(frame: CGRect) {
     super.init(frame: .zero)
 
+    setTitleColor(UIColor.TFMOrange.light, for: .normal)
+    titleLabel?.font = UIFont.systemFont(ofSize: Layout.FontSize.property)
+    backgroundColor = .clear
+
+    layer.cornerRadius = Layout.Button.cornerRadius
+    layer.borderWidth = Layout.Button.borderWidth
+    layer.borderColor = UIColor.TFMOrange.dark.cgColor
+
     translatesAutoresizingMaskIntoConstraints = false
     addTarget(self, action: #selector(didPressUnitButtonUI), for: .touchUpInside)
   }
@@ -46,23 +54,9 @@ class UnitButton: UIButton {
 
 }
 
-extension UIButton {
-  static var unit: UIButton {
+extension UnitButton {
+  static var productionFactor: UnitButton {
     let button = UnitButton()
-
-    button.setTitleColor(UIColor.TFMOrange.light, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: Layout.FontSize.property)
-    button.backgroundColor = .clear
-
-    button.layer.cornerRadius = Layout.Button.cornerRadius
-    button.layer.borderWidth = Layout.Button.borderWidth
-    button.layer.borderColor = UIColor.TFMOrange.light.cgColor
-
-    return button
-  }
-
-  static var productionFactor: UIButton {
-    let button = UIButton.unit
     button.contentEdgeInsets = UIEdgeInsets(top: Layout.Button.verticalSpace,
                                             left: Layout.Button.horizontalSpaceProduction,
                                             bottom: Layout.Button.verticalSpace,
@@ -70,8 +64,8 @@ extension UIButton {
     return button
   }
 
-  static var quantity: UIButton {
-    let button = UIButton.unit
+  static var quantity: UnitButton {
+    let button = UnitButton()
     button.contentEdgeInsets = UIEdgeInsets(top: Layout.Button.verticalSpace,
                                             left: Layout.Button.horizontalSpaceQuantity,
                                             bottom: Layout.Button.verticalSpace,
