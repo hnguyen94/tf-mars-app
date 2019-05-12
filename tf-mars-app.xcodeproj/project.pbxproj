@@ -40,6 +40,7 @@
 		ECC529BB2287476C0098BBE1 /* TerraFormValuePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529BA2287476C0098BBE1 /* TerraFormValuePicker.swift */; };
 		ECC529BD22874F220098BBE1 /* IncrementDecrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529BC22874F220098BBE1 /* IncrementDecrementButton.swift */; };
 		ECC529C222876A330098BBE1 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529C122876A330098BBE1 /* UIButton.swift */; };
+		ECC529C42287E8770098BBE1 /* TFMPropertyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC529C32287E8770098BBE1 /* TFMPropertyCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		ECC529BA2287476C0098BBE1 /* TerraFormValuePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerraFormValuePicker.swift; sourceTree = "<group>"; };
 		ECC529BC22874F220098BBE1 /* IncrementDecrementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementDecrementButton.swift; sourceTree = "<group>"; };
 		ECC529C122876A330098BBE1 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		ECC529C32287E8770098BBE1 /* TFMPropertyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyCellViewModel.swift; sourceTree = "<group>"; };
 		FAB45F0B639488434A088F14 /* Pods_tf_mars_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tf_mars_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				CD600A0B2269F4D6006DC597 /* MainViewModel.swift */,
+				ECC529C32287E8770098BBE1 /* TFMPropertyCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				CD573A14222B255E00CA943B /* TFMPropertyCell.swift in Sources */,
 				CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */,
 				CD573A11222B0D4A00CA943B /* PropertyProtocols.swift in Sources */,
+				ECC529C42287E8770098BBE1 /* TFMPropertyCellViewModel.swift in Sources */,
 				ECC529B52286D4440098BBE1 /* Layout.swift in Sources */,
 				EC9D5ADB227C45210011DE04 /* Color.swift in Sources */,
 				EC23C237224E452F008E4785 /* MainView.swift in Sources */,

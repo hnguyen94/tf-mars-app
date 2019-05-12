@@ -38,6 +38,12 @@ class UnitButton: UIButton {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func defaultState() {
+    setTitleColor(UIColor.TFMOrange.light, for: .normal)
+    titleLabel?.font = UIFont.systemFont(ofSize: Layout.FontSize.property)
+    backgroundColor = .clear
+  }
+
   @objc func didPressUnitButtonUI() {
     toggleButton(!isOn)
   }

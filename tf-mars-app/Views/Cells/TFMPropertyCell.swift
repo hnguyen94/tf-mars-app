@@ -25,11 +25,27 @@ class TFMPropertyCell: UICollectionViewCell {
   }
   
   // MARK: - Properties
-  
-  var model: TFMPropertyModel? {
+
+  var viewModel: TFMPropertCellViewModel! {
     didSet {
-      setupData()
+      finishCellConfiguration(with: viewModel)
     }
+  }
+
+  private var incrementDecrementButtons: [UIButton] {
+    let list = [
+      productionIncrementButton,
+      productionDecrementButton,
+      quantityIncrementButton,
+      quantityDecrementButton
+    ]
+
+    return list
+  }
+
+  private var unitButtons: [UnitButton] {
+    let list = [productionFactorButton, quantityButton]
+    return list
   }
   
   // MARK: - View Properties
@@ -87,7 +103,7 @@ class TFMPropertyCell: UICollectionViewCell {
     stepper.translatesAutoresizingMaskIntoConstraints = false
     return stepper
   }()
-  
+
   lazy var quantityStepper: UIStepper = {
     let stepper = UIStepper()
     stepper.wraps = true
@@ -96,21 +112,29 @@ class TFMPropertyCell: UICollectionViewCell {
     stepper.translatesAutoresizingMaskIntoConstraints = false
     return stepper
   }()
-  
+
   // MARK: - Init
+
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    configureCell()
+    configureCellLayout()
     setupViews()
   }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
+  // MARK: - Overriden Methods
+
+  override func prepareForReuse() {
+    viewModel.hideButtons(incrementDecrementButtons)
+    viewModel.defaultUnitButtonState(unitButtons)
+  }
+
   // MARK: - Constraints
-  
+
   func setupConstraints() {
     NSLayoutConstraint.activate([
       // Icon
@@ -157,7 +181,7 @@ class TFMPropertyCell: UICollectionViewCell {
   // MARK: - Methods
   
   /// Styling for the view itself
-  private func configureCell() {
+  private func configureCellLayout() {
     // Border radious
     layer.cornerRadius = Layout.Cell.cornerRadius
     layer.masksToBounds = true
@@ -165,19 +189,6 @@ class TFMPropertyCell: UICollectionViewCell {
     // Border line
     layer.borderColor = UIColor.TFMOrange.dark.cgColor
     layer.borderWidth = Layout.Cell.borderWidth
-
-    // Increment Decrement
-    let incrementDecrementList = [
-      productionIncrementButton,
-      productionDecrementButton,
-      quantityIncrementButton,
-      quantityDecrementButton
-    ]
-
-    for button in incrementDecrementList {
-      button.isHidden = true
-    }
-
   }
   
   private func setupViews() {
@@ -193,38 +204,28 @@ class TFMPropertyCell: UICollectionViewCell {
     setupConstraints()
   }
 
-  private func setupData() {
-    guard let model = model else {
-      assertionFailure("Model is not set")
-      return
-    }
-    
-    setContent(with: model)
-    setupActions(with: model)
+  private func finishCellConfiguration(with viewModel: TFMPropertCellViewModel) {
+
+    // Increment Decrement
+    viewModel.hideButtons(incrementDecrementButtons)
+    setContent(with: viewModel)
   }
   
-  private func setContent(with model: TFMPropertyModel) {
-    titleLabel.text = model.type.rawValue
-    iconView.image = model.icon
-    productionFactorButton.setTitle("Production: \(model.productionFactor)", for: .normal)
-    quantityButton.setTitle("Quantity: \(model.quantity)", for: .normal)
-    productionStepper.minimumValue = model.minimumProductionNumber
-    productionStepper.maximumValue = model.maximumProductionNumber
-  }
-  
-  private func setupActions(with model: TFMPropertyModel) {
-    productionStepper.value = Double(model.productionFactor)
-    quantityStepper.value = Double(model.quantity)
+  private func setContent(with viewModel: TFMPropertCellViewModel) {
+    titleLabel.text = viewModel.title
+    iconView.image = viewModel.icon
+    productionFactorButton.setTitle(viewModel.productionTitle, for: .normal)
+    quantityButton.setTitle(viewModel.quantityTitle, for: .normal)
   }
 
   @objc func didPressProduction() {
-    productionIncrementButton.toggleHiddenState()
-    productionDecrementButton.toggleHiddenState()
+    viewModel.changeCounterButtonState(productionIncrementButton, with: productionFactorButton)
+      viewModel.changeCounterButtonState(productionDecrementButton, with: productionFactorButton)
   }
 
   @objc func didPressQuantity() {
-    quantityIncrementButton.toggleHiddenState()
-    quantityDecrementButton.toggleHiddenState()
+    viewModel.changeCounterButtonState(quantityIncrementButton, with: quantityButton)
+    viewModel.changeCounterButtonState(quantityDecrementButton, with: quantityButton)
   }
 
 }
