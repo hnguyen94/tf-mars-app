@@ -1,5 +1,6 @@
 import UIKit
 
+
 class HeaderView: UIView {
 
   // MARK: - Properties
@@ -9,10 +10,10 @@ class HeaderView: UIView {
   var resetValuesAction: (() -> Void)?
   
   override var intrinsicContentSize: CGSize {
-//    let height = titleLabel.intrinsicContentSize.height + stackView.intrinsicContentSize.height
-    let height = CGFloat(200)
-
-    return CGSize(width: UIView.noIntrinsicMetric, height: height)
+    let titleLabelHeight = titleLabel.intrinsicContentSize.height
+    let stackViewHeight = stackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+    let totalHeight =  titleLabelHeight + stackViewHeight
+    return CGSize(width: UIView.noIntrinsicMetric, height: totalHeight)
   }
   
   var toggleGenerationPicker: (() -> Void)?
@@ -37,7 +38,7 @@ class HeaderView: UIView {
   lazy var generationLabel: UILabel = {
     let label = UILabel()
     label.text = viewModel.displayGeneration(with: $0)
-    label.font = UIFont.systemFont(ofSize: 16)
+    label.font = UIFont.systemFont(ofSize: 18)
     label.textColor = .white
     label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -74,8 +75,7 @@ class HeaderView: UIView {
     tfmBoard.didChangeTerraForm = didChangeTerraForm
 
     translatesAutoresizingMaskIntoConstraints = false
-    backgroundColor = .red
-    
+
     setupViews()
   }
   
@@ -91,12 +91,11 @@ class HeaderView: UIView {
   }
   
   private func addSubviews() {
-    addSubview(titleLabel)
-    addSubview(stackView)
-    
-    stackView.addArrangedSubview(generationLabel)
-    stackView.addArrangedSubview(terraFormButton)
-    stackView.addArrangedSubview(resetButton)
+    addSubviews(titleLabel, stackView)
+
+    stackView.addArrangedSubviews(generationLabel,
+                                  terraFormButton,
+                                  resetButton)
   }
   
   private func setupConstraints() {

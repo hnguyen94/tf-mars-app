@@ -87,11 +87,11 @@ class TFMPropertyCell: UICollectionViewCell {
   // MARK: - Constraints
   
   fileprivate func addSubViews() {
-    addSubview(titleLabel)
-    addSubview(quantityLabel)
-    addSubview(productionFactorLabel)
-    addSubview(productionStepper)
-    addSubview(quantityStepper)
+    addSubviews(titleLabel,
+                quantityLabel,
+                productionFactorLabel,
+                productionStepper,
+                quantityStepper)
   }
   
   fileprivate func setupConstraints() {

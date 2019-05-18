@@ -20,6 +20,7 @@
 		CD573A32222B551B00CA943B /* TFMBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD573A31222B551B00CA943B /* TFMBoard.swift */; };
 		CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */; };
 		CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A0B2269F4D6006DC597 /* MainViewModel.swift */; };
+		CD9D89BF2279ECA80073AB09 /* Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D89BE2279ECA80073AB09 /* Subviews.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 		CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerData.swift */; };
 		CDF25777226C7EF90024332E /* MainViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF25776226C7EF90024332E /* MainViewConstraints.swift */; };
@@ -59,6 +60,7 @@
 		CD573A31222B551B00CA943B /* TFMBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMBoard.swift; sourceTree = "<group>"; };
 		CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		CD600A0B2269F4D6006DC597 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		CD9D89BE2279ECA80073AB09 /* Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subviews.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 		CDF2576E226B4BD20024332E /* GenerationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerData.swift; sourceTree = "<group>"; };
 		CDF25776226C7EF90024332E /* MainViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewConstraints.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				CDBC6C16222BF1400012AA99 /* CellTouchable.swift */,
+				CD9D89BE2279ECA80073AB09 /* Subviews.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
 				CDF25777226C7EF90024332E /* MainViewConstraints.swift in Sources */,
 				CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */,
+				CD9D89BF2279ECA80073AB09 /* Subviews.swift in Sources */,
 				CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
 			);
