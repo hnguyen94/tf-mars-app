@@ -81,7 +81,7 @@ extension MainViewController {
       let resettedProperties = self.tfmBoard.resetProperties(self.tfmDatasource.tfmProperties)
       self.tfmDatasource.tfmProperties = resettedProperties
       
-      self.tfmBoard.makeReset()
+      self.tfmBoard.reset()
 
       UIView.performWithoutAnimation {
         self.mainView.collectionView.reloadData()

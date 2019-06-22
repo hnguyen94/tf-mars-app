@@ -190,7 +190,7 @@ class AppTests: XCTestCase {
     
     board.generation = 45
     board.terraForm = 45
-    board.makeReset()
+    board.reset()
 
     // THEN
     XCTAssertEqual(board.generation, expectedGeneration)

@@ -17,15 +17,9 @@ class HeaderView: UIView {
   
   var toggleGenerationPicker: (() -> Void)?
   
-  lazy var titleLabel: UILabel = {
-    let label = UILabel()
-    label.text = "Terra Forming Board"
-    label.font = UIFont.systemFont(ofSize: 24)
-    label.textColor = UIColor.TFMOrange.light
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
-  }()
+  lazy var titleLabel = UILabel.title
   
+
   lazy var stackView: UIStackView = {
     let stackView = UIStackView()
     stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,15 +29,11 @@ class HeaderView: UIView {
   }()
   
   lazy var generationLabel: UILabel = {
-    let label = UILabel()
+    let label = UILabel.generation
     label.text = viewModel.displayGeneration(with: $0)
-    label.font = UIFont.systemFont(ofSize: 16)
-    label.textColor = UIColor.TFMOrange.light
-    label.textAlignment = .center
-    label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }(tfmBoard.generation)
-  
+
   lazy var terraFormButton: UIButton = {
     let button = UIButton()
     button.setTitle($0, for: .normal)

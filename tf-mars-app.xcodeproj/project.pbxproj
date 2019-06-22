@@ -23,6 +23,7 @@
 		CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */; };
 		CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A0B2269F4D6006DC597 /* MainViewModel.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
+		CDED0B48229078B800558221 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED0B47229078B800558221 /* UILabel.swift */; };
 		CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerData.swift */; };
 		CDF2577B2275CDFC0024332E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2577A2275CDFC0024332E /* HeaderView.swift */; };
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
@@ -77,6 +78,7 @@
 		CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		CD600A0B2269F4D6006DC597 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
+		CDED0B47229078B800558221 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		CDF2576E226B4BD20024332E /* GenerationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerData.swift; sourceTree = "<group>"; };
 		CDF2577A2275CDFC0024332E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EC23C236224E452F008E4785 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				ECC529B822872AC80098BBE1 /* MainCollectionView.swift */,
 				ECC529BA2287476C0098BBE1 /* TerraFormValuePicker.swift */,
 				ECC529BC22874F220098BBE1 /* IncrementDecrementButton.swift */,
+				CDED0B47229078B800558221 /* UILabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				CD1D5B4F2229C5D800067636 /* MainViewController.swift in Sources */,
 				EC6D279222563C31003A471B /* MainTabBarController.swift in Sources */,
 				ECC529B922872AC80098BBE1 /* MainCollectionView.swift in Sources */,
+				CDED0B48229078B800558221 /* UILabel.swift in Sources */,
 				EC9D5AD9227C23750011DE04 /* Subview.swift in Sources */,
 				ECC529C222876A330098BBE1 /* UIButton.swift in Sources */,
 				CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */,

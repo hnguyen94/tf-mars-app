@@ -137,7 +137,7 @@ class TFMBoard {
                             productionFactor: property.productionFactor)
   }
   
-  func makeReset() {
+  func reset() {
     generation = defaultGeneration
     terraForm = defaultTerraForm
   }
