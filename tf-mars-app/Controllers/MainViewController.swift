@@ -10,7 +10,7 @@ class MainViewController: UIViewController {
   
   private let tfmBoard = TFMBoard()
   private let tfmDatasource = TfmPropertyDataSource()
-  private let generationPickerData = GenerationPickerData()
+  private let generationPickerData = TerraFormPickerData()
   private let mainCollectionViewDelegate = MainCollectionViewDelegate()
 
   private var mainView: MainView!

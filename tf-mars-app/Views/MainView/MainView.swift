@@ -40,7 +40,16 @@ class MainView: UIView {
   /// `generationPickerView.isHidden` is default set
   /// to `true` in the init method
   lazy var generationPickerView = UIPickerView.terraFormValue
-
+  
+  lazy var toolbar: UIToolbar = {
+    let toolbar = UIToolbar.terraFormValue
+    let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(didPressDone))
+    doneButton.tintColor = .white
+    toolbar.setItems([spaceButton, doneButton], animated: false)
+    return toolbar
+  }()
+  
   // MARK: - Initializer
   
   init(with tfmBoard: TFMBoard) {
@@ -66,7 +75,8 @@ class MainView: UIView {
     addSubviews(headerView,
                 collectionView,
                 nextGenButton,
-                generationPickerView)
+                generationPickerView,
+                toolbar)
 
     setupConstraints()
   }
@@ -77,11 +87,12 @@ class MainView: UIView {
       headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
       headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
       headerView.trailingAnchor.constraint(equalTo: trailingAnchor)
-      ])
+    ])
 
     setupCollectionViewConstraints()
     setupNextGenButtonConstraints()
     setupGenrationPickerViewConstraints()
+    setupToolbarConstraints()
   }
 
   private func setupCollectionViewConstraints() {
@@ -113,6 +124,14 @@ class MainView: UIView {
       generationPickerView.heightAnchor.constraint(equalToConstant: 300)
     ])
   }
+  
+  private func setupToolbarConstraints() {
+    NSLayoutConstraint.activate([
+      toolbar.bottomAnchor.constraint(equalTo: generationPickerView.topAnchor),
+      toolbar.leadingAnchor.constraint(equalTo: generationPickerView.leadingAnchor),
+      toolbar.trailingAnchor.constraint(equalTo: generationPickerView.trailingAnchor)
+    ])
+  }
 
   // MARK: - Methods
   
@@ -122,6 +141,12 @@ class MainView: UIView {
   
   @objc func toggleGenerationPickerView() {
     generationPickerView.isHidden = !generationPickerView.isHidden
+    toolbar.isHidden = !toolbar.isHidden
+  }
+  
+  @objc func didPressDone() {
+    generationPickerView.isHidden = !generationPickerView.isHidden
+    toolbar.isHidden = !toolbar.isHidden
   }
 
 }

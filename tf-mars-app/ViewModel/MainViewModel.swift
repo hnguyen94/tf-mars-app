@@ -6,6 +6,6 @@ struct MainViewModel {
   }
   
   func displayTerraForm(with value: Int) -> String {
-    return "Terra Form Value: \(value)"
+    return "Value: \(value)"
   }
 }

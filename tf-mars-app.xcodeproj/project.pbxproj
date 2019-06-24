@@ -25,7 +25,7 @@
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
 		CDE2AAC122BF9177004FDB4C /* TFMPropertyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2AAC022BF9177004FDB4C /* TFMPropertyViewModelTests.swift */; };
 		CDED0B48229078B800558221 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED0B47229078B800558221 /* UILabel.swift */; };
-		CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerData.swift */; };
+		CDF2576F226B4BD20024332E /* TerraFormPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* TerraFormPickerData.swift */; };
 		CDF2577B2275CDFC0024332E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2577A2275CDFC0024332E /* HeaderView.swift */; };
 		EC23C237224E452F008E4785 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23C236224E452F008E4785 /* MainView.swift */; };
 		EC4AD7FF22859DA00013E673 /* TFMPropertyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4AD7FE22859DA00013E673 /* TFMPropertyModelTests.swift */; };
@@ -81,7 +81,7 @@
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
 		CDE2AAC022BF9177004FDB4C /* TFMPropertyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyViewModelTests.swift; sourceTree = "<group>"; };
 		CDED0B47229078B800558221 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		CDF2576E226B4BD20024332E /* GenerationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerData.swift; sourceTree = "<group>"; };
+		CDF2576E226B4BD20024332E /* TerraFormPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerraFormPickerData.swift; sourceTree = "<group>"; };
 		CDF2577A2275CDFC0024332E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EC23C236224E452F008E4785 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EC4AD7FE22859DA00013E673 /* TFMPropertyModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyModelTests.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 			children = (
 				EC5D6FB322481FF20094CA10 /* TfmPropertyDataSource.swift */,
 				CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */,
-				CDF2576E226B4BD20024332E /* GenerationPickerData.swift */,
+				CDF2576E226B4BD20024332E /* TerraFormPickerData.swift */,
 			);
 			path = "Datasources Delegates";
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				CD1D5B552229C5D800067636 /* tf_mars_app.xcdatamodeld in Sources */,
 				ECC529B7228726800098BBE1 /* NextGenButton.swift in Sources */,
 				ECC529B22286D0FA0098BBE1 /* UnitButton.swift in Sources */,
-				CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */,
+				CDF2576F226B4BD20024332E /* TerraFormPickerData.swift in Sources */,
 				CD573A25222B4D5800CA943B /* TFMPropertyModel.swift in Sources */,
 				CD1D5B4D2229C5D800067636 /* AppDelegate.swift in Sources */,
 			);

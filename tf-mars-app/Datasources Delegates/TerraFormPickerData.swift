@@ -2,14 +2,14 @@ import UIKit
 
 // MARK: - Main
 
-class GenerationPickerData: NSObject {
+class TerraFormPickerData: NSObject {
   let items = Array(20...150)
   var tfmBoard: TFMBoard?
 }
 
 // MARK: - DataSource
 
-extension GenerationPickerData: UIPickerViewDataSource {
+extension TerraFormPickerData: UIPickerViewDataSource {
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
   }
@@ -22,7 +22,7 @@ extension GenerationPickerData: UIPickerViewDataSource {
 
 // MARK: - Delegate
 
-extension GenerationPickerData: UIPickerViewDelegate {
+extension TerraFormPickerData: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView,
                   titleForRow row: Int,
                   forComponent component: Int) -> String? {
@@ -32,7 +32,6 @@ extension GenerationPickerData: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView,
                   didSelectRow row: Int,
                   inComponent component: Int) {
-      let item = items[row]
-    tfmBoard?.terraForm = item
+    tfmBoard?.terraForm = items[row]
   }
 }
