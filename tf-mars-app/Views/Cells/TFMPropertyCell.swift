@@ -74,11 +74,19 @@ class TFMPropertyCell: UICollectionViewCell {
 
   /// Default `isHidden` is set to `true` and will be set to
   /// `false` when `productionButton` is clicked.
-  lazy var productionIncrementButton = UIButton.increment
+  lazy var productionIncrementButton: UIButton = {
+    let button = UIButton.increment
+    button.addTarget(self, action: #selector(didPressProductionIncrement), for: .touchUpInside)
+    return button
+  }()
 
   /// Default `isHidden` is set to `true` and will be set to
   /// `false` when `productionButton` is clicked.
-  lazy var productionDecrementButton = UIButton.decrement
+  lazy var productionDecrementButton: UIButton = {
+    let button = UIButton.decrement
+    button.addTarget(self, action: #selector(didPressProductionDecrement), for: .touchUpInside)
+    return button
+  }()
 
   /// When button is touched, its increment and decrement button will
   /// shown.
@@ -90,11 +98,19 @@ class TFMPropertyCell: UICollectionViewCell {
 
   /// Default `isHidden` is set to `true` and will be set to
   /// `false` when `quantityButton` is clicked.
-  lazy var quantityIncrementButton = UIButton.increment
+  lazy var quantityIncrementButton: UIButton = {
+    let button = UIButton.increment
+    button.addTarget(self, action: #selector(didPressQuantityIncrement), for: .touchUpInside)
+    return button
+  }()
 
   /// Default `isHidden` is set to `true` and will be set to
   /// `false` when `quantityButton` is clicked.
-  lazy var quantityDecrementButton = UIButton.decrement
+  lazy var quantityDecrementButton: UIButton = {
+    let button = UIButton.decrement
+    button.addTarget(self, action: #selector(didPressQuantityDecrement), for: .touchUpInside)
+    return button
+  }()
 
   lazy var productionStepper: UIStepper = {
     let stepper = UIStepper()
@@ -226,6 +242,26 @@ class TFMPropertyCell: UICollectionViewCell {
   @objc func didPressQuantity() {
     viewModel.changeCounterButtonState(quantityIncrementButton, with: quantityButton)
     viewModel.changeCounterButtonState(quantityDecrementButton, with: quantityButton)
+  }
+  
+  @objc func didPressProductionIncrement() {
+    viewModel.increment(unit: .productionFactor)
+    productionFactorButton.setTitle(viewModel.productionTitle, for: .normal)
+  }
+  
+  @objc func didPressProductionDecrement() {
+    viewModel.decrement(unit: .productionFactor)
+    productionFactorButton.setTitle(viewModel.productionTitle, for: .normal)
+  }
+  
+  @objc func didPressQuantityIncrement() {
+    viewModel.increment(unit: .quantity)
+    quantityButton.setTitle(viewModel.quantityTitle, for: .normal)
+  }
+  
+  @objc func didPressQuantityDecrement() {
+    viewModel.decrement(unit: .quantity)
+    quantityButton.setTitle(viewModel.quantityTitle, for: .normal)
   }
 
 }

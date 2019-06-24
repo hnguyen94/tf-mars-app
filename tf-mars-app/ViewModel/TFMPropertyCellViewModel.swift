@@ -1,11 +1,20 @@
 import UIKit
 
 class TFMPropertCellViewModel {
-
+  
+  enum Unit {
+    case productionFactor
+    case quantity
+  }
+  
+  // MARK: - Properties
+  
+  typealias Quantity = Int
+  typealias ProductionFactor = Int
+  
   private var model: TFMPropertyModel
 
   var title: String { return model.type.rawValue }
-
   var icon: UIImage { return model.icon }
 
   var productionTitle: String {
@@ -15,14 +24,14 @@ class TFMPropertCellViewModel {
   var quantityTitle: String {
     return "Quantity: \(model.quantity)"
   }
-
+  
   init(with model: TFMPropertyModel) {
     self.model = model
   }
-
+  
 }
 
-// MARK: - Helper Methods
+// MARK: - Methods
 
 extension TFMPropertCellViewModel {
   /// This function change the button `isHidden` property depending on
@@ -52,5 +61,24 @@ extension TFMPropertCellViewModel {
       button.defaultState()
     }
 
+  }
+  
+  func increment(unit: Unit) {
+    switch unit {
+    case .productionFactor:
+      model.productionFactor += 1
+    case .quantity:
+     model.quantity += 1
+    }
+  }
+  
+  func decrement(unit: Unit) {
+    switch unit {
+    case .productionFactor:
+      model.productionFactor -= 1
+    case .quantity:
+      if model.quantity == 0 { return }
+      model.quantity -= 1
+    }
   }
 }

@@ -23,6 +23,7 @@
 		CD600A092269F055006DC597 /* MainCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */; };
 		CD600A0C2269F4D6006DC597 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD600A0B2269F4D6006DC597 /* MainViewModel.swift */; };
 		CDBC6C17222BF1400012AA99 /* CellTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC6C16222BF1400012AA99 /* CellTouchable.swift */; };
+		CDE2AAC122BF9177004FDB4C /* TFMPropertyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2AAC022BF9177004FDB4C /* TFMPropertyViewModelTests.swift */; };
 		CDED0B48229078B800558221 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED0B47229078B800558221 /* UILabel.swift */; };
 		CDF2576F226B4BD20024332E /* GenerationPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2576E226B4BD20024332E /* GenerationPickerData.swift */; };
 		CDF2577B2275CDFC0024332E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF2577A2275CDFC0024332E /* HeaderView.swift */; };
@@ -78,6 +79,7 @@
 		CD600A082269F055006DC597 /* MainCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		CD600A0B2269F4D6006DC597 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CDBC6C16222BF1400012AA99 /* CellTouchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchable.swift; sourceTree = "<group>"; };
+		CDE2AAC022BF9177004FDB4C /* TFMPropertyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFMPropertyViewModelTests.swift; sourceTree = "<group>"; };
 		CDED0B47229078B800558221 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		CDF2576E226B4BD20024332E /* GenerationPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationPickerData.swift; sourceTree = "<group>"; };
 		CDF2577A2275CDFC0024332E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				CD1D5B642229C5D900067636 /* AppTests.swift */,
 				CD1D5B662229C5D900067636 /* Info.plist */,
 				EC4AD7FE22859DA00013E673 /* TFMPropertyModelTests.swift */,
+				CDE2AAC022BF9177004FDB4C /* TFMPropertyViewModelTests.swift */,
 			);
 			path = "tf-mars-appTests";
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4AD7FF22859DA00013E673 /* TFMPropertyModelTests.swift in Sources */,
+				CDE2AAC122BF9177004FDB4C /* TFMPropertyViewModelTests.swift in Sources */,
 				CD1D5B652229C5D900067636 /* AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
